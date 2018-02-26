@@ -1,26 +1,27 @@
 <?
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
+{
     die();
+}
 ?>
 
-</div>
 
-<footer>
-    <div class="footer">
-        <div class="row">
-            <div class="col-12">
-                <div class="footer__l">
-                    <span><? $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/copyright.php'); ?></span>
-                </div>
+<div class="footer">
+    <div class="row">
+        <div class="col-12">
+            <div class="footer__l">
+                <span><? $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/copyright.php'); ?></span>
             </div>
-            <div class="col-12">
-                <div class="footer__r">
-                    <? $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/developer.php'); ?>
-                </div>
+        </div>
+        <div class="col-12">
+            <div class="footer__r">
+                <? $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/developer.php'); ?>
             </div>
         </div>
     </div>
-</footer>
+</div>
+
+</div>
 
 <!--<div class="core__modal core__modal__add" id="core__modal__add">-->
 <!--    <div class="core__form">-->
