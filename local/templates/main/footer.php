@@ -10,12 +10,12 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
         <div class="row">
             <div class="col-12">
                 <div class="footer__l">
-                    <span>© MELIH - фабрика меха и кожи</span>
+                    <span><? $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/copyright.php'); ?></span>
                 </div>
             </div>
             <div class="col-12">
                 <div class="footer__r">
-                    <a class="" target="_blank">Создание сайта</a>
+                    <? $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/developer.php'); ?>
                 </div>
             </div>
         </div>

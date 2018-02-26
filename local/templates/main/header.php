@@ -1,6 +1,11 @@
 <?
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
     die();
+
+use Bitrix\Main\Localization\Loc;
+
+Loc::loadMessages(__FILE__);
+
 ?><!DOCTYPE html>
 <html lang="<?=LANGUAGE_ID;?>">
 <head>
@@ -43,7 +48,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
             <div class="core__menu-nav__mobile__alert__user">
 
             </div>
-            <div class="core__menu-nav__mobile__alert__menu" data-core-name="Меню" data-js-core-resize-after="menu">
+            <div class="core__menu-nav__mobile__alert__menu" data-core-name="<?=Loc::getMessage('LEMA_HEADER_MENU_TITLE');?>" data-js-core-resize-after="menu">
             </div>
         </div>
         <div class="core__menu-nav__mobile__button">
@@ -55,35 +60,43 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
         <div class="header container-fluid">
             <div class="header__main">
                     <div class="header__main__logo">
-                        <a href="/" title="logo">
+                        <?if($APPLICATION->GetCurDir() == '/'):?>
                             <img src="/assets/img/logo.png" alt="logo">
-                        </a>
+                        <?else:?>
+                            <a href="<?=SITE_DIR;?>" title="logo">
+                                <img src="/assets/img/logo.png" alt="logo">
+                            </a>
+                        <?endif;?>
                     </div>
                     <div class="header__main__menu">
-                        <div class="header__main__menu__title"><span>Меню</span></div>
-                        <ul class="header__main__menu__list">
-                            <li><a href="" title="Для Вас">Для Вас</a></li>
-                            <li><a href="" title="Каталог">Каталог</a></li>
-                            <li><a href="" title="Статьи">Статьи</a></li>
-                            <li><a href="" title="Сертификаты">Сертификаты</a></li>
-                            <li><a href="" title="Доставка оплата">Доставка оплата</a></li>
-                            <li><a href="" title="Контакты">Контакты</a></li>
-                        </ul>
+                        <? $APPLICATION->IncludeComponent('bitrix:menu', 'top_menu', array(
+                            'ALLOW_MULTI_SELECT' => 'N',
+                            'ROOT_MENU_TYPE' => 'top',
+                            'CHILD_MENU_TYPE' => 'left',
+                            'DELAY' => 'N',
+                            'MAX_LEVEL' => '1',
+                            'MENU_CACHE_GET_VARS' => array(
+                            ),
+                            'MENU_CACHE_TIME' => '3600',
+                            'MENU_CACHE_TYPE' => 'A',
+                            'MENU_CACHE_USE_GROUPS' => 'N',
+                            'USE_EXT' => 'Y',
+                            'COMPONENT_TEMPLATE' => 'top_menu'
+                        )); ?>
                     </div>
                     <div class="header__main__phone">
                         <div class="header__main__phone__icon">
                             <img src="/assets/img/icon/phone.png" alt=""/>
                         </div>
                         <div class="header__main__phone__number">
-                            <a href="tell://81234567890" title="Позвонить" class="header__main__phone__number__control">8 (123) 456-78-90</a>
+                            <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/phone_link.php'); ?>
                         </div>
                         <div class="header__main__phone__btn">
-                            <a href="/" title="Заказать звонок" class="header__main__phone__btn__control">Заказать звонок</a>
+                            <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/order_link.php'); ?>
                         </div>
                     </div>
                     <div class="header__main__social">
-                        <a href="" title="vkontakte" class="header__main__social__item header__main__social__item_vk"></a>
-                        <a href="" title="instagram" class="header__main__social__item header__main__social__item_inst"></a>
+                        <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/social_links.php'); ?>
                     </div>
                 </div>
         </div>

@@ -1,0 +1,45 @@
+<?
+$aMenuLinks = array(
+	array(
+		'Для Вас',
+		'#',
+		array(),
+		array(),
+		''
+	),
+	array(
+		'Каталог',
+		'#',
+		array(),
+		array(),
+		''
+	),
+	array(
+		'Статьи',
+		'#',
+		array(),
+		array(),
+		''
+	),
+	array(
+		'Сертификаты',
+		'#',
+		array(),
+		array(),
+		''
+	),
+	array(
+		'Доставка и оплата',
+		'#',
+		array(),
+		array(),
+		''
+	),
+	array(
+		'Контакты',
+		'#',
+		array(),
+		array(),
+		''
+	),
+);
