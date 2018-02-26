@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
+<?
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
+    die();
+?><!DOCTYPE html>
+<html lang="<?=LANGUAGE_ID;?>">
 <head>
-    <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -9,21 +11,28 @@
     <link rel="apple-touch-icon" sizes="76x76" href="/">
     <link rel="icon" type="image/png" href="/assets/img/favicon.png"/>
 
-    <!-- SEO -->
-    <title></title>
-    <meta name="description" content="<?=$arParam['description']?>"/>
-    <meta name="robots" content="noodp"/>
-    <meta property="og:locale" content="ru_RU" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="<?=$arParam['title']?>" />
-    <meta property="og:description" content="<?=$arParam['description']?>" />
-    <meta property="og:url" content="http://sitename.com/" />
-    <meta property="og:site_name" content="Название сайта" />
+    <?php
+    $APPLICATION->ShowHead();
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="/assets/js/lib/fancybox/fancybox.min.css" type='text/css'/>
-    <link rel="stylesheet" href="/assets/css/style.min.css" type='text/css' media='all' />
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    \Lema\Common\AssetManager::get()
+        ->init(array('fx'))
+        ->addCssArray(array(
+            '//fonts.googleapis.com/css?family=Noto+Sans:400,700',
+            '//fonts.googleapis.com/css?family=PT+Sans:400,700',
+            '/assets/js/lib/fancybox/fancybox.min.css',
+            '/assets/css/style.min.css',
+        ))
+        ->addJsArray(array(
+            '/assets/js/lib/jquery.min.js',
+            '/assets/js/lib/slick.js',
+            '/assets/js/lib/fancybox/fancybox.min.js',
+            '/assets/js/scripts.min.js',
+            '/assets/js/main.min.js',
+        ));
+    ?>
+
+    <title><?$APPLICATION->ShowTitle();?></title>
+
 </head>
 <body class="body-content">
     <header>

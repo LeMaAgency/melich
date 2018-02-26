@@ -1,6 +1,7 @@
-
-
-</div>
+<?
+if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
+    die();
+?>
 
 <footer>
     <div class="footer">
@@ -58,16 +59,5 @@
 <!--        </div>-->
 <!--    </div>-->
 <!--</div>-->
-
-<!-- Libs JS Files -->
-<script type="text/javascript" src="/assets/js/lib/jquery.min.js"></script>
-<script type="text/javascript" src="/assets/js/lib/slick.js"></script>
-<script type="text/javascript" src="/assets/js/lib/fancybox/fancybox.min.js"></script>
-
-<!-- Core JS Files -->
-<script type="text/javascript" src="/assets/js/scripts.min.js"></script>
-<script type="text/javascript" src="/assets/js/main.min.js"></script>
-
-<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
 </body>
 </html>
