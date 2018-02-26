@@ -150,7 +150,8 @@ var coreJsTabs = {
         // Переменные
         var tempLastName = null,
             _this = this;
-console.log(this.$arElementsNav);
+        if(!_this.$arElementsNav)
+            _this.$arElementsNav = $('[data-js-core-tabs-nav]').find('a');
         this.$arElementsNav.each(function () {
             var $this = $(this),
                 id    = null,
