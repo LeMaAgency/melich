@@ -63,6 +63,8 @@ var coreJsResize = {
         $(window).resize(this.resize);
     },
     resize: function() {
+        if(typeof this.$arElements === 'undefined')
+            this.$arElements = $('[data-js-core-resize]');
         this.$arElements.each(function () {
             var $this = $(this);
 
@@ -142,14 +144,13 @@ var coreJsTabs = {
     init: function () {
         this.$arElementsNav = $('[data-js-core-tabs-nav]').find('a');
         this.$arElementsTabs = $('[data-js-core-tabs]');
-        console.log(this.$arElementsNav);
         this.load();
     },
     load: function () {
         // Переменные
         var tempLastName = null,
             _this = this;
-
+console.log(this.$arElementsNav);
         this.$arElementsNav.each(function () {
             var $this = $(this),
                 id    = null,

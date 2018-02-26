@@ -30,6 +30,7 @@ Loc::loadMessages(__FILE__);
         ->addJsArray(array(
             '/assets/js/lib/jquery.min.js',
             '/assets/js/lib/slick.js',
+            '/assets/js/lib/anime.js',
             '/assets/js/lib/fancybox/fancybox.min.js',
             '/assets/js/scripts.js',
             '/assets/js/main.min.js',
