@@ -1,9 +1,10 @@
 // - coreJs -
 var coreJs = {
-    menu: $('.core__menu-nav__ul'),
+    menu: null,
     width: null,
 
     init: function () {
+        this.menu = $('.core__menu-nav__ul');
         this.resize();
     },
     active: function ($this) {
@@ -33,11 +34,12 @@ var coreJs = {
 var coreJsResize = {
     // Переменные
     // ...
-    $arElements : $('[data-js-core-resize]'),
+    $arElements : null,
     width : null,
 
     //...
     init: function () {
+        this.$arElements = $('[data-js-core-resize]');
         this.load();
     },
     load: function () {
@@ -61,7 +63,7 @@ var coreJsResize = {
         $(window).resize(this.resize);
     },
     resize: function() {
-        coreJsResize.$arElements.each(function () {
+        this.$arElements.each(function () {
             var $this = $(this);
 
             if($this.data().size === 'xl') $this.data().size = '1200';
@@ -101,9 +103,10 @@ var coreJsResize = {
 var coreJsFormCheckbox = {
     // Переменные
     // ...
-    $arElements : $('[data-js-core-form-checkbox]'),
+    $arElements : null,
     //...
     init: function () {
+        this.$arElements = $('[data-js-core-form-checkbox]');
         this.load();
     },
     load: function () {
@@ -131,17 +134,21 @@ var coreJsFormCheckbox = {
 var coreJsTabs = {
     // Переменные
     // ...
-    $arElementsNav : $('[data-js-core-tabs-nav]').find('a'),
-    $arElementsTabs : $('[data-js-core-tabs]'),
+    $arElementsNav : null,
+    $arElementsTabs : null,
     id : 1,
     num: null,
     //...
     init: function () {
+        this.$arElementsNav = $('[data-js-core-tabs-nav]').find('a');
+        this.$arElementsTabs = $('[data-js-core-tabs]');
+        console.log(this.$arElementsNav);
         this.load();
     },
     load: function () {
         // Переменные
-        var tempLastName = null;
+        var tempLastName = null,
+            _this = this;
 
         this.$arElementsNav.each(function () {
             var $this = $(this),
@@ -162,13 +169,13 @@ var coreJsTabs = {
                 coreJsTabs.num = 1;
             }
 
-            var $tab = coreJsTabs.$arElementsTabs.find('[data-js-core-tabs-id ='+ id + ']');
+            var $tab = _this.$arElementsTabs.find('[data-js-core-tabs-id ='+ id + ']');
 
             $this.data({
                 id:         id,
                 name:       $name,
                 tab:        $tab,
-                num:        coreJsTabs.num
+                num:        _this.num
             });
             coreJsTabs.id += 1;
         });
@@ -200,11 +207,15 @@ var coreJsTabs = {
 var coreJsMobile = {
     // Переменные
     // ...
-    $body :    $('.core__body'),
-    $menu :    $('.core__body__mobile__menu'),
-    $buttonX : $('.core__body__mobile__btn'),
+    $body :    null,
+    $menu :    null,
+    $buttonX : null,
 
     init: function () {
+        this.$body = $('.core__body');
+        this.$menu = $('.core__body__mobile__menu');
+        this.$buttonX = $('.core__body__mobile__btn');
+
         this.load();
     },
     load: function () {
@@ -213,17 +224,18 @@ var coreJsMobile = {
 
     ButtonX_click: function (e){
         e.preventDefault();
-        coreJsMobile.$body.toggleClass('active');
-        coreJsMobile.$buttonX.toggleClass('active');
+        this.$body.toggleClass('active');
+        this.$buttonX.toggleClass('active');
         $('.core__mobile').removeClass('js-list');
     }
 };
 var coreJsSwitchElement = {
     // Переменные
     // ...
-    $arElements : $('[data-js-core-switch-element]'),
+    $arElements : null,
     //...
     init: function () {
+        this.$arElements = $('[data-js-core-switch-element]');
         this.load();
     },
     load: function () {
@@ -280,10 +292,11 @@ var coreJSFixed = {
         this.activation();
     },
     activation: function () {
-        coreJSFixed.window.scroll(function() {
-            coreJSFixed.$arElements.each(function () {
+        var _this = this;
+        _this.window.scroll(function() {
+            _this.$arElements.each(function () {
                 var $this = $(this);
-                if (coreJSFixed.window.scrollTop() > $this.data('top')) {
+                if (_this.window.scrollTop() > $this.data('top')) {
                     $this.addClass('fixed');
                 } else {
                     $this.removeClass('fixed');
