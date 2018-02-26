@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("MELIH");
+$APPLICATION->SetTitle("MELICH");
 ?>
 <?$APPLICATION->IncludeComponent('bitrix:news.list', 'slider_main', array(
     'DISPLAY_DATE' => 'Y',
