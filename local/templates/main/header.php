@@ -35,6 +35,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)
 
 </head>
 <body class="body-content">
+<?$APPLICATION->ShowPanel();?>
     <header>
         <!-- MOBILE MENU -->
         <div class="core__menu-nav__mobile__alert">
