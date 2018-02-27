@@ -140,7 +140,7 @@ $APPLICATION->SetTitle("MELICH");
                         ));?>
                     </div>
                     <div data-js-core-tabs-id="2" class="page__index__inf__tabs__block__comment ">
-                        <?/*$APPLICATION->IncludeComponent('bitrix:news.list', 'reviews_list_main', array(
+                        <?$APPLICATION->IncludeComponent('bitrix:news.list', 'reviews_list_main', array(
                             'DISPLAY_DATE' => 'Y',
                             'DISPLAY_NAME' => 'Y',
                             'DISPLAY_PICTURE' => 'Y',
@@ -155,7 +155,7 @@ $APPLICATION->SetTitle("MELICH");
                             'SORT_ORDER2' => 'ASC',
                             'FILTER_NAME' => '',
                             'FIELD_CODE' => array(),
-                            'PROPERTY_CODE' => array(),
+                            'PROPERTY_CODE' => array('CITY'),
                             'CHECK_DATES' => 'Y',
                             'DETAIL_URL' => '',
                             'PREVIEW_TRUNCATE_LEN' => '',
@@ -193,83 +193,7 @@ $APPLICATION->SetTitle("MELICH");
                             'AJAX_OPTION_STYLE' => 'Y',
                             'AJAX_OPTION_HISTORY' => 'N',
                             'AJAX_OPTION_ADDITIONAL' => '',
-                        ));*/?>
-                        <!-- list -->
-                        <div class="page__index__inf__tabs__block__comment__list">
-                            <div class="page__index__inf__tabs__block__comment__list__group">
-                                <div class="page__index__inf__tabs__block__comment__list__item">
-                                    <div class="page__index__inf__tabs__block__comment__list__item__name">
-                                        <span>Имя Фамилия</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__city">
-                                        <span>Москва</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__text">
-                                        <span>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения.</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__btn">
-                                        <a href="" title="Читать далее"
-                                           class="page__index__inf__tabs__block__comment__list__item__btn__control">Читать
-                                            далее</a>
-                                    </div>
-                                </div>
-                                <div class="page__index__inf__tabs__block__comment__list__item">
-                                    <div class="page__index__inf__tabs__block__comment__list__item__name">
-                                        <span>Имя Фамилия</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__city">
-                                        <span>Москва</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__text">
-                                        <span>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения.</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__btn">
-                                        <a href="" title="Читать далее"
-                                           class="page__index__inf__tabs__block__comment__list__item__btn__control">Читать
-                                            далее</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="page__index__inf__tabs__block__comment__list__group">
-                                <div class="page__index__inf__tabs__block__comment__list__item">
-                                    <div class="page__index__inf__tabs__block__comment__list__item__name">
-                                        <span>Имя Фамилия</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__city">
-                                        <span>Москва</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__text">
-                                        <span>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения.</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__btn">
-                                        <a href="" title="Читать далее"
-                                           class="page__index__inf__tabs__block__comment__list__item__btn__control">Читать
-                                            далее</a>
-                                    </div>
-                                </div>
-                                <div class="page__index__inf__tabs__block__comment__list__item">
-                                    <div class="page__index__inf__tabs__block__comment__list__item__name">
-                                        <span>Имя Фамилия</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__city">
-                                        <span>Москва</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__text">
-                                        <span>Многие программы электронной вёрстки и редакторы HTML используют Lorem Ipsum в качестве текста по умолчанию, так что поиск по ключевым словам "lorem ipsum" сразу показывает, как много веб-страниц всё ещё дожидаются своего настоящего рождения.</span>
-                                    </div>
-                                    <div class="page__index__inf__tabs__block__comment__list__item__btn">
-                                        <a href="" title="Читать далее"
-                                           class="page__index__inf__tabs__block__comment__list__item__btn__control">Читать
-                                            далее</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- list end -->
-                        <div class="page__index__inf__tabs__block__comment__btn">
-                            <a href="/" title="Читать все отзывы"
-                               class="page__index__inf__tabs__block__comment__btn__control">Читать все отзывы</a>
-                        </div>
+                        ));?>
                     </div>
                 </div>
             </div>
