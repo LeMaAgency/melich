@@ -26,7 +26,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
             '/assets/inner_page/js/main.js?v=4',
         ));
     ?>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnVwscjfcA78bKndhDTdwKs6c4k9awWXE&amp;callback=initMap" type="text/javascript" async defer></script>
     <title><? $APPLICATION->ShowTitle(); ?></title>
 </head>
 
