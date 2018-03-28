@@ -1,45 +1,46 @@
 <?
-$aMenuLinks = array(
-	array(
-		'Для Вас',
-		'#',
-		array(),
-		array(),
-		''
+$aMenuLinks = Array(
+	Array(
+		"Для Вас", 
+		"/about/", 
+		Array(), 
+		Array(), 
+		"" 
 	),
-	array(
-		'Каталог',
-		'#',
-		array(),
-		array(),
-		''
+	Array(
+		"Каталог", 
+		"/catalog/", 
+		Array(), 
+		Array(), 
+		"" 
 	),
-	array(
-		'Статьи',
-		'#',
-		array(),
-		array(),
-		''
+	Array(
+		"Статьи", 
+		"/articles/", 
+		Array(), 
+		Array(), 
+		"" 
 	),
-	array(
-		'Сертификаты',
-		'#',
-		array(),
-		array(),
-		''
+	Array(
+		"Сертификаты", 
+		"/certificates/", 
+		Array(), 
+		Array(), 
+		"" 
 	),
-	array(
-		'Доставка и оплата',
-		'#',
-		array(),
-		array(),
-		''
+	Array(
+		"Доставка и оплата", 
+		"/shipping/", 
+		Array(), 
+		Array(), 
+		"" 
 	),
-	array(
-		'Контакты',
-		'#',
-		array(),
-		array(),
-		''
-	),
+	Array(
+		"Контакты", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
 );
+?>
