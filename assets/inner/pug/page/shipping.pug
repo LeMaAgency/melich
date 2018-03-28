@@ -1,0 +1,141 @@
+extends ../layout/main.pug
+
+block var
+    -var title= "Доставка Оплата"
+
+block content
+
+    .flex-container
+
+        //Start nav-bar
+        include ../section/navbar
+        //End nav-bar
+
+        //Start main-content
+        main.main-content
+
+            //Start page-header
+            header.page-header
+
+                //Start hamburger-btn
+                .hamburger-btn
+                    button(class="hamburger hamburger--collapse" type="button")
+                        span(class="hamburger-box")
+                            span(class="hamburger-inner")
+                //End hamburger-btn
+
+                .page-header__wrap
+                    .page-header__logo
+                        img(src="img/header-logo.png" alt="")
+                    .breadcrumbs
+                        ul.breadcrumbs__list
+                            li.breadcrumbs__item
+                                a(href="/").breadcrumbs__link главная
+                            li.breadcrumbs__item
+                                a(href="#").breadcrumbs__link доставка и оплата
+                    .page-header__headline
+                        h1.page-header__title Доставка и оплата
+                        h2.page-header__subtitle Историю Компании «MELICH» можно рассказывать как историю создания искусства
+
+            //End page-header
+
+            //Start shipping
+            section.shipping
+                .flex-container.flex-reverse-mobile
+                    .shipping__img
+                        img(src="img/shipping-photo.jpg" data-object-fit="cover" alt="")
+                    .shipping__description
+                        .shipping__note
+                            p ВНИМАНИЕ! В наличии есть множество товаров, которые пока не представлены в нашем интернет- магазине.  О наличии той или иной вещи спрашивайте у нашего менеджера.
+                        .shipping__info
+                            p Обработка заказа происходит с 11:00 до 20:00 с понедельника по пятницу. Вы можете оставить свой заказ в любое время, и как только он поступит в обработку, с Вами свяжется наш менеджер. Если Вы оставляете заказ в выходной, менеджер свяжется с Вами в ближайший будний день.
+            //End shipping
+                
+            //Start shipping
+            section.shipping
+                .flex-container.flex-direction-tablet
+
+                    .shipping__left
+                        .shipping__left-wrap
+                            .heading
+                                h2.heading__title Условия доставки
+
+                            ul.shipping__list
+                                li.shipping__item Заключение договора и предоплата в размере 70%
+                                li.shipping__item Покупатель оплачивает страховку в размере <br>  1% от стоимости изделия
+                                li.shipping__item Покупатель оплачивает двойную стоимость доставки в <br> соответствии с тарифами
+
+                            .shipping__note
+                                p Доставка товаров осуществляется по всем городам России!
+
+                            .shipping__question
+                                em * Стоимость и сроки доставки спрашивайте у нашего менеджера.
+
+                    .shipping__right
+                        div(style="background-image: url('img/shipping-phone-bg.jpg')").shipping__right-wrap
+
+                            .shipping__card
+                                .shipping__card-inner
+                                    .shipping__card-header
+                                        p Заказать товары <br> вы можете по телефону
+                                    .shipping__card-body
+                                        a(href="tel:84957245437").shipping__card-phone 8 (495) 724-54-37
+                                    .shipping__card-footer
+                                        p с 11:00 до 20:00 <br> с понедельника по пятницу
+            //End shipping
+
+            //Start shipping
+            section.shipping
+                .flex-container.flex-reverse.flex-direction-tablet
+
+                    .shipping__left
+
+                        .shipping__delivery
+                            .shipping__delivery-wrap
+                                .heading
+                                    h2.heading__title Условия доставки
+                                .shipping__info
+                                    p Заказ оплачивается при доставке курьеру наличными или банковской карточкой.
+
+                        .shipping__return
+                            .shipping__return-wrap
+                                .heading
+                                    h2.heading__title Возврат
+                                .shipping__info
+                                    p Если по каким-то причинам Вы решили вернуть товар, который не подошел или не понравился Вам, это сделать очень просто.
+                                .shipping__info
+                                    p Возврат товаров надлежащего качества, <br> с сохранением товарного вида и этикеток, возможен только  в нашем офисе по адресу : <br> <b>Москва, ул. Большая Дмитровка, д. 7/5</b>
+
+
+                    .shipping__right
+                        div(style="background-image: url('img/shipping-book-bg.jpg')").shipping__right-wrap
+                            div(role="button").shipping__card.shipping__card--button
+                                .shipping__card-inner.shipping__card-inner-brown
+                                    .shipping__card-center
+                                        p Правила продажи
+                                    .shipping__card-icon
+                                        img(src="img/icon/list.png" alt="")
+
+                    .shipping-overlay
+
+                        div(tabindex="-1").shipping-modal
+
+                            button(type="button").shipping-modal__close.close-js
+
+                            .shipping-modal__wrap
+                                .shipping-modal__header
+                                    h3.shipping-modal__title Правила продажи товаров дистанционным способом
+                                .shipping-modal__content
+                                    p <strong>В соответствии со ст. 26 Закона РФ «О защите прав потребителей» от 07.02.1992 г. №2300-1и Постановлением Правительства РФ от 27.09.2007 г. №612 «Об утверждении Правил продажи товаров дистанционным способом» </strong> потребитель вправе отказаться от товара в любое время до его передачи, а после передачи товара – в течение семи дней. Возврат товара надлежащегокачества возможен в случае, если сохранены его товарный вид, ярлыки, упаковка,потребительские свойства, подтверждающий факт и условия покупки товара документ.
+
+                                    p При отказепотребителя от товара надлежащего качества продавец возвращает уплаченную за товар сумму за исключением расходов на доставку возвращенного товара. Полный расчет продавца с потребителем при его отказе от товара надлежащего качества осуществляется в течение пяти рабочих дней после даты дня получения продавцом возвращенного товара по адресу покупки.
+
+                                    p При отказепотребителя от товара надлежащего качества продавец возвращает уплаченную за товар сумму за исключением расходов на доставку возвращенного товара. Полный расчет продавца с потребителем при его отказе от товара надлежащего качества осуществляется в течение пяти рабочих дней после даты дня получения продавцом возвращенного товара по адресу покупки.
+
+            //End shipping
+
+            //Start page-footer
+            footer.page-footer
+                p.page-footer__company © MELIH - фабрика меха и кожи
+                a(href="#").page-footer__made-link Создание сайта
+            //End page-footer

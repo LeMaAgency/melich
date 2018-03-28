@@ -1,0 +1,22 @@
+.size {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__item {
+    font-size: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 29px;
+    height: 29px;
+    margin-right: 14px;
+
+    border: 1px solid #ededed;
+    border-radius: 50%;
+    color: #333;
+  }
+
+}

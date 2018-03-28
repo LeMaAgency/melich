@@ -1,0 +1,69 @@
+extends ../layout/main.pug
+
+block var
+    -var title= "Контакты"
+    -var maps= true
+
+block content
+
+    .flex-container
+
+        //Start nav-bar
+        include ../section/navbar
+        //End nav-bar
+
+        //Start main-content
+        main.main-content
+
+            //Start contacts
+            section.contacts
+                .flex-container.flex-direction-tablet
+
+                    .contacts-content.contacts__column
+
+                        //Start hamburger-btn
+                        .hamburger-btn.hamburger-btn--darken
+                            button(class="hamburger hamburger--collapse" type="button")
+                                span(class="hamburger-box")
+                                    span(class="hamburger-inner")
+                        //End hamburger-btn
+
+
+                        .contacts-content__wrap
+                            .heading
+                                h1.heading__title Контакты
+
+                            .contacts-content__top
+                                .contacts-content__phone
+                                    span Телефон : <a href="+7(123)456-78-90">+7 (123) 456-78-90</a>
+                                .contacts-content__email
+                                    a(href="mailto:melich@gmail.com") E-mail: melich@gmail.com
+                                .contacts-content__socials.socials.socials--row
+                                    ul.socials__list
+                                        li.socials__item
+                                            a(href="#").socials__link
+                                                +icon("socials__icon icon-vk", "vk-logo")
+                                        li.socials__item
+                                            a(href="#").socials__link
+                                                +icon("socials__icon icon-inst", "instagram-logo")
+
+                            .contacts-content__section
+                                h2.contacts-content__title Адрес
+                                .contacts-content__text
+                                    p Ессентуки <br> ул. Название улицы, дом 3, корпус 8
+
+                            .contacts-content__section
+                                h2.contacts-content__title Время работы магазина
+                                .contacts-content__text
+                                    p Понедельник - Пятница : С 9:00 до 18:00
+                                    p Суббота- Воскресенье : С 9:00 до 20:00
+
+
+                    #map.contacts-map.contacts__column
+            //End contacts
+
+            //Start page-footer
+            footer.page-footer
+                p.page-footer__company © MELIH - фабрика меха и кожи
+                a(href="#").page-footer__made-link Создание сайта
+            //End page-footer

@@ -1,0 +1,140 @@
+// --------------------------------------------------
+// Flex
+// --------------------------------------------------
+@mixin flex-container($jc: flex-start, $ai: stretch, $fd: row) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-direction: $fd;
+}
+
+// --------------------------------------------------
+// Media queries
+// --------------------------------------------------
+
+@mixin desktop() {
+  @media screen and (max-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin laptop() {
+  @media screen and (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin phone() {
+  @media screen and (max-width: $phone) {
+    @content;
+  }
+}
+
+
+// --------------------------------------------------
+// Clearfix
+// --------------------------------------------------
+
+// eg: @include clearfix;
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// --------------------------------------------------
+// Font
+// --------------------------------------------------
+// eg: @include font($size: 14px, $style: italic, $weight: 400, $variant: normal, $family: $font-family-base);
+@mixin font($size: null, $style: null, $weight: null, $family: null) {
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  font-family: $family;
+}
+
+// --------------------------------------------------
+// Positioning
+// --------------------------------------------------
+
+// eg: @include position(absolute, $top: 5px, $left: 5px);
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+}
+
+// --------------------------------------------------
+// Sizing
+// --------------------------------------------------
+
+// eg 2: @include size(100%, 1px); */
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// --------------------------------------------------
+// RGBA Background Opacity
+// --------------------------------------------------
+
+// eg: @include bg-opacity($color-dark, .2);
+@mixin bg-opacity($color, $opacity: 0.3) {
+  background: rgba($color, $opacity);
+}
+
+// --------------------------------------------------
+// Cubic Bezier Transition
+// --------------------------------------------------
+
+// eg: @include cubic-transition($delay: 0, $duration: 300ms, $property: (all));
+@mixin cubic-transition($delay, $duration, $property) {
+  transition: {
+    duration: $duration;
+    property: $property;
+    timing-function: cubic-bezier(.7,1,.7,1);
+  }
+}
+
+// --------------------------------------------------
+// Rotate
+// --------------------------------------------------
+
+// eg: @include rotate(45deg);
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+// --------------------------------------------------
+// Translate 3D Transition
+// --------------------------------------------------
+
+// eg: @include translate3d(0,0,0);
+@mixin translate3d($x, $y, $z) {
+  -webkit-transform: translate3d($x, $y, $z);
+  -moz-transform: translate3d($x, $y, $z);
+  transform: translate3d($x, $y, $z);
+}
+
+// --------------------------------------------------
+// Transform: translate
+// --------------------------------------------------
+@mixin translate($x: -50%, $y: -50%) {
+  transform: translate($x, $y);
+}

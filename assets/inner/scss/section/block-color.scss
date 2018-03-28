@@ -1,0 +1,45 @@
+.block-color {
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 46px;
+    height: 45px;
+    padding: 7px;
+    margin-right: 8px;
+
+    border: 1px solid #e2ebe5;
+    border-radius: 50%;
+
+    span {
+      width: 31px;
+      height: 31px;
+
+      background-color: #333;
+      border-radius: 50%;
+    }
+  }
+
+}
+
+.color-blue {
+  background-image: linear-gradient(131deg, #bddde8, #9dc2ce);
+}
+
+.color-yellow {
+  background-image: linear-gradient(319deg, #fbfb37, #e4e40a)
+}
+
+.color-brown {
+  background-image: linear-gradient(319deg, #7b524c, #512e25)
+}
+
+.color-red {
+  background-image: linear-gradient(319deg, #e36d5c, #d82208)
+}

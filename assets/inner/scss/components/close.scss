@@ -1,0 +1,39 @@
+$close-color: #fff;
+$close-width: 17px;
+$close-height: 17px;
+
+.close {
+  position: relative;
+  left: 10%;
+  top: 10%;
+  display: block;
+  width: $close-width;
+  height: $close-height;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &::after, &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $close-color;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: inherit;
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+  &:hover {
+    &::after, &::before {
+      background-color: darken($close-color, 5%);
+    }
+  }
+}

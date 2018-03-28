@@ -1,0 +1,88 @@
+// Переменные
+@import "globals/variable";
+
+// Миксины
+@import "globals/mixins";
+
+// Шрифты
+@import "globals/fonts";
+
+// normalize.css
+@import "globals/normalize";
+
+// Базовые стили проекта и стили по умолчанию
+@import "globals/common";
+
+//fancybox
+@import "section/fancybox";
+
+//Nav-bar
+@import "section/nav-bar";
+
+//hamburger
+@import "components/hamburger";
+
+//Main-nav
+@import "section/main-nav";
+
+//action-phone
+@import "section/action-phone";
+
+//Socials
+@import "section/socials";
+
+//page-header
+@import "section/page-header";
+
+//breadcrumbs
+@import "section/breadcrumbs";
+
+//catalog
+@import "section/catalog";
+
+//pagination
+@import "section/pagination";
+
+//shipping
+@import "section/shipping";
+
+//contacts
+@import "section/contacts";
+
+//certificates
+@import "section/certificates";
+
+//about
+@import "section/about";
+
+//awards
+@import "section/awards";
+
+//moving-forward
+@import "section/moving-forward";
+
+//block-photo
+@import "section/block-photo";
+
+//articles
+@import "section/articles";
+
+//slick
+@import "section/slick";
+//@import "section/slick-theme";
+
+//card
+@import "section/card";
+
+//block-color
+@import "section/block-color";
+
+//size
+@import "section/size";
+
+//scroll-bar
+@import "section/scroll-bar";
+
+//Page-footer
+@import "section/page-footer";
+

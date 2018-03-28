@@ -1,0 +1,16 @@
+-var menuItem = ["item 1", 'item 2', "item 3"]
+
+mixin menu(className, classActive)
+    ul(class=className + "__list")
+        for item in menuItem
+            if item === "item 1"
+                li(class=className + "__item " + classActive)
+                    a(href="#")= item
+            else
+                li(class=className + "__item")
+                    a(href="#")= item
+
+mixin icon(classIcon, idIcon)
+    svg(class=classIcon)
+        use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#" + idIcon)
+

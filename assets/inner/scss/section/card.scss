@@ -1,0 +1,300 @@
+.card {
+  padding-bottom: 88px;
+  border-bottom: 1px solid #dadada;
+
+  @media screen and (max-width: 1199px) {
+    padding-bottom: 60px;
+  }
+}
+
+.card-slider {
+  max-width: 640px;
+  width: 100%;
+  margin-right: 50px;
+
+  &__for {
+    margin-bottom: 18px;
+  }
+
+  &__nav {
+    max-width: 380px;
+    margin: 0 auto;
+
+    .slick-current {
+
+      &::before {
+        background-color: rgba(#fff, 0);
+      }
+    }
+
+  }
+
+  &__nav-item {
+    position: relative;
+
+    width: 60px !important;
+    height: 90px !important;
+
+    margin-left: 1px;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      width: 100%;
+      height: 100%;
+
+      background-color: rgba(#fff, .6);
+
+      transition: all 0.3s ease;
+    }
+
+    &:hover {
+      &::before {
+        background-color: rgba(#fff, 0);
+      }
+    }
+  }
+
+  @media screen and (max-width: 1440px) {
+    max-width: 400px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+}
+
+
+.card-description {
+  padding-top: 88px;
+  max-width: 759px;
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: 100px;
+
+  .breadcrumbs {
+    
+    &__list {
+      justify-content: flex-start;
+      margin: 0 0 23px;
+
+      &::before, &::after {
+        display: none;
+      }
+    }
+    
+    &__item {
+      color: #bebebe;
+
+      &::after {
+        top: 5.5px;
+        color: #bebebe;
+      }
+
+      span {
+        color: #333333;
+      }
+
+    }
+  }
+
+  &__article {
+    display: block;
+
+    font-size: 20px;
+    font-family: $font-Garamond;
+    font-weight: bold;
+
+    margin-bottom: 21px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 40px;
+  }
+
+  &__color {
+    margin-bottom: 20px;
+  }
+
+  &__size {
+    margin-left: 9px;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    padding-top: 20px;
+    margin-right: 55px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 40px 55px 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    .breadcrumbs {
+
+      &__list {
+        flex-wrap: wrap;
+      }
+
+    }
+
+    &__article {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+  }
+
+}
+
+.card-accordion {
+
+  &__item {
+    border-top: 1px solid #dadada;
+
+    &:last-child {
+      border-bottom: 1px solid #dadada;
+    }
+  }
+
+  &__title {
+    position: relative;
+    font-family: $font-Garamond;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1;
+
+    padding: 20px 0;
+
+    text-transform: uppercase;
+    color: #666666;
+    cursor: pointer;
+
+    .icon-plus {
+      position: absolute;
+
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .is-active {
+    color: #9f8234;
+  }
+
+  &__content {
+    display: none;
+
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #666;
+
+    b {
+      display: block;
+      margin-bottom: 28px;
+      font-weight: normal;
+      color: #000;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-bottom: 25px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__content {
+      font-size: 12px;
+      line-height: 1.6;
+
+      b {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+}
+
+.icon-plus {
+  display: block;
+  position: relative;
+
+  width: 9px;
+  height: 9px;
+
+  &::before, &::after {
+    content: '';
+
+    position: absolute;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: #cfc099;
+  }
+
+  &::before {
+    top: 4.5px;
+    left: 0;
+  }
+
+  &::after {
+    top: 4.5px;
+    left: 0;
+    z-index: 10;
+    transform: rotate(90deg);
+  }
+}
+
+
+.popular-model {
+  width: 100% !important;
+  padding-top: 85px;
+
+  .catalog__item {
+    width: 24.9%;
+  }
+  
+  @media screen and (max-width:  1199px) {
+    padding-top: 40px;
+
+    .catalog__item {
+      width: 49.8%;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .catalog__item {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,77 @@
+extends ../layout/main.pug
+
+block var
+    -var title= "Сертификаты"
+
+block content
+
+    .flex-container
+
+        //Start nav-bar
+        include ../section/navbar
+        //End nav-bar
+
+        //Start main-content
+        main.main-content
+
+            //Start page-header
+            header.page-header
+
+                //Start hamburger-btn
+                .hamburger-btn
+                    button(class="hamburger hamburger--collapse" type="button")
+                        span(class="hamburger-box")
+                            span(class="hamburger-inner")
+                //End hamburger-btn
+
+                .page-header__wrap
+                    .page-header__logo
+                        img(src="img/header-logo.png" alt="")
+                    .breadcrumbs
+                        ul.breadcrumbs__list
+                            li.breadcrumbs__item
+                                a(href="/").breadcrumbs__link главная
+                            li.breadcrumbs__item
+                                a(href="#").breadcrumbs__link Сертификаты
+                    .page-header__headline
+                        h1.page-header__title Сертификаты
+                        h2.page-header__subtitle Историю Компании «MELICH» можно рассказывать как историю создания искусства
+
+            //End page-header
+
+            //Start certificates
+            section.certificates
+                .certificates__wrap
+
+                    ul.certificates__list
+                        li.certificates__item
+                            a(href="img/certificates/certificates-1.jpg" data-fancybox="group").certificates__link
+                                img(src="img/certificates/certificates-1.jpg" alt="")
+                        li.certificates__item
+                            a(href="img/certificates/certificates-2.jpg" data-fancybox="group").certificates__link
+                                img(src="img/certificates/certificates-2.jpg" alt="")
+                        li.certificates__item
+                            a(href="img/certificates/certificates-3.jpg" data-fancybox="group").certificates__link
+                                img(src="img/certificates/certificates-3.jpg" alt="")
+                        li.certificates__item
+                            a(href="img/certificates/certificates-8.jpg" data-fancybox="group").certificates__link
+                                img(src="img/certificates/certificates-8.jpg" alt="")
+                        li.certificates__item
+                            a(href="img/certificates/certificates-5.jpg" data-fancybox="group").certificates__link
+                                img(src="img/certificates/certificates-5.jpg" alt="")
+                        li.certificates__item
+                            a(href="img/certificates/certificates-6.jpg" data-fancybox="group").certificates__link
+                                img(src="img/certificates/certificates-6.jpg" alt="")
+                        li.certificates__item
+                            a(href="img/certificates/certificates-7.jpg" data-fancybox="group").certificates__link
+                                img(src="img/certificates/certificates-7.jpg" alt="")
+                        li.certificates__item
+                            a(href="img/certificates/certificates-4.jpg" data-fancybox="group").certificates__link
+                                img(src="img/certificates/certificates-4.jpg" alt="")
+            //End certificates
+
+            //Start page-footer
+            footer.page-footer
+                p.page-footer__company © MELIH - фабрика меха и кожи
+                a(href="#").page-footer__made-link Создание сайта
+            //End page-footer

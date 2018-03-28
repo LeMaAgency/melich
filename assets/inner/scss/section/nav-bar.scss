@@ -1,0 +1,38 @@
+.nav-bar {
+  flex-shrink: 0;
+
+  width: 210px;
+  min-height: 100vh;
+  padding-top: 36px;
+
+  background-color: #dadada;
+
+  z-index: 110;
+
+  &__logo {
+    width: 130px;
+    padding-bottom: 26px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1366px) {
+    padding-top: 30px;
+
+    &__logo {
+      padding-bottom: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    left: -100%;
+    transition: all 0.2s ease;
+    z-index: 110;
+    padding-bottom: 60px;
+
+    &--active {
+      left: 0;
+      transition: all 0.2s ease;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.certificates {
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 25%;
+  }
+  
+  @media screen and (max-width: 992px) {
+    padding: 20px 0;
+
+    &__item {
+      width: 33.3%;
+      padding: 0 15px;
+      margin-bottom: 10px;
+
+      img {
+        display: block;
+        width: 100%;
+
+        object-fit: cover;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__item {
+      width: 50%;
+    }
+
+  }
+
+  @media screen and (max-width: 570px) {
+
+    &__list {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__item {
+      width: 75%;
+      margin-bottom: 20px;
+
+      img {
+        height: auto;
+      }
+    }
+
+  }
+
+}

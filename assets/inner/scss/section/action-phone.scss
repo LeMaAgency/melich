@@ -1,0 +1,91 @@
+.action-phone {
+  font-family: $font-Garamond;
+  padding-top: 42px;
+  padding-bottom: 40px;
+
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+
+  &__wrap {
+    width: 118px;
+    margin: 0 auto;
+  }
+
+  &__icon {
+    width: 34px;
+    height: 25px;
+    margin: 0 auto 10px;
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    color: #333;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #9f8234;
+    }
+  }
+
+  &__btn {
+    position: relative;
+
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+
+    padding: 8px 0;
+
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+
+    text-transform: uppercase;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    &::after, &::before {
+      content: '';
+
+      position: absolute;
+      left: 0;
+
+      width: 100%;
+      height: 1px;
+
+      background-color: #666;
+
+      transition: inherit;
+    }
+
+    &::before {
+      top: 1px;
+    }
+
+    &::after {
+      bottom: 1px;
+    }
+
+    &:hover {
+      color: #9f8234;
+      border-color: #ccc;
+
+      &::after, &::before {
+        width: 0;
+      }
+    }
+
+  }
+
+  @media screen and (max-width: 1366px) {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+}

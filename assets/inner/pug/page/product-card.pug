@@ -1,0 +1,191 @@
+extends ../layout/main.pug
+
+block var
+    -var title= "Каталог"
+
+block content
+
+    .flex-container
+
+        //Start nav-bar
+        include ../section/navbar
+        //End nav-bar
+
+        //Start main-content
+        main.main-content
+
+            //Start card
+            section.card
+
+                .flex-container.flex-direction-tablet
+
+                    .card-slider
+
+                        //Start hamburger-btn
+                        .hamburger-btn.hamburger-btn--darken
+                            button(class="hamburger hamburger--collapse" type="button")
+                                span(class="hamburger-box")
+                                    span(class="hamburger-inner")
+                        //End hamburger-btn
+
+                        .card-slider__for.slider-for
+                            .card-slider__for-item
+                                img(src="img/slider-1.jpg" alt="")
+                            .card-slider__for-item
+                                img(src="img/slider-1.jpg" alt="")
+                            .card-slider__for-item
+                                img(src="img/slider-1.jpg" alt="")
+                            .card-slider__for-item
+                                img(src="img/slider-1.jpg" alt="")
+
+                        .card-slider__nav
+                            card-slider__nav-list.slider-nav
+                                .card-slider__nav-item
+                                    img(src="img/slider-1.jpg" alt="")
+                                .card-slider__nav-item
+                                    img(src="img/slider-1.jpg" alt="")
+                                .card-slider__nav-item
+                                    img(src="img/slider-1.jpg" alt="")
+                                .card-slider__nav-item
+                                    img(src="img/slider-1.jpg" alt="")
+
+
+                    .card-description
+
+                        .breadcrumbs
+                            ul.breadcrumbs__list
+                                li.breadcrumbs__item
+                                    a(href="/").breadcrumbs__link главная
+                                li.breadcrumbs__item
+                                    a(href="#").breadcrumbs__link каталог
+                                li.breadcrumbs__item
+                                    span.breadcrumbs__link шуба из меха норки
+
+                        .heading
+                            h2.heading__title Шуба из меха норки
+
+                        .card-description__info
+
+                            h3.card-description__article Артикул 4556
+
+                            .card-description__text
+                                p Описание модели мехавого изделия. Прямой фасон. Узор в горошек. Струящаяся ткань. Круглый вырез горловины. Короткие рукава с отворотами. Эластичный пояс. Завязываются шнурки. Сзади застежка на пуговицы. Боковая длина (от проймы до низа) 13.0 cm Длина спинки 111.0 cm Данные мерки соответствуют испанскому размеру М.
+
+                            .card-description__color.block-color
+                                .block-color__item
+                                    span.color-blue
+                                .block-color__item
+                                    span.color-red
+                                .block-color__item
+                                    span.color-yellow
+                                .block-color__item
+                                    span.color-brown
+
+                            .card-description__size.size
+                                .size__item
+                                    span XS
+                                .size__item
+                                    span S
+                                .size__item
+                                    span M
+                                .size__item
+                                    span L
+                                .size__item
+                                    span XL
+
+                            .card-accordion
+                                ul.card-accordion__list
+                                    li.card-accordion__item
+                                        .card-accordion__title.card-accordion__btn Вид меха и уход
+                                            span.icon-plus
+                                        .card-accordion__content
+                                            b Москва и Санкт - Петербург
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                            p Курьерская доставка по Москве и в Санкт-Петербург. <br> Срок — от 1 дня. <br> Стоимость — 299 руб.
+
+                                            b Россия
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                    li.card-accordion__item
+                                        .card-accordion__title.card-accordion__btn Доставка
+                                            span.icon-plus
+                                        .card-accordion__content
+                                            b Москва и Санкт - Петербург
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                            p Курьерская доставка по Москве и в Санкт-Петербург. <br> Срок — от 1 дня. <br> Стоимость — 299 руб.
+
+                                            b Россия
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                    li.card-accordion__item
+                                        .card-accordion__title.card-accordion__btn оплата
+                                            span.icon-plus
+                                        .card-accordion__content
+                                            b Москва и Санкт - Петербург
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                            p Курьерская доставка по Москве и в Санкт-Петербург. <br> Срок — от 1 дня. <br> Стоимость — 299 руб.
+
+                                            b Россия
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                    li.card-accordion__item
+                                        .card-accordion__title.card-accordion__btn возврат
+                                            span.icon-plus
+                                        .card-accordion__content
+                                            b Москва и Санкт - Петербург
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                            p Курьерская доставка по Москве и в Санкт-Петербург. <br> Срок — от 1 дня. <br> Стоимость — 299 руб.
+
+                                            b Россия
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                    li.card-accordion__item
+                                        .card-accordion__title.card-accordion__btn наличие в магазинах
+                                            span.icon-plus
+                                        .card-accordion__content
+                                            b Москва и Санкт - Петербург
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+                                            p Курьерская доставка по Москве и в Санкт-Петербург. <br> Срок — от 1 дня. <br> Стоимость — 299 руб.
+
+                                            b Россия
+                                            p Доставка в магазин. <br> Срок — от 1 дня. <br> Доставка бесплатная, по 100% предоплате.
+
+
+            //End card
+
+            //Start popular-model catalog
+            .popular-model.catalog
+                .heading.heading--center
+                    .heading__title Популярные модели
+
+                ul.catalog__list
+                    li.catalog__item
+                        a(href="#").catalog__link
+                            img(src="img/catalog-1.jpg" alt="")
+                            .catalog__descr
+                                p.catalog__text Шуба из меха норки
+                                p.catalog__article Артикул 4556
+                    li.catalog__item
+                        a(href="#").catalog__link
+                            img(src="img/catalog-2.jpg" alt="")
+                            .catalog__descr
+                                p.catalog__text Шуба из меха норки
+                                p.catalog__article Артикул 4556
+                    li.catalog__item
+                        a(href="#").catalog__link
+                            img(src="img/catalog-3.jpg" alt="")
+                            .catalog__descr
+                                p.catalog__text Шуба из меха норки
+                                p.catalog__article Артикул 4556
+                    li.catalog__item
+                        a(href="#").catalog__link
+                            img(src="img/catalog-3.jpg" alt="")
+                            .catalog__descr
+                                p.catalog__text Шуба из меха норки
+                                p.catalog__article Артикул 4556
+
+
+            //End popular-model catalog
+
+
+            //Start page-footer
+            footer.page-footer
+                p.page-footer__company © MELIH - фабрика меха и кожи
+                a(href="#").page-footer__made-link Создание сайта
+            //End page-footer

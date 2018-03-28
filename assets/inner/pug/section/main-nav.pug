@@ -1,0 +1,13 @@
+-var menu = [{item: "Для вас", href: "about.html"}, {item: "Каталог", href: "index.html"}, {item: "Статьи", href: "articles.html"}, {item: "Сертификаты", href: "certificates.html"}, {item: "Доставка Оплата", href: "shipping.html"}, {item: "Контакты", href: "contacts.html"}]
+
+nav.main-nav
+    .main-nav__text Меню
+
+    ul.main-nav__list
+        for menuItem in menu
+            if menuItem.item === title
+                li.main-nav__item.is-active
+                    a(href=menuItem.href).main-nav__link= menuItem.item
+            else
+                li.main-nav__item
+                    a(href=menuItem.href).main-nav__link= menuItem.item

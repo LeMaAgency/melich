@@ -1,0 +1,281 @@
+extends ../layout/main.pug
+
+block var
+	-var title= "Каталог"
+
+block content
+
+	.flex-container
+
+		//Start nav-bar
+		include ../section/navbar
+		//End nav-bar
+
+		//Start main-content
+		main.main-content
+
+			//Start page-header
+			header.page-header
+
+				//Start hamburger-btn
+				.hamburger-btn
+					button(class="hamburger hamburger--collapse" type="button")
+						span(class="hamburger-box")
+							span(class="hamburger-inner")
+				//End hamburger-btn
+
+				.page-header__wrap
+					.page-header__logo
+						img(src="img/header-logo.png" alt="")
+					.breadcrumbs
+						ul.breadcrumbs__list
+							li.breadcrumbs__item
+								a(href="/").breadcrumbs__link главная
+							li.breadcrumbs__item
+								a(href="#").breadcrumbs__link каталог
+					.page-header__headline
+						h1.page-header__title Каталог
+						h2.page-header__subtitle Историю Компании «MELICH» можно рассказывать как историю создания искусства
+
+			//End page-header
+
+
+
+			//Start flex-container
+			.flex-container.flex-direction-tablet
+
+				//Start catalog
+				.catalog
+					ul.catalog__list
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-1.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-2.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-3.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-1.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-2.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-3.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-1.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-2.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+						li.catalog__item
+							a(href="#").catalog__link
+								img(src="img/catalog-3.jpg" alt="")
+								.catalog__descr
+									p.catalog__text Шуба из меха норки
+									p.catalog__article Артикул 4556
+					.catalog__action
+						button(type="button").catalog__btn ещё модели
+
+					//Start pagination
+					.pagination
+						ul.pagination__list
+							li.pagination__item
+								span.pagination__link.is-active 1
+							li.pagination__item
+								a(href="#").pagination__link 2
+							li.pagination__item
+								a(href="#").pagination__link 3
+							li.pagination__item
+								a(href="#").pagination__link 4
+							li.pagination__item
+								a(href="#").pagination__link 5
+							li.pagination__item
+								a(href="#").pagination__link 6
+							li.pagination__item
+								a(href="#").pagination__link 7
+							li.pagination__item
+								a(href="#").pagination__link 8
+							li.pagination__item
+								a(href="#").pagination__link 9
+							li.pagination__item
+								a(href="#").pagination__link 10
+							li.pagination__item
+								a(href="#").pagination__link 11
+							li.pagination__item
+								a(href="#").pagination__link 12
+							li.pagination__item
+								a(href="#").pagination__link 13
+							li.pagination__item
+								a(href="#").pagination__link 14
+							li.pagination__item
+								a(href="#").pagination__link 15
+					//End pagination
+
+
+				//End catalog
+
+				.catalog-filter
+
+					form(action="/" method="GET").filter-form
+
+						.filter-form__left
+							.filter-form__action
+								button(type="submit").filter-form__btn.filter-form__apply Применить
+								button(type="reset").filter-form__btn.filter-form__reset Сбросить
+
+						.filter-form__right
+							h2.filter-form__title Вид меха
+
+							.filter-form__wrap
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox.checked-all-js
+										.filter-form__custom
+										.filter-form__text Все
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text астраган
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text бобр
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text енот
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text каракуль
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text кролик
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text куница
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text лиса
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text норка
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text куница
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text лиса
+								.filter-form__group
+									label.filter-form__label
+										input(type="checkbox" name="all").filter-form__checkbox
+										.filter-form__custom
+										.filter-form__text норка
+
+					form(action="/" method="GET").filter-form
+
+						.filter-form__left
+							.filter-form__action
+								button(type="submit").filter-form__btn.filter-form__apply Применить
+								button(type="reset").filter-form__btn.filter-form__reset Сбросить
+
+						.filter-form__right
+							h2.filter-form__title Цвет
+
+							.filter-form__color
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #f4f4e1, #dadac5)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(#fff, #fff)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #bddde8, #9dc2ce)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #fbfb37, #e4e40a)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #7b524c, #512e25)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #e36d5c, #d82208)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #fdb93b, #e39608)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #fbcbd3, #e2acb5)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #9a9a9a, #767676)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #3939fb, #0a0a91)")
+								label.filter-form__color-label
+									input(type="checkbox" name="color").filter-form__radio
+									.filter-form__color-custom
+										.filter-form__color-btn(style="background-image: linear-gradient(319deg, #383838, #000000)")
+
+			//End flex-container
+
+			//Start page-footer
+			footer.page-footer
+				p.page-footer__company © MELIH - фабрика меха и кожи
+				a(href="#").page-footer__made-link Создание сайта
+			//End page-footer

@@ -1,0 +1,161 @@
+extends ../layout/main.pug
+
+block var
+    -var title= "Для вас"
+
+block content
+
+    .flex-container
+
+        //Start nav-bar
+        include ../section/navbar
+        //End nav-bar
+
+        //Start main-content
+        main.main-content
+
+            //Start page-header
+            header.page-header
+
+                //Start hamburger-btn
+                .hamburger-btn
+                    button(class="hamburger hamburger--collapse" type="button")
+                        span(class="hamburger-box")
+                            span(class="hamburger-inner")
+                //End hamburger-btn
+
+                .page-header__wrap
+                    .page-header__logo
+                        img(src="img/header-logo.png" alt="")
+                    .breadcrumbs
+                        ul.breadcrumbs__list
+                            li.breadcrumbs__item
+                                a(href="/").breadcrumbs__link главная
+                            li.breadcrumbs__item
+                                a(href="#").breadcrumbs__link для вас
+                    .page-header__headline
+                        h1.page-header__title Для вас
+                        h2.page-header__subtitle Историю Компании «MELICH» можно рассказывать как историю создания искусства
+
+            //End page-header
+
+
+            //Start about
+            section.about
+               .flex-container.flex-reverse-tablet
+
+                   .column-large.about-content
+
+                       .content-container.about-content__container
+
+                           .about-content__section
+
+                               .heading
+                                   h2.heading__title История создания марки
+
+                               .about-content__info
+                                    p <strong>Компания основана в 1987 году Мелиховым Юрием Яковлевичем.</strong> Его страсть к мехам, красоте, неимоверная любознательность, энтузиазм и стремление бросать себе новые вызовы, возможности и достигать желаемое в создании компании сыграли невероятную роль. Спустя 30 лет фабрика остается семейным предприятием и поддерживает свои традиции.
+
+                                    p Сегодня Компания «MELICH» занимает одну из лидирующих позиций в российской меховой отрасли, благодаря своему изысканному стилю, безупречному качеству, идеальному сочетанию традиционных материалов и современных технологий.
+
+                           .about-content__section
+                               .heading
+                                   h2.heading__title Наши ценности
+
+                               .about-content__wrap
+                                   ul.about-list
+                                       li.about-list__item
+                                            p Фабрика разрабатывает и изготавливает авторскую, эксклюзивную одежду из натурального меха овчины (мутон) премиум класса, астрагана, каракуля, норки, бобра, соболя, кожаных и замшевых изделий, дубленок высочайшего качества
+                                       li.about-list__item
+                                            p Наш опыт и мастерство, внимание к каждой детали, использование только лучших мехов и кожи, являются гарантом качества наших изделий. Меховые изделия бренда «MELICH» - это синоним качества и правильной цены.
+                                       li.about-list__item
+                                            p Стараемся развиваться не только сохраняя свое высокое качество, но и улучшая его.
+
+                                   ul.about-list
+                                       li.about-list__item
+                                           p Шубы Компании «MELICH» – это женственный, элегантный силуэт, стильные шубы на каждый день, эксклюзивные меховые изделия для особого выхода, разнообразная палитра меха, а также цветовая гамма, которая не оставит равнодушных самых избалованных меховых гурманов.
+                                       li.about-list__item
+                                           p Мы уделяем особое внимание соблюдению международных стандартов по защите животных, покупая только качественное сырье у сертифицированных поставщиков на мировых аукционах.
+                                       li.about-list__item
+                                           p При создании нашей очередной коллекции, мы учитываем все тенденции моды, которые идеально сочетаются с инновациями и современным стилем
+
+                   .column-min.about-photo
+                       .about-photo__img
+                           img(src="img/about-director-photo-2.jpg" data-object-fit="cover" alt="")
+            //End about
+
+            //Start awards
+            section.awards
+
+                .awards__wrap
+                    .heading
+                        h2.heading__title Гарантия нашего качества и профессионализма - <br>это наши награды
+
+                    ul.awards__list
+                        li(style="background-image: url('img/award-photo-1.jpg')").awards__item
+                            .awards__item-img
+                                img(src="img/logo-M.png" alt="")
+                            .awards__item-content
+                                .awards__item-visible
+                                    p Европейские <br> технологии <br> по пошиву меховых <br> изделий
+                                .awards__item-hidden
+                                    p В 2012 году Компания «MELICH» влилась в общеевропейскую тенденцию -  дизайнеры нашей меховой фабрики использовали новые европейские технологии по пошиву меховых изделий
+                        li(style="background-image: url('img/award-photo-2.jpg')").awards__item
+                            .awards__item-img
+                                img(src="img/logo-M.png" alt="")
+                            .awards__item-content
+                                .awards__item-visible
+                                    p ежегодное участие <br> в международной <br> выставке «LESHOW»
+                                .awards__item-hidden
+                                    p Ежегодно фабрика участвует в международной выставке «LESHOW». Стала победителем в Первом Международном Конкурсе «Меховая Промышленная Мода» - Награждение историком моды А. А. Васильевым
+                        li(style="background-image: url('img/award-photo-3.jpg')").awards__item
+                            .awards__item-img
+                                img(src="img/logo-M.png" alt="")
+                            .awards__item-content
+                                .awards__item-visible
+                                    p  «CHAPEAU 2012» -<br> победитель <br> в номинации <br> «Имперский Стиль»
+                                .awards__item-hidden
+                                    p Стала победителем в номинации «Имперский Стиль» на 11-ой Международной Юбилейной Выставке головных уборов и аксессуаров «CHAPEAU 2012» - награждение метром моды В. Зайцев.
+                        li(style="background-image: url('img/award-photo-4.jpg')").awards__item
+                            .awards__item-img
+                                img(src="img/logo-M.png" alt="")
+                            .awards__item-content
+                                .awards__item-visible
+                                    p Победитель конкурса <br> «100 Лучших Товаров <br> России» и дипломант <br> международных <br> выставок «Мех и его обработка»
+                                .awards__item-hidden
+                                    p Победитель регионального конкурса по качеству «100 Лучших Товаров России». Неоднократный дипломант Международной выставки «Мех и его обработка».
+
+            //End awards
+                
+            //Start moving-forward
+            .moving-forward
+                .flex-container.flex-direction-tablet
+                    .column-min
+                        .moving-forward__photo
+                            img(src="img/moving-forward-photo.jpg" data-object-fit="cover" alt="")
+                            
+                    .column-large
+                        .content-container.moving-forward__container
+                            .heading
+                                h2.heading__title Постоянное развитие и движение вперед
+
+                            .moving-forward__content
+                                p Компания «MELICH» - это постоянное развитие и движение вперед в мире моды. Каждая модель – это определенное настроение, отточенный стиль, эксклюзивная, стильная одежда, создающая особенный образ его обладателю. Продуманный стиль читается в каждом фасоне «MELICH». Руками высококлассных и профессиональных мастеров рождаются креативные силуэты, которые сочетают в себе элементы шика и в тоже время элегантной сдержанности.
+
+            //End moving-forward
+
+            //Start block-photo
+            section.block-photo
+                .block-photo__img
+                    img(src="img/block-photo-1.jpg" data-object-fit="cover" alt="")
+                .block-photo__img
+                    img(src="img/block-photo-2.jpg" data-object-fit="cover" alt="")
+
+            //End block-photo
+
+            //Start page-footer
+            footer.page-footer
+                p.page-footer__company © MELIH - фабрика меха и кожи
+                a(href="#").page-footer__made-link Создание сайта
+            //End page-footer
+

@@ -1,0 +1,30 @@
+aside.nav-bar
+
+    .nav-bar__logo.logo
+        a(href="/").logo__link
+            img(src="img/logo.png" alt="Melich - Фабрика меха и кожи").logo__img
+
+    //Start main-nav
+    include ../section/main-nav
+    //End main-nav
+        
+    //Start action-phone
+    .action-phone
+        .action-phone__wrap
+            .action-phone__icon
+                img(src="img/icon-phone.png" alt="")
+            a(href="tel:81234567890").action-phone__link 8 (123) 456-78-90
+            .action-phone__btn Заказать звонок
+    //End action-phone
+
+    //Start socials
+    .socials.socials-row
+        ul.socials__list
+            li.socials__item
+                a(href="#").socials__link
+                    +icon("socials__icon icon-vk", "vk-logo")
+            li.socials__item
+                a(href="#").socials__link
+                    +icon("socials__icon icon-inst", "instagram-logo")
+    //End socials
+

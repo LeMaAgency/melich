@@ -1,0 +1,37 @@
+include ../common/mixins
+
+block var
+  -var title
+  -var maps= false
+
+doctype html
+
+html(lang="ru")
+  
+    head
+        meta(charset="UTF-8")
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        meta(name="description" content="")
+        meta(name="keywords" content="")
+        meta(name="format-detection" content="telephone=no")
+        link(rel="stylesheet" href="css/style.css?v=6")
+
+    body
+
+        //Start svg-sprite
+        include ../common/svg
+        //End svg-sprite
+
+        block content
+
+        block script
+            if maps === true
+                script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnVwscjfcA78bKndhDTdwKs6c4k9awWXE&callback=initMap" type="text/javascript" async defer)
+            script(src="js/jquery.min.js")
+            script(src="js/object-fit-polyfill.js")
+            script(src="js/jquery.fancybox.min.js")
+            script(src="js/slick.min.js")
+            script(src="js/jquery.mCustomScrollbar.concat.min.js")
+            script(src="js/main.js?v=4")

@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'Garamond Premiere Pro';
+  font-weight: bold;
+  font-style: normal;
+  src: url('../fonts/Garamond-Premiere-Pro/GaramondPremrPro-Bd.woff2') format('woff2'),
+       url('../fonts/Garamond-Premiere-Pro/GaramondPremrPro-Bd.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Garamond Premiere Pro';
+  font-weight: 500;
+  font-style: normal;
+  src: url('../fonts/Garamond-Premiere-Pro/GaramondPremrPro-Med.woff2') format('woff2'),
+       url('../fonts/Garamond-Premiere-Pro/GaramondPremrPro-Med.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Noto Sans'), local('NotoSans'),
+       url('../fonts/NotoSans/noto-sans-v7-latin_cyrillic-regular.woff2') format('woff2'),
+       url('../fonts/NotoSans/noto-sans-v7-latin_cyrillic-regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Noto Sans Italic'), local('NotoSans-Italic'),
+       url('../fonts/NotoSans/noto-sans-v7-latin_cyrillic-italic.woff2') format('woff2'),
+       url('../fonts/NotoSans/noto-sans-v7-latin_cyrillic-italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+       url('../fonts/NotoSans/noto-sans-v7-latin_cyrillic-700.woff2') format('woff2'),
+       url('../fonts/NotoSans/noto-sans-v7-latin_cyrillic-700.woff') format('woff');
+}
