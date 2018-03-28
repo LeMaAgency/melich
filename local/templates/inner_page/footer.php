@@ -4,7 +4,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 ?>
 
-</div>
+
 <!--End flex-container-->
 <!--Start page-footer-->
 <footer class="page-footer">
