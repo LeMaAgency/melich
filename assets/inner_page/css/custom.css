@@ -1,0 +1,8 @@
+.articles-item__img img{
+    height: 400px;
+}
+@media screen and (max-width: 1440px){
+    .articles-item__img img{
+        height:auto;
+    }
+}

@@ -16,6 +16,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
         ->init(array('fx'))
         ->addCssArray(array(
             '/assets/inner_page/css/style.css?v=6',
+            '/assets/inner_page/css/custom.css',
         ))
         ->addJsArray(array(
             '/assets/inner_page/js/jquery.min.js',
