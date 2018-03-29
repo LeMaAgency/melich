@@ -22,7 +22,6 @@ $data = new TH($this);
 
 <ul class="awards__list">
     <?foreach ($data->items() as $key=>$award):?>
-        <? var_dump($key)?>
         <li class="awards__item" style="background-image: url('<?=$award->previewPicture()?>');">
             <div class="awards__item-img">
                 <img src="<?=SITE_DIR."assets/inner_page/img/logo-M.png"?>" alt="">
