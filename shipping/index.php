@@ -154,7 +154,7 @@ $APPLICATION->SetTitle("Доставка и оплата");
                                 <p><? $APPLICATION->IncludeFile(SITE_DIR . 'include/shipping/terms_of_sale/button_caption.php'); ?></p>
                             </div>
                             <div class="shipping__card-icon">
-                                <img src="img/icon/list.png" alt="">
+                                <img src="<?=SITE_DIR."assets/inner_page/img/icon/list.png"?>" alt="">
                             </div>
                         </div>
                     </div>
