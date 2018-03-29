@@ -24,7 +24,6 @@ Loc::loadMessages(__FILE__);
 $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__name);
 ?>
 
-<section class="articles">
     <? if ($_REQUEST['showMore'] == '1')
         $GLOBALS['APPLICATION']->RestartBuffer(); ?>
     <div class="articles__container">
@@ -76,7 +75,6 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
     <? if ($_REQUEST['showMore'] == '1')
         die(); ?>
 
-</section>
 
 
 <script>

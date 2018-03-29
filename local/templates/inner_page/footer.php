@@ -4,18 +4,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 ?>
 
-
-<!--End flex-container-->
-<!--Start page-footer-->
 <footer class="page-footer">
     <p class="page-footer__company">
-        © MELIH - фабрика меха и кожи
+        <? $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/copyright.php'); ?>
     </p>
-    <a class="page-footer__made-link" href="#">
-        Создание сайта
-    </a>
+    <? $APPLICATION->IncludeFile(SITE_DIR . 'include/inner_page/footer/developer.php'); ?>
 </footer>
-<!--End page-footer-->
 </main>
 </div>
 </body>

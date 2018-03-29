@@ -6,6 +6,12 @@ $arUrlRewrite = array(
 		"ID" => "",
 		"PATH" => "/bitrix/services/ymarket/index.php",
 	),
+    array(
+        'CONDITION' => '#^/articles/([^/]+)/?(?:\\?(.*))?$#',
+        'RULE' => 'CODE=$1&$2',
+        'ID' => '',
+        'PATH' => '/articles/detail.php',
+    ),
 );
 
 ?>
