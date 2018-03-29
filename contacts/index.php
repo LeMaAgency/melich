@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
 ?>
-
+    <div class="flex-container flex-direction-tablet">
     <div class="contacts-content contacts__column">
         <!--Start hamburger-btn-->
         <div class="hamburger-btn hamburger-btn--darken">
@@ -46,4 +46,5 @@ $APPLICATION->SetTitle("Контакты");
         </div>
     </div>
     <div class="contacts-map contacts__column" id="map"></div>
+    </div>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
