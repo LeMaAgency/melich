@@ -37,14 +37,14 @@ foreach ($data->items() as $key=>$item)
 <div class="about-content__wrap">
     <ul class="about-list">
         <?foreach ($list2 as $listItem):?>
-            <li class="about-list__item">
+            <li class="about-list__item" <?=$listItem->editId()?>>
                 <p><?=$listItem->previewText()?></p>
             </li>
         <?endforeach;?>
     </ul>
     <ul class="about-list">
         <?foreach ($list1 as $listItem):?>
-            <li class="about-list__item">
+            <li class="about-list__item" <?=$listItem->editId()?>>
                 <p><?=$listItem->previewText()?></p>
             </li>
         <?endforeach;?>
