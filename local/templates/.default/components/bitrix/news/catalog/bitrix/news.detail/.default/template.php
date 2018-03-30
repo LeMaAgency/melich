@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -11,85 +11,170 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$data = new \Lema\Template\TemplateHelper($this);
+$item = $data->item();
 ?>
-<div class="news-detail">
-	<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
-		<img
-			class="detail_picture"
-			border="0"
-			src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
-			width="<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>"
-			height="<?=$arResult["DETAIL_PICTURE"]["HEIGHT"]?>"
-			alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
-			title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
-			/>
-	<?endif?>
-	<?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
-		<span class="news-date-time"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></span>
-	<?endif;?>
-	<?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
-		<h3><?=$arResult["NAME"]?></h3>
-	<?endif;?>
-	<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && $arResult["FIELDS"]["PREVIEW_TEXT"]):?>
-		<p><?=$arResult["FIELDS"]["PREVIEW_TEXT"];unset($arResult["FIELDS"]["PREVIEW_TEXT"]);?></p>
-	<?endif;?>
-	<?if($arResult["NAV_RESULT"]):?>
-		<?if($arParams["DISPLAY_TOP_PAGER"]):?><?=$arResult["NAV_STRING"]?><br /><?endif;?>
-		<?echo $arResult["NAV_TEXT"];?>
-		<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?><br /><?=$arResult["NAV_STRING"]?><?endif;?>
-	<?elseif(strlen($arResult["DETAIL_TEXT"])>0):?>
-		<?echo $arResult["DETAIL_TEXT"];?>
-	<?else:?>
-		<?echo $arResult["PREVIEW_TEXT"];?>
-	<?endif?>
-	<div style="clear:both"></div>
-	<br />
-	<?foreach($arResult["FIELDS"] as $code=>$value):
-		if ('PREVIEW_PICTURE' == $code || 'DETAIL_PICTURE' == $code)
-		{
-			?><?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?
-			if (!empty($value) && is_array($value))
-			{
-				?><img border="0" src="<?=$value["SRC"]?>" width="<?=$value["WIDTH"]?>" height="<?=$value["HEIGHT"]?>"><?
-			}
-		}
-		else
-		{
-			?><?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?=$value;?><?
-		}
-		?><br />
-	<?endforeach;
-	foreach($arResult["DISPLAY_PROPERTIES"] as $pid=>$arProperty):?>
+<section class="card">
+    <div class="flex-container flex-direction-tablet">
+        <div class="card-slider">
 
-		<?=$arProperty["NAME"]?>:&nbsp;
-		<?if(is_array($arProperty["DISPLAY_VALUE"])):?>
-			<?=implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);?>
-		<?else:?>
-			<?=$arProperty["DISPLAY_VALUE"];?>
-		<?endif?>
-		<br />
-	<?endforeach;
-	if(array_key_exists("USE_SHARE", $arParams) && $arParams["USE_SHARE"] == "Y")
-	{
-		?>
-		<div class="news-detail-share">
-			<noindex>
-			<?
-			$APPLICATION->IncludeComponent("bitrix:main.share", "", array(
-					"HANDLERS" => $arParams["SHARE_HANDLERS"],
-					"PAGE_URL" => $arResult["~DETAIL_PAGE_URL"],
-					"PAGE_TITLE" => $arResult["~NAME"],
-					"SHORTEN_URL_LOGIN" => $arParams["SHARE_SHORTEN_URL_LOGIN"],
-					"SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
-					"HIDE" => $arParams["SHARE_HIDE"],
-				),
-				$component,
-				array("HIDE_ICONS" => "Y")
-			);
-			?>
-			</noindex>
-		</div>
-		<?
-	}
-	?>
-</div>
+            <div class="hamburger-btn hamburger-btn--darken">
+                <button class="hamburger hamburger--collapse" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+
+            <div class="card-slider__for slider-for">
+                <? foreach ($item->get("MORE_IMAGE") as $srcImage): ?>
+                    <div class="card-slider__for-item">
+                        <img src="<?= $srcImage; ?>" alt="<?= $item->getName(); ?>">
+                    </div>
+                <? endforeach; ?>
+            </div>
+            <? if ($item->get("ARRAY_CHECK")): ?>
+                <div class="card-slider__nav">
+                    <card-slider__nav-list class="slider-nav">
+                        <? foreach ($item->get("MORE_IMAGE") as $srcImage): ?>
+                            <div class="card-slider__nav-item">
+                                <img src="<?= $srcImage; ?>" alt="<?= $item->getName(); ?>">
+                            </div>
+                        <? endforeach; ?>
+                    </card-slider__nav-list>
+                </div>
+            <? endif; ?>
+        </div>
+
+        <div class="card-description">
+            <? $APPLICATION->IncludeComponent(
+                "bitrix:breadcrumb",
+                "breadcrumb_inner",
+                Array(
+                    "PATH" => "",
+                    "SITE_ID" => "s1",
+                    "START_FROM" => "0",
+                ),
+                false
+            ); ?>
+            <div class="heading">
+                <h2 class="heading__title">
+                    <?= $item->getName(); ?>
+                </h2>
+            </div>
+            <div class="card-description__info">
+                <h3 class="card-description__article">
+                    <?= $item->prop("ARTICUL", NAME), ' ', $item->propVal("ARTICUL"); ?>
+                </h3>
+                <div class="card-description__text">
+                    <p>
+                        <?= $item->detailText(); ?>
+                    </p>
+                </div>
+                <? if (!empty($item->propVal("COLOR"))): ?>
+                    <div class="card-description__color block-color">
+                        <? foreach ($item->prop("COLOR", VALUE_XML_ID) as $color): ?>
+                            <div class="block-color__item">
+                                <span class="color-<?= $color; ?>">
+                                </span>
+                            </div>
+                        <? endforeach; ?>
+                    </div>
+                <? endif; ?>
+
+                <? if (!empty($item->propVal("SIZE"))): ?>
+                    <div class="card-description__size size">
+                        <? foreach ($item->propVal("SIZE") as $size): ?>
+                            <div class="size__item">
+                                <span><?= $size; ?></span>
+                            </div>
+                        <? endforeach; ?>
+                    </div>
+                <? endif; ?>
+                <div class="card-accordion">
+                    <ul class="card-accordion__list">
+                        <li class="card-accordion__item">
+                            <div class="card-accordion__title card-accordion__btn">Вид меха и уход<span
+                                        class="icon-plus"></span>
+                            </div>
+                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
+                                    <br>Срок — от 1 дня.
+                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                            </div>
+                        </li>
+                        <li class="card-accordion__item">
+                            <div class="card-accordion__title card-accordion__btn">Доставка<span
+                                        class="icon-plus"></span>
+                            </div>
+                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
+                                    <br>Срок — от 1 дня.
+                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                            </div>
+                        </li>
+                        <li class="card-accordion__item">
+                            <div class="card-accordion__title card-accordion__btn">оплата<span class="icon-plus"></span>
+                            </div>
+                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
+                                    <br>Срок — от 1 дня.
+                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                            </div>
+                        </li>
+                        <li class="card-accordion__item">
+                            <div class="card-accordion__title card-accordion__btn">возврат<span
+                                        class="icon-plus"></span>
+                            </div>
+                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
+                                    <br>Срок — от 1 дня.
+                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                            </div>
+                        </li>
+                        <li class="card-accordion__item">
+                            <div class="card-accordion__title card-accordion__btn">наличие в магазинах<span
+                                        class="icon-plus"></span>
+                            </div>
+                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
+                                    <br>Срок — от 1 дня.
+                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
+                                <p>Доставка в магазин.
+                                    <br>Срок — от 1 дня.
+                                    <br>Доставка бесплатная, по 100% предоплате.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
