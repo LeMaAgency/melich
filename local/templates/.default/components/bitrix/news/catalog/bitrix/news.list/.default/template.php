@@ -16,66 +16,94 @@ $data = new \Lema\Template\TemplateHelper($this);
 use Bitrix\Main\Localization\Loc;
 
 Loc::loadMessages(__FILE__);
+
+$bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__name);
 ?>
+
+
+<? if ($_REQUEST['showMore'] == '1')
+    $GLOBALS['APPLICATION']->RestartBuffer(); ?>
 <div class="catalog">
     <ul class="catalog__list">
-        <?var_dump($data);?>
         <? foreach ($data->items() as $item): ?>
-            <li class="catalog__item" <?=$item->editId();?>>
-                <a class="catalog__link" href="<?=$item->detailUrl();?>">
-                    <img src="<?=$item->previewPicture();?>" alt="<?=$item->getName();?>">
+            <li class="catalog__item" <?= $item->editId(); ?>>
+                <a class="catalog__link" href="<?= $item->detailUrl(); ?>">
+                    <img src="<?= $item->previewPicture(); ?>" alt="<?= $item->getName(); ?>">
                     <div class="catalog__descr">
                         <p class="catalog__text">
-                            <?=$item->getName();?>
+                            <?= $item->getName(); ?>
                         </p>
                         <p class="catalog__article">
-                            <?=$item->prop("ARTICUL")+' '+$item->propVal("ARTICUL");?>
+                            <? echo $item->prop("ARTICUL", NAME), ' ', $item->propVal("ARTICUL"); ?>
                         </p>
                     </div>
                 </a>
             </li>
         <? endforeach; ?>
     </ul>
-    <div class="catalog__action">
-        <button class="catalog__btn" type="button">
-            <?= Loc::getMessage("LEMA_CATALOG_LIST_MORE_MODELS"); ?>
-        </button>
+    <? if ($arResult["NAV_RESULT"]->NavPageNomer != $arResult["NAV_RESULT"]->nEndPage): ?>
+        <div class="catalog__action">
+            <button class="catalog__btn ajax_load_btn_new"
+                    type="button"
+                    data-ajax-id="<?= $bxAjaxId ?>"
+                    data-show-more="<?= $arResult["NAV_RESULT"]->NavNum ?>"
+                    data-next-page="<?= ($arResult["NAV_RESULT"]->NavPageNomer + 1) ?>"
+                    data-max-page="<?= $arResult["NAV_RESULT"]->nEndPage ?>">
+                <?= Loc::getMessage("LEMA_CATALOG_LIST_MORE_MODELS"); ?>
+            </button>
+        </div>
+    <? endif; ?>
+
+    <div class="js-pagination">
+        <? if ($arParams["DISPLAY_BOTTOM_PAGER"] == "Y") ?>
+        <?= $arResult["NAV_STRING"]; ?>
     </div>
-    <!--Start pagination-->
-    <div class="pagination">
-        <ul class="pagination__list">
-            <li class="pagination__item"><span class="pagination__link is-active">1</span>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">2</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">3</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">4</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">5</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">6</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">7</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">8</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">9</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">10</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">11</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">12</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">13</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">14</a>
-            </li>
-            <li class="pagination__item"><a class="pagination__link" href="#">15</a>
-            </li>
-        </ul>
-    </div>
-    <!--End pagination-->
+    <script>
+
+        $(document).ready(function () {
+            $(document).off('click').on('click', '[data-show-more]', function (e) {
+
+                e.preventDefault();
+
+                var btn = $(this),
+                    waitElement = btn.parent().get(0),
+                    page = btn.attr('data-next-page') * 1,
+                    id = btn.attr('data-show-more'),
+                    max = btn.attr('data-max-page') * 1;
+
+                var data = {};
+
+                console.log(page, max);
+                data['showMore'] = 1;
+                data['PAGEN_' + id] = page;
+
+                BX.showWait(waitElement);
+                btn.find('[data-show-more]').off('click');
+
+                $.ajax({
+                    type: "GET",
+                    url: window.location.href,
+                    data: data,
+                    success: function (data) {
+                        BX.closeWait(waitElement);
+                        btn.attr('data-next-page', page * 1 + 1);
+                        var tmp = $($(data));
+                        var els = tmp.find('.catalog__item');
+                        $('.catalog__list').append(els);
+                        $('.js-pagination').html(tmp.find('.js-pagination'));
+                        if (page == max) {
+                            $('.catalog__action').hide();
+                        }
+                    }
+                });
+            });
+        });
+
+    </script>
+
+    <? if ($_REQUEST['showMore'] == '1')
+        die(); ?>
 </div>
+
+
 

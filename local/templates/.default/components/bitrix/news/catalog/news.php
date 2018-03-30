@@ -12,7 +12,9 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<?if(empty($_REQUEST['showMore'])):?>
 <div class="flex-container flex-direction-tablet">
+<?endif;?>
 <?if($arParams["USE_RSS"]=="Y"):?>
 	<?
 	if(method_exists($APPLICATION, 'addheadstring'))
@@ -102,7 +104,10 @@ $this->setFrameMode(true);
 		"FILTER_NAME" => $arParams["FILTER_NAME"],
 		"HIDE_LINK_WHEN_NO_DETAIL" => $arParams["HIDE_LINK_WHEN_NO_DETAIL"],
 		"CHECK_DATES" => $arParams["CHECK_DATES"],
+        "AJAX_MODE" => "Y",
 	),
 	$component
 );?>
-</div>
+<?if(empty($_REQUEST['showMore'])):?>
+    </div>
+<?endif;?>
