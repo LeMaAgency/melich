@@ -20,10 +20,8 @@ Loc::loadMessages(__FILE__);
 $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__name);
 ?>
 
-
 <? if ($_REQUEST['showMore'] == '1')
     $GLOBALS['APPLICATION']->RestartBuffer(); ?>
-<div class="catalog">
     <ul class="catalog__list">
         <? foreach ($data->items() as $item): ?>
             <li class="catalog__item" <?= $item->editId(); ?>>
@@ -103,7 +101,6 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
 
     <? if ($_REQUEST['showMore'] == '1')
         die(); ?>
-</div>
 
 
 
