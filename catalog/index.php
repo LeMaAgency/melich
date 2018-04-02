@@ -1,11 +1,10 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
-?>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news", 
-	"catalog", 
-	array(
+?><?$APPLICATION->IncludeComponent(
+	"bitrix:news",
+	"catalog",
+	Array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -19,31 +18,15 @@ $APPLICATION->SetTitle("Каталог");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "catalog",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
-		"DETAIL_FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "PREVIEW_PICTURE",
-			2 => "DETAIL_TEXT",
-			3 => "DETAIL_PICTURE",
-			4 => "",
-		),
+		"DETAIL_FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_PICTURE",2=>"DETAIL_TEXT",3=>"DETAIL_PICTURE",4=>"",),
 		"DETAIL_PAGER_SHOW_ALL" => "Y",
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
-		"DETAIL_PROPERTY_CODE" => array(
-			0 => "ARTICUL",
-			1 => "TYPE_FUR_AND_CARE",
-			2 => "RETURN",
-			3 => "DELIVERY",
-			4 => "AVAILABILITY_IN_SHOPS",
-			5 => "PAYMENT",
-			6 => "POPULAR",
-			7 => "SIZE",
-			8 => "COLOR",
-			9 => "MORE_IMAGE",
-		),
+		"DETAIL_PROPERTY_CODE" => array(0=>"ARTICUL",1=>"TYPE_FUR_AND_CARE",2=>"RETURN",3=>"DELIVERY",4=>"AVAILABILITY_IN_SHOPS",5=>"PAYMENT",6=>"POPULAR",7=>"SIZE",8=>"COLOR",9=>"MORE_IMAGE",),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "N",
@@ -51,30 +34,16 @@ $APPLICATION->SetTitle("Каталог");
 		"DISPLAY_PICTURE" => "N",
 		"DISPLAY_PREVIEW_TEXT" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FILTER_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"FILTER_FIELD_CODE" => array(0=>"",1=>"",),
 		"FILTER_NAME" => "arrFilter",
-		"FILTER_PROPERTY_CODE" => array(
-			0 => "TYPE_FUR",
-			1 => "COLOR",
-			2 => "",
-		),
+		"FILTER_PROPERTY_CODE" => array(0=>"TYPE_FUR",1=>"COLOR",2=>"",),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "9",
 		"IBLOCK_TYPE" => "catalog",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"LIST_FIELD_CODE" => array(
-			0 => "NAME",
-			1 => "PREVIEW_PICTURE",
-			2 => "",
-		),
-		"LIST_PROPERTY_CODE" => array(
-			0 => "ARTICUL",
-			1 => "",
-		),
+		"LIST_FIELD_CODE" => array(0=>"NAME",1=>"PREVIEW_PICTURE",2=>"",),
+		"LIST_PROPERTY_CODE" => array(0=>"ARTICUL",1=>"",),
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
@@ -89,6 +58,7 @@ $APPLICATION->SetTitle("Каталог");
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"SEF_FOLDER" => "/catalog/",
 		"SEF_MODE" => "Y",
+		"SEF_URL_TEMPLATES" => array("news"=>"","section"=>"","detail"=>"#ELEMENT_CODE#/",),
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "N",
@@ -105,15 +75,7 @@ $APPLICATION->SetTitle("Каталог");
 		"USE_REVIEW" => "N",
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
-		"USE_SHARE" => "N",
-		"COMPONENT_TEMPLATE" => "catalog",
-		"SEF_URL_TEMPLATES" => array(
-			"news" => "",
-			"section" => "",
-			"detail" => "#ELEMENT_CODE#/",
-		)
-	),
-	false
-);?>
-
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+		"USE_SHARE" => "N"
+	)
+);?> <br>
+<br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

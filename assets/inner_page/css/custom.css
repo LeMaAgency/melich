@@ -47,3 +47,9 @@
 .float-r{
     float: right;
 }
+.height-auto{
+    height: auto;
+}
+.width-inherit{
+    width: inherit !important;
+}

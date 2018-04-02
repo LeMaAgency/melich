@@ -110,6 +110,16 @@ class Item
      * @param $name
      * @return null
      */
+    public function propTextType($name)
+    {
+        $prop = $this->propValue($name);
+        return isset($prop, $prop['TYPE']) ? $prop['TYPE'] : null;
+    }
+
+    /**
+     * @param $name
+     * @return null
+     */
     public function propXmlId($name)
     {
         return $this->prop($name, 'VALUE_XML_ID');

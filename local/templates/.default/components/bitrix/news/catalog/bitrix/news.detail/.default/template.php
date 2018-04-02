@@ -26,14 +26,15 @@ $item = $data->item();
                 </button>
             </div>
 
-            <div class="card-slider__for slider-for">
-                <? foreach ($item->get("MORE_IMAGE") as $srcImage): ?>
-                    <div class="card-slider__for-item">
-                        <img src="<?= $srcImage; ?>" alt="<?= $item->getName(); ?>">
-                    </div>
-                <? endforeach; ?>
-            </div>
             <? if ($item->get("ARRAY_CHECK")): ?>
+                <div class="card-slider__for slider-for">
+                    <? foreach ($item->get("MORE_IMAGE") as $srcImage): ?>
+
+                        <div class="card-slider__for-item">
+                            <img src="<?= $srcImage; ?>" alt="<?= $item->getName(); ?>">
+                        </div>
+                    <? endforeach; ?>
+                </div>
                 <div class="card-slider__nav">
                     <card-slider__nav-list class="slider-nav">
                         <? foreach ($item->get("MORE_IMAGE") as $srcImage): ?>
@@ -42,6 +43,12 @@ $item = $data->item();
                             </div>
                         <? endforeach; ?>
                     </card-slider__nav-list>
+                </div>
+            <? else: ?>
+                <div class="card-slider__for slider-for">
+                    <div class="card-slider__for-item height-auto">
+                        <img class="width-inherit" src="<?= $item->get("MORE_IMAGE"); ?>" alt="<?= $item->getName(); ?>">
+                    </div>
                 </div>
             <? endif; ?>
         </div>
@@ -93,85 +100,86 @@ $item = $data->item();
                 <? endif; ?>
                 <div class="card-accordion">
                     <ul class="card-accordion__list">
-                        <li class="card-accordion__item">
-                            <div class="card-accordion__title card-accordion__btn">Вид меха и уход<span
-                                        class="icon-plus"></span>
-                            </div>
-                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
-                                    <br>Срок — от 1 дня.
-                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                            </div>
-                        </li>
-                        <li class="card-accordion__item">
-                            <div class="card-accordion__title card-accordion__btn">Доставка<span
-                                        class="icon-plus"></span>
-                            </div>
-                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
-                                    <br>Срок — от 1 дня.
-                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                            </div>
-                        </li>
-                        <li class="card-accordion__item">
-                            <div class="card-accordion__title card-accordion__btn">оплата<span class="icon-plus"></span>
-                            </div>
-                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
-                                    <br>Срок — от 1 дня.
-                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                            </div>
-                        </li>
-                        <li class="card-accordion__item">
-                            <div class="card-accordion__title card-accordion__btn">возврат<span
-                                        class="icon-plus"></span>
-                            </div>
-                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
-                                    <br>Срок — от 1 дня.
-                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                            </div>
-                        </li>
-                        <li class="card-accordion__item">
-                            <div class="card-accordion__title card-accordion__btn">наличие в магазинах<span
-                                        class="icon-plus"></span>
-                            </div>
-                            <div class="card-accordion__content"><b>Москва и Санкт - Петербург</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                                <p>Курьерская доставка по Москве и в Санкт-Петербург.
-                                    <br>Срок — от 1 дня.
-                                    <br>Стоимость — 299 руб.</p><b>Россия</b>
-                                <p>Доставка в магазин.
-                                    <br>Срок — от 1 дня.
-                                    <br>Доставка бесплатная, по 100% предоплате.</p>
-                            </div>
-                        </li>
+                        <? if (!empty($item->propText("TYPE_FUR_AND_CARE"))): ?>
+                            <li class="card-accordion__item">
+                                <div class="card-accordion__title card-accordion__btn">
+                                    <?= $item->prop("TYPE_FUR_AND_CARE", NAME); ?>
+                                    <span class="icon-plus"></span>
+                                </div>
+                                <div class="card-accordion__content">
+                                    <? if ($item->propTextType('TYPE_FUR_AND_CARE') == "HTML") {
+                                        echo htmlspecialcharsBack($item->propText("TYPE_FUR_AND_CARE"));
+                                    } else {
+                                        echo $item->propText("TYPE_FUR_AND_CARE");
+                                    }
+                                    ?>
+                                </div>
+                            </li>
+                        <? endif; ?>
+                        <? if (!empty($item->propText("DELIVERY"))): ?>
+                            <li class="card-accordion__item">
+                                <div class="card-accordion__title card-accordion__btn">
+                                    <?= $item->prop("DELIVERY", NAME); ?>
+                                    <span class="icon-plus"></span>
+                                </div>
+                                <div class="card-accordion__content">
+                                    <? if ($item->propTextType('DELIVERY') == "HTML") {
+                                        echo htmlspecialcharsBack($item->propText("DELIVERY"));
+                                    } else {
+                                        echo $item->propText("DELIVERY");
+                                    }
+                                    ?>
+                                </div>
+                            </li>
+                        <? endif; ?>
+                        <? if (!empty($item->propText("PAYMENT"))): ?>
+                            <li class="card-accordion__item">
+                                <div class="card-accordion__title card-accordion__btn">
+                                    <?= $item->prop("PAYMENT", NAME); ?>
+                                    <span class="icon-plus"></span>
+                                </div>
+                                <div class="card-accordion__content">
+                                    <? if ($item->propTextType('PAYMENT') == "HTML") {
+                                        echo htmlspecialcharsBack($item->propText("PAYMENT"));
+                                    } else {
+                                        echo $item->propText("PAYMENT");
+                                    }
+                                    ?>
+                                </div>
+                            </li>
+                        <? endif; ?>
+                        <? if (!empty($item->propText("RETURN"))): ?>
+                            <li class="card-accordion__item">
+                                <div class="card-accordion__title card-accordion__btn">
+                                    <?= $item->prop("RETURN", NAME); ?>
+                                    <span class="icon-plus"></span>
+                                </div>
+                                <div class="card-accordion__content">
+                                    <? if ($item->propTextType('RETURN') == "HTML") {
+                                        echo htmlspecialcharsBack($item->propText("RETURN"));
+                                    } else {
+                                        echo $item->propText("RETURN");
+                                    }
+                                    ?>
+                                </div>
+                            </li>
+                        <? endif; ?>
+                        <? if (!empty($item->propText("AVAILABILITY_IN_SHOPS"))): ?>
+                            <li class="card-accordion__item">
+                                <div class="card-accordion__title card-accordion__btn">
+                                    <?= $item->prop("AVAILABILITY_IN_SHOPS", NAME); ?>
+                                    <span class="icon-plus"></span>
+                                </div>
+                                <div class="card-accordion__content">
+                                    <? if ($item->propTextType('AVAILABILITY_IN_SHOPS') == "HTML") {
+                                        echo htmlspecialcharsBack($item->propText("AVAILABILITY_IN_SHOPS"));
+                                    } else {
+                                        echo $item->propText("AVAILABILITY_IN_SHOPS");
+                                    }
+                                    ?>
+                                </div>
+                            </li>
+                        <? endif; ?>
                     </ul>
                 </div>
             </div>
