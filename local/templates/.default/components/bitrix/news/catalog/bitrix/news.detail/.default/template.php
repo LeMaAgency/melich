@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 $data = new \Lema\Template\TemplateHelper($this);
 $item = $data->item();
 ?>
-<section class="card">
+<section class="card" <?= $item->editId(); ?>>
     <div class="flex-container flex-direction-tablet">
         <div class="card-slider">
 
@@ -47,7 +47,8 @@ $item = $data->item();
             <? else: ?>
                 <div class="card-slider__for slider-for">
                     <div class="card-slider__for-item height-auto">
-                        <img class="width-inherit" src="<?= $item->get("MORE_IMAGE"); ?>" alt="<?= $item->getName(); ?>">
+                        <img class="width-inherit" src="<?= $item->get("MORE_IMAGE"); ?>"
+                             alt="<?= $item->getName(); ?>">
                     </div>
                 </div>
             <? endif; ?>
