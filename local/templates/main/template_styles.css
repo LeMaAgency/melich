@@ -1,0 +1,18 @@
+.body-content .header {position:fixed;}
+.body-content .body-main {width:85%; float:right;}
+.footer__l {margin-top:20px;}
+.find_price_left {width:40%; float:left;}
+.find_price_right {width:60%; float:right;}
+.find_price_form {display: inline-block;}
+.find_price .form-call {width:60px;position: relative;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 5px 0;border-left: none;border-right: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-transform: uppercase;margin:0 10px 0 0;display: inline-table;}
+.find_price .action-phone__btn {width:100px; padding: 6px 0;display: inline-table;}
+.find_price span {font-size:10px; font-style: italic;}
+.clearfix {clear: both;}
+

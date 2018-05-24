@@ -26,17 +26,17 @@ Loc::loadMessages(__FILE__);
     </div>
     <ul class="catalog__list">
         <?foreach ($data->items() as $item):?>
-        <li class="catalog__item" <?=$item->editId();?>>
-            <a class="catalog__link" href="#">
-                <img src="<?=$item->previewPicture();?>" alt="<?=$item->getName();?>">
-                <div class="catalog__descr">
-                    <p class="catalog__text"><?=$item->getName();?></p>
-                    <p class="catalog__article">
-                        <?echo $item->prop("ARTICUL",NAME),' ',$item->propVal("ARTICUL");?>
-                    </p>
-                </div>
-            </a>
-        </li>
+            <li class="catalog__item" <?=$item->editId();?>>
+                <a class="catalog__link" href="<?=$item->detailUrl();?>">
+                    <img src="<?=$item->get('PREVIEW_PICTURE_SRC');?>" alt="<?=$item->getName();?>">
+                    <div class="catalog__descr">
+                        <p class="catalog__text"><?=$item->getName();?></p>
+                        <p class="catalog__article">
+                            <?echo $item->propName("ARTICUL"),' ',$item->propVal("ARTICUL");?>
+                        </p>
+                    </div>
+                </a>
+            </li>
         <?endforeach;?>
 
     </ul>
