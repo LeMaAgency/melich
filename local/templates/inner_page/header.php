@@ -45,7 +45,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
         <nav class="main-nav">
             <? $APPLICATION->IncludeComponent(
 	"bitrix:menu", 
-	"top_menu_inner_test", 
+	"top_menu_inner", 
 	array(
 		"ALLOW_MULTI_SELECT" => "N",
 		"ROOT_MENU_TYPE" => "top",
@@ -58,7 +58,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 		"MENU_CACHE_TYPE" => "A",
 		"MENU_CACHE_USE_GROUPS" => "N",
 		"USE_EXT" => "Y",
-		"COMPONENT_TEMPLATE" => "top_menu_inner_test"
+		"COMPONENT_TEMPLATE" => "top_menu_inner"
 	),
 	false
 ); ?>
