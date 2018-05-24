@@ -44,21 +44,24 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
         <!--TOP MENU inner_page-->
         <nav class="main-nav">
             <? $APPLICATION->IncludeComponent(
-                'bitrix:menu',
-                'top_menu_inner',
-                array(
-                    'ALLOW_MULTI_SELECT' => 'N',
-                    'ROOT_MENU_TYPE' => 'top',
-                    'CHILD_MENU_TYPE' => 'left',
-                    'DELAY' => 'N',
-                    'MAX_LEVEL' => '1',
-                    'MENU_CACHE_GET_VARS' => array(),
-                    'MENU_CACHE_TIME' => '3600',
-                    'MENU_CACHE_TYPE' => 'A',
-                    'MENU_CACHE_USE_GROUPS' => 'N',
-                    'USE_EXT' => 'Y',
-                    'COMPONENT_TEMPLATE' => 'top_menu_inner_page'
-                )); ?>
+	"bitrix:menu", 
+	"top_menu_inner_test", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"ROOT_MENU_TYPE" => "top",
+		"CHILD_MENU_TYPE" => "left",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "A",
+		"MENU_CACHE_USE_GROUPS" => "N",
+		"USE_EXT" => "Y",
+		"COMPONENT_TEMPLATE" => "top_menu_inner_test"
+	),
+	false
+); ?>
         </nav>
         <!--/TOP MENU inner_page-->
         <div class="action-phone">
