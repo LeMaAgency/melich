@@ -13,6 +13,8 @@ if(!empty($arResult['ITEMS']))
 
     foreach($arResult['ITEMS'] as $k => $arItem)
     {
+        if(empty($arItem['PREVIEW_PICTURE']) || $arItem['PREVIEW_PICTURE'] == null)
+                continue;
         $arResult['ITEMS'][$k]['PREVIEW_PICTURE_SRC'] = Helper::getImageWatermarkSrc($arItem['PREVIEW_PICTURE'], $watermarkParams);
     }
 }
