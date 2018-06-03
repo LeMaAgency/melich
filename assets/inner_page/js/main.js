@@ -109,6 +109,96 @@ $(document).ready(function () {
     });
 
 
+    //===============================================================
+    //БЫСТРЫЙ ПРОСМОТР ЭЛЕМЕНТОВ КАТАЛОГА (Нужен подключенный fancybox)
+
+    /** @description Функция для быстрого просмотра шуб
+     * @param {bool} isNavigationButton Элемента для которого вызывается функция является кнопкой для перемещения влево или вправо.
+     * @param {number} elemId ID элемента который нужно показать
+     */
+    function quickPreview(isNavigationButton,elemId){
+        var coatId = elemId //Получение id шубы
+        var parent = $('.catalog__item[data-id="'+elemId+'"]');
+        var next_elem_id = parent.next().attr('data-id');
+        var prev_elem_id = parent.prev().attr('data-id');
+        $('#prev_qick_view').attr('data-id',prev_elem_id);
+        $('#next_qick_view').attr('data-id',next_elem_id);
+
+        $.post('/ajax/catalog_quick_view.php',{'COAT_ID': elemId},function(data) {
+                $("#quick_view").find(".heading__title").text(data["NAME"]);
+                $("#quick_view").find(".card-description__article").text("Модель "+data["PROPERTY_ARTICUL_VALUE"]);
+
+                //Перезапуск slick слайдера
+                $("#quick_view").find(".slider-for").slick('unslick');
+                $("#quick_view").find(".slider-nav").slick('unslick');
+                $("#quick_view").find(".slider-for").empty();
+                $("#quick_view").find(".slider-nav").empty();
+                //Наполениене картинками сладеров
+                for (var ArrVal in data["IMAGES"]) {
+                    //Добавление элемента в слайдер
+                    $("#quick_view").find(".slider-for").append(`\
+                            <div class="card-slider__for-item">\
+                                <img src="${data["IMAGES"][ArrVal]}" alt="test">\
+                            </div>`
+                    )
+                    //Добавление элемента в мини-слайдер
+                    $("#quick_view").find(".slider-nav").append(`\
+                            <div class="card-slider__nav-item">\
+                                <img src="${data["IMAGES"][ArrVal]}" alt="test">\
+                            </div>`
+                    )
+                }
+                //конец картинками сладеров
+
+                //открытие подготовленного блока в fancybox
+                if(isNavigationButton !=true){
+                    $.fancybox.open($('#quick_view'),{scrolling: 'no',touch: false});
+                }
+                //Инициализация слайдеров
+                $("#quick_view").find(".slider-for").slick({
+                    speed: 300,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    fade: false,
+                    asNavFor: ".slider-nav",
+                });
+                $("#quick_view").find(".slider-nav").slick({
+                    slidesToShow: 6,
+                    slidesToScroll: 1,
+                    asNavFor: ".slider-for",
+                    dots: false,
+                    centerMode: false,
+                    focusOnSelect: true,
+                    arrows: false,
+                });
+
+            },
+            'json'
+        )
+
+    }
+
+
+    //Нажате кнопки "Быстрый просмотр на элемента"
+    $(".quick_prev_btn").on('click',function(){
+        var coatId = $(this).attr("data-id");
+        quickPreview(false,coatId);
+    })
+
+    //Предыдущий элемент
+    $("#prev_qick_view").on('click',function () {
+        var coatId = $(this).attr("data-id");
+        quickPreview(true,coatId);
+    });
+
+    //Следующий элемент
+    $("#next_qick_view").on('click',function () {
+        var coatId = $(this).attr("data-id");
+        quickPreview(true,coatId);
+    });
+
+    //===============================================================
 });
 
 

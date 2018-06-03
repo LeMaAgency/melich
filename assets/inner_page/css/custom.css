@@ -53,3 +53,134 @@
 .width-inherit{
     width: inherit !important;
 }
+
+
+/*Быстрый просмотр каталога*/
+.body-content .header {position:fixed;}
+.body-content .body-main {width:85%; float:right;}
+.footer__l {margin-top:20px;}
+.find_price_left {width:40%; float:left;}
+.find_price_right {width:60%; float:right;}
+.find_price_form {display: inline-block;}
+.find_price .form-call {width:60px;position: relative;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 5px 0;border-left: none;border-right: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-transform: uppercase;margin:0 10px 0 0;display: inline-table;}
+.find_price .action-phone__btn {width:100px; padding: 6px 0;display: inline-table;}
+.find_price span {font-size:10px; font-style: italic;}
+.clearfix {clear: both;}
+.main-nav__item ul li { text-transform: uppercase;font-family: "Garamond Premiere Pro", sans-serif;
+    font-size: 11px;
+    margin-bottom: 10px;
+    padding-left: 23px;
+    color: #666;}
+.main-nav__item ul li:hover {
+    color: #9f8234;}
+.open::before {content: "";
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 4px;
+    height: 100%;
+    background-color: #9f8234;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;}
+.open a {font-size: 17px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    border-color: #ccc;
+    color: #9f8234;}
+.popup{ display: flex;}
+#quick_view{
+    width: 80%;
+    max-width: 1180px;
+    overflow: visible;
+}
+#quick_view .card-slider{
+    width: 40%;
+    max-width: 348px;
+}
+#quick_view .slider-for{
+   max-height: 520px;
+    overflow: hidden;
+}
+#quick_view .slider-for img{
+    width: 100%;
+   max-width: 455px;
+}
+#quick_view .card-slider__nav-item{
+    width: 57px !important;
+}
+.catalog__item{
+    position: relative;
+}
+.catalog__item:hover .quick_prev_btn{
+    display: block;
+}
+.quick_prev_btn{
+    display: none;
+    border: 1px solid #9f8234;
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%);
+    padding: 10px 0px;
+    background-color: unset;
+    transition: background-color 0.3s;
+    font-family: "Garamond Premiere Pro", sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 80%;
+    color: white;
+    text-align:center ;
+}
+.quick_prev_btn:hover{
+    background-color: rgba(123,123,123,0.5);
+    transition: background-color 0.3s;
+}
+#next_qick_view,
+#prev_qick_view{
+    position: absolute;
+    height: 100px;
+    width: 57px;
+    top: 40%;
+    z-index: 99995;
+    cursor: pointer;
+}
+#next_qick_view:hover,#prev_qick_view:hover{
+    background-color: rgba(123,123,123,0.5);
+    transition: all 0.3s;
+    outline:10px solid rgba(123,123,123,0.5) ;
+}
+#next_qick_view:active,#prev_qick_view:active{
+    background-color: #9f8234;
+    outline:10px solid #9f8234 ;
+}
+#next_qick_view{
+    background-image: url("/assets/img/icon/arrow-right-white.png");
+    right: -75px;
+}
+#prev_qick_view{
+    background-image: url("/assets/img/icon/arrow-left-white.png");
+    left: -75px;
+}
+
+.popup .card-description {float:left;}
+.popup .card-description {float:right;}
+
+
+@media screen and (max-width:1600px) {.find_price_left {width:100%;}
+    .find_price_right {width:100%;margin-bottom:20px;}}
+@media screen and (max-width: 1199px){
+    .popup {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }}

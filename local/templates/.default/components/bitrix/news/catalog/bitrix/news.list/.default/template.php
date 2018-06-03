@@ -24,7 +24,7 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
     $GLOBALS['APPLICATION']->RestartBuffer(); ?>
     <ul class="catalog__list">
         <? foreach ($data->items() as $item): ?>
-            <li class="catalog__item" <?= $item->editId(); ?>>
+            <li class="catalog__item" <?= $item->editId(); ?> data-id="<?= $item->getId(); ?>">
                 <a class="catalog__link" href="<?= $item->detailUrl(); ?>">
                     <img src="<?= $item->get('PREVIEW_PICTURE_SRC'); ?>" alt="<?= $item->getName(); ?>">
                     <div class="catalog__descr">
@@ -35,10 +35,70 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
                             <? echo $item->propName("ARTICUL"), ' ', $item->propVal("ARTICUL"); ?>
                         </p>
                     </div>
+                    <div class="quick_prev_btn"  data-id="<?= $item->getId(); ?>" onclick="event.preventDefault()">
+                        Быстрый просмотр
+                    </div>
                 </a>
+
             </li>
         <? endforeach; ?>
     </ul>
+
+
+
+
+
+<div id="quick_view" style="display: none">
+    <div id="next_qick_view"></div>
+    <div class="popup">
+        <div class="card-slider">
+            <div class="hamburger-btn hamburger-btn--darken">
+                <button class="hamburger hamburger--collapse" type="button">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+            <div class="card-slider__for slider-for">
+
+            </div>
+            <div class="card-slider__nav">
+                <card-slider__nav-list class="slider-nav">
+
+                </card-slider__nav-list>
+            </div>
+        </div>
+
+        <div class="card-description">
+            <div class="heading">
+                <h2 class="heading__title">
+                                   </h2>
+            </div>
+            <div class="card-description__info">
+                <h3 class="card-description__article">
+                                    </h3>
+
+                <div class="find_price">
+
+                    <div class="find_price_right">Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои данные для связи<br>
+                        <div class="find_price_form">
+                            <input type="text" placeholder="Имя" class="form-call" value="">
+                            <input type="text" placeholder="Тел" class="form-call" value="">
+                            <div class="action-phone__btn">Узнать цену</div></div><br>
+                        <span>согласен на обработку персональных данных</span></div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <div id="prev_qick_view"></div>
+</div>
+
+
+
+
+
+
     <? if ($arResult["NAV_RESULT"]->NavPageNomer != $arResult["NAV_RESULT"]->nEndPage): ?>
         <div class="catalog__action">
             <button class="catalog__btn ajax_load_btn_new"
