@@ -192,3 +192,25 @@
     margin-right: 5px;
 
 }
+.main-nav__list ul{
+    margin-bottom: 20px;
+}
+
+.main-nav__link_sub {
+    text-transform: uppercase;
+    font-family: "Garamond Premiere Pro", sans-serif;
+    font-size: 11px;
+    margin-bottom: 10px;
+    padding-left: 23px;
+    color: #666;
+    cursor: pointer;
+}
+.main-nav__link_sub:hover {
+    color: #9f8234;
+}
+
+.main-nav .is-active .main-nav__link_sub {
+    font-weight: bold;
+    border-color: #ccc;
+    color: #9f8234;
+}
