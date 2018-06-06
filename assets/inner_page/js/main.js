@@ -34,7 +34,7 @@ $(document).ready(function () {
     //===========================
     // Filter
     //===========================
-    
+
     $(".checked-all-js").click(function () {
 
         var allCheckbox = $(".filter-form__checkbox");
@@ -117,17 +117,69 @@ $(document).ready(function () {
      * @param {number} elemId ID элемента который нужно показать
      */
     function quickPreview(isNavigationButton,elemId){
-        var coatId = elemId //Получение id шубы
-        var parent = $('.catalog__item[data-id="'+elemId+'"]');
-        var next_elem_id = parent.next().attr('data-id');
-        var prev_elem_id = parent.prev().attr('data-id');
+        var parent = $('.catalog__item[data-id="'+elemId+'"]'),
+            prev_elem_id = parent.prev().attr('data-id'),
+            next_elem_id = parent.next().attr('data-id');
+
         $('#prev_qick_view').attr('data-id',prev_elem_id);
         $('#next_qick_view').attr('data-id',next_elem_id);
-
+        $('#prev_qick_view').show();
+        $('#next_qick_view').show();
+        if(typeof prev_elem_id == "undefined"){
+            $('#prev_qick_view').hide();
+        }
+        if(typeof next_elem_id == "undefined"){
+            $('#next_qick_view').hide();
+        }
+        console.log(prev_elem_id,next_elem_id,elemId);
         $.post('/ajax/catalog_quick_view.php',{'COAT_ID': elemId},function(data) {
                 $("#quick_view").find(".heading__title").text(data["NAME"]);
                 $("#quick_view").find(".card-description__article").text("Модель "+data["PROPERTY_ARTICUL_VALUE"]);
+                if(data["PROPERTY_TYPE_FUR_VALUE"] !== null){
+                    $("#quick_view").find(".type_fur").text(data["PROPERTY_TYPE_FUR_VALUE"]);
+                    $("#quick_view").find(".type_fur_block").show();
+                }else{
+                    $("#quick_view").find(".type_fur_block").hide();
+                }
 
+                if(data["PROPERTY_OTDELKA_VALUE"] !== null){
+                    $("#quick_view").find(".otdelka").text(data["PROPERTY_OTDELKA_VALUE"]);
+                    $("#quick_view").find(".otdelka_block").show();
+                }else{
+                    $("#quick_view").find(".otdelka_block").hide();
+                }
+
+                if(data["PROPERTY_VOROT_VALUE"] !== null){
+                    $("#quick_view").find(".vorot").text(data["PROPERTY_VOROT_VALUE"]);
+                    $("#quick_view").find(".vorot_block").show();
+                }else{
+                    $("#quick_view").find(".vorot_block").hide();
+                }
+
+                if(data["PROPERTY_SIZE_VALUE"] !== null && data["PROPERTY_SIZE_VALUE"].length !== 0){
+                    $("#quick_view").find(".size").empty();
+                    $("#quick_view").find(".size_block").show();
+                   for(var key in data["PROPERTY_SIZE_VALUE"]){
+                       $("#quick_view").find(".size").append(
+                           "<div class='size__item'><span>"+data["PROPERTY_SIZE_VALUE"][key]+"</span></div>"
+                       );
+                   }
+
+                }else{
+                    $("#quick_view").find(".size_block").hide();
+                }
+
+                if(typeof data["PROPERTY_COLOR_VALUE_XML_ID"] !=="undefined"){
+                    $("#quick_view").find(".color").empty();
+                    $("#quick_view").find(".color_block").show();
+                    for(var key in data["PROPERTY_COLOR_VALUE_XML_ID"]){
+                        $("#quick_view").find(".color").append(
+                            "<div class='block-color__item'><span class='color-"+data["PROPERTY_COLOR_VALUE_XML_ID"][key]+"'></span></div>"
+                        );
+                    }
+                }else{
+                    $("#quick_view").find(".color_block").hide();
+                }
                 //Перезапуск slick слайдера
                 $("#quick_view").find(".slider-for").slick('unslick');
                 $("#quick_view").find(".slider-nav").slick('unslick');
@@ -181,19 +233,19 @@ $(document).ready(function () {
 
 
     //Нажате кнопки "Быстрый просмотр на элемента"
-    $(".quick_prev_btn").on('click',function(){
+    $('body').on("click",".quick_prev_btn",function(){
         var coatId = $(this).attr("data-id");
         quickPreview(false,coatId);
     })
 
     //Предыдущий элемент
-    $("#prev_qick_view").on('click',function () {
+    $('body').on("click","#prev_qick_view",function(){
         var coatId = $(this).attr("data-id");
         quickPreview(true,coatId);
     });
 
     //Следующий элемент
-    $("#next_qick_view").on('click',function () {
+    $('body').on("click","#next_qick_view",function(){
         var coatId = $(this).attr("data-id");
         quickPreview(true,coatId);
     });

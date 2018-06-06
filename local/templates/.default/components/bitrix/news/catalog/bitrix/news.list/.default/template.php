@@ -22,30 +22,27 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
 
 <? if ($_REQUEST['showMore'] == '1')
     $GLOBALS['APPLICATION']->RestartBuffer(); ?>
-    <ul class="catalog__list">
-        <? foreach ($data->items() as $item): ?>
-            <li class="catalog__item" <?= $item->editId(); ?> data-id="<?= $item->getId(); ?>">
-                <a class="catalog__link" href="<?= $item->detailUrl(); ?>">
-                    <img src="<?= $item->get('PREVIEW_PICTURE_SRC'); ?>" alt="<?= $item->getName(); ?>">
-                    <div class="catalog__descr">
-                        <p class="catalog__text">
-                            <?= $item->getName(); ?>
-                        </p>
-                        <p class="catalog__article">
-                            <? echo $item->propName("ARTICUL"), ' ', $item->propVal("ARTICUL"); ?>
-                        </p>
-                    </div>
-                    <div class="quick_prev_btn"  data-id="<?= $item->getId(); ?>" onclick="event.preventDefault()">
-                        Быстрый просмотр
-                    </div>
-                </a>
+<ul class="catalog__list">
+    <? foreach ($data->items() as $item): ?>
+        <li class="catalog__item" <?= $item->editId(); ?> data-id="<?= $item->getId(); ?>">
+            <a class="catalog__link" href="<?= $item->detailUrl(); ?>">
+                <img src="<?= $item->get('PREVIEW_PICTURE_SRC'); ?>" alt="<?= $item->getName(); ?>">
+                <div class="catalog__descr">
+                    <p class="catalog__text">
+                        <?= $item->getName(); ?>
+                    </p>
+                    <p class="catalog__article">
+                        <? echo $item->propName("ARTICUL"), ' ', $item->propVal("ARTICUL"); ?>
+                    </p>
+                </div>
+                <div class="quick_prev_btn" data-id="<?= $item->getId(); ?>" onclick="event.preventDefault()">
+                    Быстрый просмотр
+                </div>
+            </a>
 
-            </li>
-        <? endforeach; ?>
-    </ul>
-
-
-
+        </li>
+    <? endforeach; ?>
+</ul>
 
 
 <div id="quick_view" style="display: none">
@@ -72,31 +69,61 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
         <div class="card-description">
             <div class="heading">
                 <h2 class="heading__title">
-                                   </h2>
+                </h2>
             </div>
             <div class="card-description__info">
                 <h3 class="card-description__article">
-                                    </h3>
+                </h3>
+                    <div class="type_fur_block">
+                        <span class="card-description__proprties_title">
+                            Вид меха:
+                        </span>
+                        <span class="type_fur"></span>
+                    </div>
+                    <div class="otdelka_block">
+                        <span class="card-description__proprties_title">
+                            Отделка:
+                        </span>
+                        <span class="otdelka"></span>
+                    </div>
+                    <div class="vorot_block">
+                        <span class="card-description__proprties_title">
+                            Вид ворота:
+                        </span>
+                        <span class="vorot"></span>
+                    </div>
+                    <div class="size_block">
+                        <span class="card-description__proprties_title">
+                            Длина:
+                        </span>
+                        <div class="size">
 
-                <div class="find_price">
+                        </div>
+                    </div>
+                    <div class="color_block">
+                        <span class="card-description__proprties_title">
+                            Цвет:
+                        </span>
+                        <div class="card-description__color block-color color"></div>
+                    </div>
+                    <div class="find_price">
 
-                    <div class="find_price_right">Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои данные для связи<br>
-                        <div class="find_price_form">
-                            <input type="text" placeholder="Имя" class="form-call" value="">
-                            <input type="text" placeholder="Тел" class="form-call" value="">
-                            <div class="action-phone__btn">Узнать цену</div></div><br>
-                        <span>согласен на обработку персональных данных</span></div>
+                        <div class="find_price_right">Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои
+                            данные для связи<br>
+                            <div class="find_price_form">
+                                <input type="text" placeholder="Имя" class="form-call" value="">
+                                <input type="text" placeholder="Тел" class="form-call" value="">
+                                <div class="action-phone__btn">Узнать цену</div>
+                            </div>
+                            <br>
+                            <span>согласен на обработку персональных данных</span></div>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
             </div>
         </div>
+        <div id="prev_qick_view"></div>
     </div>
-    <div id="prev_qick_view"></div>
-</div>
-
-
-
-
 
 
     <? if ($arResult["NAV_RESULT"]->NavPageNomer != $arResult["NAV_RESULT"]->nEndPage): ?>

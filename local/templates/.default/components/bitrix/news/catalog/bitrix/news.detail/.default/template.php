@@ -79,24 +79,57 @@ $item = $data->item();
                         <?= $item->detailText(); ?>
                     </p>
                 </div>
-                <? if (!empty($item->propVal("COLOR"))): ?>
-                    <div class="card-description__color block-color">
-                        <? foreach ($item->prop("COLOR", VALUE_XML_ID) as $color): ?>
-                            <div class="block-color__item">
-                                <span class="color-<?= $color; ?>">
-                                </span>
-                            </div>
-                        <? endforeach; ?>
+                <? if (!empty($item->propVal("TYPE_FUR"))): ?>
+                    <div>
+                    <span class="card-description__proprties_title">
+                        <?= $item->prop("TYPE_FUR", NAME); ?>:
+                    </span>
+                        <?= $item->propVal("TYPE_FUR"); ?>
+                    </div>
+                <? endif; ?>
+                <? if (!empty($item->propVal("OTDELKA"))): ?>
+                    <div>
+                    <span class="card-description__proprties_title">
+                        <?= $item->prop("OTDELKA", NAME); ?>:
+                    </span>
+                        <?= $item->propVal("OTDELKA"); ?>
+                    </div>
+                <? endif; ?>
+                <? if (!empty($item->propVal("VOROT"))): ?>
+                    <div>
+                        <span class="card-description__proprties_title">
+                            <?= $item->prop("VOROT", NAME); ?>:
+                        </span>
+                        <?= $item->propVal("VOROT"); ?>
                     </div>
                 <? endif; ?>
 
                 <? if (!empty($item->propVal("SIZE"))): ?>
                     <div class="card-description__size size">
+                        <span class="card-description__proprties_title">
+                            <?= $item->prop("SIZE", NAME); ?>:
+                        </span>
                         <? foreach ($item->propVal("SIZE") as $size): ?>
                             <div class="size__item">
                                 <span><?= $size; ?></span>
                             </div>
                         <? endforeach; ?>
+                    </div>
+                <? endif; ?>
+
+                <? if (!empty($item->propVal("COLOR"))): ?>
+                    <div>
+                        <span class="card-description__proprties_title">
+                            <?= $item->prop("COLOR", NAME); ?>:
+                        </span>
+                        <div class="card-description__color block-color">
+                            <? foreach ($item->prop("COLOR", VALUE_XML_ID) as $color): ?>
+                                <div class="block-color__item">
+                                    <span class="color-<?= $color; ?>">
+                                    </span>
+                                </div>
+                            <? endforeach; ?>
+                        </div>
                     </div>
                 <? endif; ?>
                 <div class="card-accordion">

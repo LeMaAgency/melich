@@ -185,3 +185,10 @@
         -ms-flex-direction: column;
         flex-direction: column;
     }}
+.card-description__proprties_title{
+    font-size: 20px;
+    font-family: "Garamond Premiere Pro", sans-serif;
+    font-weight: bold;
+    margin-right: 5px;
+
+}
