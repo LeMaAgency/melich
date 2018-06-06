@@ -87,7 +87,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
         </div>
     </aside>
     <main class="main-content">
-        <? if (!preg_match('~^/(?:contacts|catalog/[^/]+)/$~iu', $APPLICATION->GetCurDir())): ?>
+        <? if (!preg_match('~^/(?:contacts|catalog/([A-Za-z0-9-]+)/[^/]+)/$~iu', $APPLICATION->GetCurDir())): ?>
             <header class="page-header">
                 <div class="hamburger-btn">
                     <button class="hamburger hamburger--collapse" type="button">
