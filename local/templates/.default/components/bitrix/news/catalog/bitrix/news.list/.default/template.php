@@ -76,25 +76,25 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
                 </h3>
                     <div class="type_fur_block">
                         <span class="card-description__proprties_title">
-                            Вид меха:
+                            <?=Loc::getMessage('LEMA_CATALOG_LIST_TYPE_FUR');?>
                         </span>
                         <span class="type_fur"></span>
                     </div>
                     <div class="otdelka_block">
                         <span class="card-description__proprties_title">
-                            Отделка:
+                            <?=Loc::getMessage('LEMA_CATALOG_LIST_OTDELKA');?>
                         </span>
                         <span class="otdelka"></span>
                     </div>
                     <div class="vorot_block">
                         <span class="card-description__proprties_title">
-                            Вид ворота:
+                            <?=Loc::getMessage('LEMA_CATALOG_LIST_VOROT');?>
                         </span>
                         <span class="vorot"></span>
                     </div>
                     <div class="size_block">
                         <span class="card-description__proprties_title">
-                            Длина:
+                            <?=Loc::getMessage('LEMA_CATALOG_LIST_SIZE');?>
                         </span>
                         <div class="size">
 
@@ -102,18 +102,40 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
                     </div>
                     <div class="color_block">
                         <span class="card-description__proprties_title">
-                            Цвет:
+                            <?=Loc::getMessage('LEMA_CATALOG_LIST_COLOR');?>
                         </span>
                         <div class="card-description__color block-color color"></div>
                     </div>
+                <?$APPLICATION->IncludeComponent(
+                    "lema:form.ajax",
+                    "",
+                    Array(
+                        "CACHE_TIME" => "3600",
+                        "CACHE_TYPE" => "A",
+                        "EVENT_TYPE" => "7",
+                        "FORM_152_FZ" => "Я ознакомлен <a target=\"_blank\" href=\"/contacts/apply.pdf\">c положением об обработке и защите персональных данных.</a>",
+                        "FORM_ACTION" => "",
+                        "FORM_BTN_TITLE" => "Узнать цену",
+                        "FORM_CLASS" => "ajax-form call-order",
+                        "FORM_FIELDS" => "[{\"name\":\"name\",\"type\":\"text\",\"title\":\"\",\"placeholder\":\"Имя\",\"default\":\"\",\"required\":\"Y\"},{\"name\":\"phone\",\"type\":\"tel\",\"title\":\"\",\"placeholder\":\"Телефон\",\"default\":\"\",\"required\":\"Y\"}]",
+                        "FORM_SUCCESS_FUNCTION" => "\\$.fancybox.open(\"Ваше сообщение успешно отправлено\")",
+                        "FORM_SUCCESS_FUNCTION_CORRECT_JSON" => "Y",
+                        "IBLOCK_ID" => "10",
+                        "IBLOCK_TYPE" => "feedback",
+                        "NEED_SAVE_TO_IBLOCK" => "Y",
+                        "NEED_SEND_EMAIL" => "Y"
+                    )
+                );?>
                     <div class="find_price">
 
-                        <div class="find_price_right">Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои
-                            данные для связи<br>
+                        <div class="find_price_right">
+                            Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои данные для связи<br>
                             <div class="find_price_form">
                                 <input type="text" placeholder="Имя" class="form-call" value="">
                                 <input type="text" placeholder="Тел" class="form-call" value="">
-                                <div class="action-phone__btn">Узнать цену</div>
+                                <div class="action-phone__btn">
+                                    Узнать цену
+                                </div>
                             </div>
                             <br>
                             <span>согласен на обработку персональных данных</span></div>
