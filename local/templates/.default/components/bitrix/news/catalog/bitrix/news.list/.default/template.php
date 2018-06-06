@@ -175,7 +175,7 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
                         var tmp = $($(data));
                         var els = tmp.find('.catalog__item');
                         $('.catalog__list').append(els);
-                        $('.js-pagination').html(tmp.find('.js-pagination'));
+                        $('.js-pagination').html(tmp.find('.pagination'));
                         if (page == max) {
                             $('.catalog__action').hide();
                         }
