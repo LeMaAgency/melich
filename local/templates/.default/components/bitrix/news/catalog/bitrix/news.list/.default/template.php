@@ -74,142 +74,133 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
             <div class="card-description__info">
                 <h3 class="card-description__article">
                 </h3>
-                    <div class="type_fur_block">
+                <div class="type_fur_block">
                         <span class="card-description__proprties_title">
-                            <?=Loc::getMessage('LEMA_CATALOG_LIST_TYPE_FUR');?>
+                            <?= Loc::getMessage('LEMA_CATALOG_LIST_TYPE_FUR'); ?>
                         </span>
-                        <span class="type_fur"></span>
-                    </div>
-                    <div class="otdelka_block">
+                    <span class="type_fur"></span>
+                </div>
+                <div class="otdelka_block">
                         <span class="card-description__proprties_title">
-                            <?=Loc::getMessage('LEMA_CATALOG_LIST_OTDELKA');?>
+                            <?= Loc::getMessage('LEMA_CATALOG_LIST_OTDELKA'); ?>
                         </span>
-                        <span class="otdelka"></span>
-                    </div>
-                    <div class="vorot_block">
+                    <span class="otdelka"></span>
+                </div>
+                <div class="vorot_block">
                         <span class="card-description__proprties_title">
-                            <?=Loc::getMessage('LEMA_CATALOG_LIST_VOROT');?>
+                            <?= Loc::getMessage('LEMA_CATALOG_LIST_VOROT'); ?>
                         </span>
-                        <span class="vorot"></span>
-                    </div>
-                    <div class="size_block">
+                    <span class="vorot"></span>
+                </div>
+                <div class="size_block">
                         <span class="card-description__proprties_title">
-                            <?=Loc::getMessage('LEMA_CATALOG_LIST_SIZE');?>
+                            <?= Loc::getMessage('LEMA_CATALOG_LIST_SIZE'); ?>
                         </span>
-                        <div class="size">
+                    <div class="size">
 
-                        </div>
                     </div>
-                    <div class="color_block">
+                </div>
+                <div class="color_block">
                         <span class="card-description__proprties_title">
-                            <?=Loc::getMessage('LEMA_CATALOG_LIST_COLOR');?>
+                            <?= Loc::getMessage('LEMA_CATALOG_LIST_COLOR'); ?>
                         </span>
-                        <div class="card-description__color block-color color"></div>
-                    </div>
-                <?$APPLICATION->IncludeComponent(
-                    "lema:form.ajax",
-                    "",
-                    Array(
-                        "CACHE_TIME" => "3600",
-                        "CACHE_TYPE" => "A",
-                        "EVENT_TYPE" => "7",
-                        "FORM_152_FZ" => "Я ознакомлен <a target=\"_blank\" href=\"/contacts/apply.pdf\">c положением об обработке и защите персональных данных.</a>",
-                        "FORM_ACTION" => "",
-                        "FORM_BTN_TITLE" => "Узнать цену",
-                        "FORM_CLASS" => "ajax-form call-order",
-                        "FORM_FIELDS" => "[{\"name\":\"name\",\"type\":\"text\",\"title\":\"\",\"placeholder\":\"Имя\",\"default\":\"\",\"required\":\"Y\"},{\"name\":\"phone\",\"type\":\"tel\",\"title\":\"\",\"placeholder\":\"Телефон\",\"default\":\"\",\"required\":\"Y\"}]",
-                        "FORM_SUCCESS_FUNCTION" => "\\$.fancybox.open(\"Ваше сообщение успешно отправлено\")",
-                        "FORM_SUCCESS_FUNCTION_CORRECT_JSON" => "Y",
-                        "IBLOCK_ID" => "10",
-                        "IBLOCK_TYPE" => "feedback",
-                        "NEED_SAVE_TO_IBLOCK" => "Y",
-                        "NEED_SEND_EMAIL" => "Y"
-                    )
-                );?>
-                    <div class="find_price">
-
-                        <div class="find_price_right">
-                            Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои данные для связи<br>
-                            <div class="find_price_form">
-                                <input type="text" placeholder="Имя" class="form-call" value="">
-                                <input type="text" placeholder="Тел" class="form-call" value="">
-                                <div class="action-phone__btn">
-                                    Узнать цену
-                                </div>
-                            </div>
-                            <br>
-                            <span>согласен на обработку персональных данных</span></div>
+                    <div class="card-description__color block-color color"></div>
+                </div>
+                <div class="find_price">
+                    <div class="find_price_right">
+                        Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои данные для связи<br>
+                        <? $APPLICATION->IncludeComponent(
+                            "lema:form.ajax",
+                            "",
+                            Array(
+                                "CACHE_TIME" => "3600",
+                                "CACHE_TYPE" => "A",
+                                "EVENT_TYPE" => "7",
+                                "FORM_152_FZ" => "Согласен(-на) на обработку персональных данных",
+                                "FORM_ACTION" => "",
+                                "FORM_BTN_TITLE" => "Узнать цену",
+                                "FORM_CLASS" => "ajax-form find_price_form",
+                                "FORM_FIELDS" => "[{\"name\":\"name\",\"type\":\"text\",\"title\":\"Имя\",\"placeholder\":\"Имя\",\"default\":\"\",\"required\":\"Y\"},{\"name\":\"phone\",\"type\":\"tel\",\"title\":\"Телефон\",\"placeholder\":\"Телефон\",\"default\":\"\",\"required\":\"Y\"}]",
+                                "FORM_SUCCESS_FUNCTION" => "\$.fancybox.open(\"Ваше сообщение успешно отправлено\")",
+                                "FORM_SUCCESS_FUNCTION_CORRECT_JSON" => "Y",
+                                "IBLOCK_ID" => "10",
+                                "IBLOCK_TYPE" => "feedback",
+                                "NEED_SAVE_TO_IBLOCK" => "Y",
+                                "NEED_SEND_EMAIL" => "Y"
+                            )
+                        ); ?>
                     </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
         </div>
-        <div id="prev_qick_view"></div>
     </div>
+    <div id="prev_qick_view"></div>
+</div>
 
 
-    <? if ($arResult["NAV_RESULT"]->NavPageNomer != $arResult["NAV_RESULT"]->nEndPage): ?>
-        <div class="catalog__action">
-            <button class="catalog__btn ajax_load_btn_new"
-                    type="button"
-                    data-ajax-id="<?= $bxAjaxId ?>"
-                    data-show-more="<?= $arResult["NAV_RESULT"]->NavNum ?>"
-                    data-next-page="<?= ($arResult["NAV_RESULT"]->NavPageNomer + 1) ?>"
-                    data-max-page="<?= $arResult["NAV_RESULT"]->nEndPage ?>">
-                <?= Loc::getMessage("LEMA_CATALOG_LIST_MORE_MODELS"); ?>
-            </button>
-        </div>
-    <? endif; ?>
-
-    <div class="js-pagination">
-        <? if ($arParams["DISPLAY_BOTTOM_PAGER"] == "Y") ?>
-        <?= $arResult["NAV_STRING"]; ?>
+<? if ($arResult["NAV_RESULT"]->NavPageNomer != $arResult["NAV_RESULT"]->nEndPage): ?>
+    <div class="catalog__action">
+        <button class="catalog__btn ajax_load_btn_new"
+                type="button"
+                data-ajax-id="<?= $bxAjaxId ?>"
+                data-show-more="<?= $arResult["NAV_RESULT"]->NavNum ?>"
+                data-next-page="<?= ($arResult["NAV_RESULT"]->NavPageNomer + 1) ?>"
+                data-max-page="<?= $arResult["NAV_RESULT"]->nEndPage ?>">
+            <?= Loc::getMessage("LEMA_CATALOG_LIST_MORE_MODELS"); ?>
+        </button>
     </div>
-    <script>
+<? endif; ?>
 
-        $(document).ready(function () {
-            $(document).off('click').on('click', '[data-show-more]', function (e) {
+<div class="js-pagination">
+    <? if ($arParams["DISPLAY_BOTTOM_PAGER"] == "Y") ?>
+    <?= $arResult["NAV_STRING"]; ?>
+</div>
+<script>
 
-                e.preventDefault();
+    $(document).ready(function () {
+        $(document).off('click').on('click', '[data-show-more]', function (e) {
 
-                var btn = $(this),
-                    waitElement = btn.parent().get(0),
-                    page = btn.attr('data-next-page') * 1,
-                    id = btn.attr('data-show-more'),
-                    max = btn.attr('data-max-page') * 1;
+            e.preventDefault();
 
-                var data = {};
+            var btn = $(this),
+                waitElement = btn.parent().get(0),
+                page = btn.attr('data-next-page') * 1,
+                id = btn.attr('data-show-more'),
+                max = btn.attr('data-max-page') * 1;
 
-                console.log(page, max);
-                data['showMore'] = 1;
-                data['PAGEN_' + id] = page;
+            var data = {};
 
-                BX.showWait(waitElement);
-                btn.find('[data-show-more]').off('click');
+            console.log(page, max);
+            data['showMore'] = 1;
+            data['PAGEN_' + id] = page;
 
-                $.ajax({
-                    type: "GET",
-                    url: window.location.href,
-                    data: data,
-                    success: function (data) {
-                        BX.closeWait(waitElement);
-                        btn.attr('data-next-page', page * 1 + 1);
-                        var tmp = $($(data));
-                        var els = tmp.find('.catalog__item');
-                        $('.catalog__list').append(els);
-                        $('.js-pagination').html(tmp.find('.pagination'));
-                        if (page == max) {
-                            $('.catalog__action').hide();
-                        }
+            BX.showWait(waitElement);
+            btn.find('[data-show-more]').off('click');
+
+            $.ajax({
+                type: "GET",
+                url: window.location.href,
+                data: data,
+                success: function (data) {
+                    BX.closeWait(waitElement);
+                    btn.attr('data-next-page', page * 1 + 1);
+                    var tmp = $($(data));
+                    var els = tmp.find('.catalog__item');
+                    $('.catalog__list').append(els);
+                    $('.js-pagination').html(tmp.find('.pagination'));
+                    if (page == max) {
+                        $('.catalog__action').hide();
                     }
-                });
+                }
             });
         });
+    });
 
-    </script>
+</script>
 
-    <? if ($_REQUEST['showMore'] == '1')
-        die(); ?>
+<? if ($_REQUEST['showMore'] == '1')
+    die(); ?>
 
 
 

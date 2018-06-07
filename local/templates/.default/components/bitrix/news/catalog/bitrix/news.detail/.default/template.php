@@ -132,6 +132,32 @@ $item = $data->item();
                         </div>
                     </div>
                 <? endif; ?>
+                    <div class="find_price">
+
+                        <div class="find_price_right">
+                            Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои данные для связи<br>
+                            <? $APPLICATION->IncludeComponent(
+                                "lema:form.ajax",
+                                "",
+                                Array(
+                                    "CACHE_TIME" => "3600",
+                                    "CACHE_TYPE" => "A",
+                                    "EVENT_TYPE" => "7",
+                                    "FORM_152_FZ" => "Согласен(-на) на обработку персональных данных",
+                                    "FORM_ACTION" => "",
+                                    "FORM_BTN_TITLE" => "Узнать цену",
+                                    "FORM_CLASS" => "ajax-form find_price_form",
+                                    "FORM_FIELDS" => "[{\"name\":\"name\",\"type\":\"text\",\"title\":\"Имя\",\"placeholder\":\"Имя\",\"default\":\"\",\"required\":\"Y\"},{\"name\":\"phone\",\"type\":\"tel\",\"title\":\"Телефон\",\"placeholder\":\"Телефон\",\"default\":\"\",\"required\":\"Y\"}]",
+                                    "FORM_SUCCESS_FUNCTION" => "\$.fancybox.open(\"Ваше сообщение успешно отправлено\")",
+                                    "FORM_SUCCESS_FUNCTION_CORRECT_JSON" => "Y",
+                                    "IBLOCK_ID" => "10",
+                                    "IBLOCK_TYPE" => "feedback",
+                                    "NEED_SAVE_TO_IBLOCK" => "Y",
+                                    "NEED_SEND_EMAIL" => "Y"
+                                )
+                            ); ?>
+                    </div>
+                </div>
                 <div class="card-accordion">
                     <ul class="card-accordion__list">
                         <? if (!empty($item->propText("TYPE_FUR_AND_CARE"))): ?>
