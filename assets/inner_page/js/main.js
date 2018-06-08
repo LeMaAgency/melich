@@ -251,6 +251,12 @@ $(document).ready(function () {
     });
 
     //===============================================================
+
+
+    $(".js-feedback-form").on("click",function(){
+        $.fancybox.open($('#feedback-form'));
+    });
+
 });
 
 
@@ -266,3 +272,4 @@ function initMap() {
         map: map
     });
 }
+

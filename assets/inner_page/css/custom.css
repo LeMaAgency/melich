@@ -107,7 +107,7 @@
 .form-call:focus{
     border-color: #a98228 !important;
 }
-.find_price .form-call {
+.form-call {
     position: relative;
     font-size: 12px;
     line-height: 1;
@@ -120,6 +120,18 @@
     width: 95%;
 }
 
+.call .find_price__block{
+    width: 100%;
+    padding: 5px;
+    float: none;
+}
+.call .find_price__btn{
+    margin: 10px 0;
+}
+#feedback-form{
+    text-align: center;
+    padding: 35px;
+}
 .find_price .action-phone__btn {
     width: 100px;
     padding: 6px 0;
