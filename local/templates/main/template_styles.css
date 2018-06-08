@@ -4,3 +4,27 @@
 .clearfix {clear: both;}
 
 .test {}
+
+.footer__r {margin-top: 20px}
+
+@media (max-width: 1200px) {
+    .body-content .body-main {
+        width: 81%;
+    }
+    .page__index__slider {
+        width: 100%;
+    }
+}
+@media (max-width: 993px) {
+    .body-content .header {
+        position: static;
+
+    }
+    .body-content .body-main {
+        width: 100%;
+        float: none;
+    }
+    .page__index__inf__wrap {
+        height: auto;
+    }
+}
