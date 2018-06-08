@@ -225,7 +225,7 @@
     width: 80%;
     max-width: 1180px;
     overflow: visible;
-    max-height: 670px;
+    /*max-height: 670px;*/
 }
 
 #quick_view .card-slider {
