@@ -108,7 +108,7 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
                 </div>
                 <div class="find_price">
                     <div class="find_price_right">
-                        Чтобы узнать цену позвоните по тел 88888888888 или оставьте свои данные для связи<br>
+                        Чтобы узнать цену позвоните по тел +79282656333 или оставьте свои данные для связи<br>
                         <? $APPLICATION->IncludeComponent(
                             "lema:form.ajax",
                             "",

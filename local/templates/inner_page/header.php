@@ -70,7 +70,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
                     <img src="/assets/inner_page/img/icon-phone.png" alt="phone">
                 </div>
                 <? $APPLICATION->IncludeFile(SITE_DIR . 'include/inner_page/header/phone_link.php'); ?>
-                <div class="action-phone__btn">
+                <div class="action-phone__btn js-feedback-form">
                     <? $APPLICATION->IncludeFile(SITE_DIR . 'include/inner_page/header/phone_button_title.php'); ?>
                 </div>
             </div>
