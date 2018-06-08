@@ -6,6 +6,9 @@
 .test {}
 
 .footer__r {margin-top: 20px}
+.footer__c {
+    text-align: center;
+}
 
 @media (max-width: 1200px) {
     .body-content .body-main {
@@ -13,6 +16,11 @@
     }
     .page__index__slider {
         width: 100%;
+    }
+
+    .header__main__social__item {
+        display: inline-block;
+        margin: 20px 5px 0;
     }
 }
 @media (max-width: 993px) {

@@ -8,6 +8,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 
 <div class="footer">
     <div class="row">
+        <div class="col-24 footer__c">
+            <div data-js-core-resize-after="top"></div>
+        </div>
         <div class="col-12">
             <div class="footer__l">
                 <span><? $APPLICATION->IncludeFile(SITE_DIR . 'include/footer/copyright.php'); ?></span>

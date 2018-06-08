@@ -85,19 +85,21 @@ Loc::loadMessages(__FILE__);
                             'COMPONENT_TEMPLATE' => 'top_menu'
                         )); ?>
                     </div>
-                    <div class="header__main__phone">
-                        <div class="header__main__phone__icon">
-                            <img src="/assets/img/icon/phone.png" alt=""/>
+                    <div class="header__main__block-mobile" data-js-core-resize="top" data-js-core-resize-width="lg">
+                        <div class="header__main__phone">
+                            <div class="header__main__phone__icon">
+                                <img src="/assets/img/icon/phone.png" alt=""/>
+                            </div>
+                            <div class="header__main__phone__number">
+                                <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/phone_link.php'); ?>
+                            </div>
+                            <div class="header__main__phone__btn">
+                                <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/order_link.php'); ?>
+                            </div>
                         </div>
-                        <div class="header__main__phone__number">
-                            <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/phone_link.php'); ?>
+                        <div class="header__main__social">
+                            <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/social_links.php'); ?>
                         </div>
-                        <div class="header__main__phone__btn">
-                            <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/order_link.php'); ?>
-                        </div>
-                    </div>
-                    <div class="header__main__social">
-                        <? $APPLICATION->IncludeFile(SITE_DIR . 'include/header/social_links.php'); ?>
                     </div>
                 </div>
         </div>
