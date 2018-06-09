@@ -25,6 +25,9 @@ $item = $data->item();
                     </span>
                 </button>
             </div>
+            <div class="btn-back">
+                <a href="/" class="btn-back-control" title="Назад">Назад</a>
+            </div>
 
             <? if ($item->get("ARRAY_CHECK")): ?>
                 <div class="card-slider__for slider-for">
