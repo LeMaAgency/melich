@@ -24,7 +24,7 @@
   }
   
   @media screen and (max-width: 768px) {
-    position: absolute;
+    position: fixed;
     left: -100%;
     transition: all 0.2s ease;
     z-index: 110;
