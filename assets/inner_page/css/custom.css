@@ -80,7 +80,7 @@
     margin-top: 20px;
 }
 .find_price{
-    text-align: center;
+    /*text-align: center;*/
     display: inline-block;
 }
 .find_price_left {
@@ -89,7 +89,7 @@
 }
 
 .find_price_right {
-    width: 60%;
+    width: 100%;
     float: right;
 }
 
@@ -145,6 +145,7 @@
 .find_price__block{
     width: 35%;
     float: left;
+    margin-bottom: 10px;
 }
 .find_price__btn{
     display: inline-table;
