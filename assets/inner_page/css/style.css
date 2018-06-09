@@ -3531,8 +3531,8 @@ li.fancybox-thumbs-loading {
       padding: 40px 55px 0; } }
   @media screen and (max-width: 768px) {
     .card-description {
-      padding-left: 30px;
-      padding-right: 30px; }
+      padding-left: 0px;
+      padding-right: 0px; }
       .card-description .breadcrumbs__list {
         flex-wrap: wrap; }
       .card-description__article {
@@ -3623,6 +3623,9 @@ li.fancybox-thumbs-loading {
   @media screen and (max-width: 640px) {
     .popular-model .catalog__item {
       width: 100%; } }
+
+.popup .hamburger-btn {
+  display: none; }
 
 .block-color {
   display: flex;
