@@ -10,7 +10,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     </p>
     <? $APPLICATION->IncludeFile(SITE_DIR . 'include/inner_page/footer/developer.php'); ?>
 </footer>
-<div id="feedback-form">
+<div id="feedback-form" style="display:none;">
     <h2>Заказать звонок</h2>
     <?$APPLICATION->IncludeComponent(
 		"lema:form.ajax",
