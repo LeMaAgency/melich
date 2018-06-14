@@ -422,3 +422,28 @@
         display: block;
     }
 }
+
+
+
+.news__detail {
+    padding: 20px;
+    font-family: "Garamond Premiere Pro", sans-serif;
+}
+.news__detail__img {
+    margin-bottom: 20px;
+}
+.news__detail__title {
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+    padding-bottom: 37px;
+    padding-top: 37px;
+    margin-bottom: 0;
+}
+.news__detail__date {
+
+}
+.news__detail__text {
+
+}
