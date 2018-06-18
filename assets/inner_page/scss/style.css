@@ -1887,10 +1887,10 @@ li.fancybox-thumbs-loading {
   @media screen and (max-width: 992px) {
     .catalog__item {
       width: 50%;
-      height: 400px;
+      height: 525px;
       margin: 0 0 1px; }
     .catalog__link img {
-      height: 400px; }
+      height: 525px; }
     .catalog__action {
       height: 70px; }
     .catalog__btn {

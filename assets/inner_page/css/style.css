@@ -1312,20 +1312,16 @@ li.fancybox-thumbs-loading {
   background-color: #dadada;
   z-index: 110; }
   .nav-bar__logo {
-    display: none;
     width: 130px;
     padding-bottom: 26px;
-    padding: 0;
     margin: 0 auto; }
   @media screen and (max-width: 1366px) {
     .nav-bar {
-      padding-top: 30px;
-      padding-top: 0;}
+      padding-top: 30px; }
       .nav-bar__logo {
         padding-bottom: 20px; } }
   @media screen and (max-width: 768px) {
     .nav-bar {
-        top: 0;
       position: fixed;
       left: -100%;
       transition: all 0.2s ease;
@@ -1487,8 +1483,6 @@ li.fancybox-thumbs-loading {
     .main-nav__link:hover {
       color: #9f8234; }
   .main-nav__text {
-    text-align: right;
-    padding-right: 20px;
     font-family: "Garamond Premiere Pro", sans-serif;
     font-size: 11px;
     margin-bottom: 28px;
@@ -1893,10 +1887,10 @@ li.fancybox-thumbs-loading {
   @media screen and (max-width: 992px) {
     .catalog__item {
       width: 50%;
-      height: 400px;
+      height: 525px;
       margin: 0 0 1px; }
     .catalog__link img {
-      height: 400px; }
+      height: 525px; }
     .catalog__action {
       height: 70px; }
     .catalog__btn {
@@ -1907,9 +1901,9 @@ li.fancybox-thumbs-loading {
   @media screen and (max-width: 570px) {
     .catalog__item {
       width: 50%;
-      height: 325px; }
+      height: 425px; }
     .catalog__link img {
-      height: 325px; }
+      height: 425px; }
     .catalog__btn {
       font-size: 16px; }
       .catalog__btn::before, .catalog__btn::after {
@@ -3978,22 +3972,10 @@ yx-axis
 .mCSB_scrollTools_vertical.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger_bar,
 .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerRail {
-  -webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s,
- margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
- margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
- opacity .2s ease-in-out, background-color .2s ease-in-out;
-  -moz-transition: width .2s ease-out .2s, height .2s ease-out .2s,
- margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
- margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
- opacity .2s ease-in-out, background-color .2s ease-in-out;
-  -o-transition: width .2s ease-out .2s, height .2s ease-out .2s,
- margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
- margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
- opacity .2s ease-in-out, background-color .2s ease-in-out;
-  transition: width .2s ease-out .2s, height .2s ease-out .2s,
- margin-left .2s ease-out .2s, margin-right .2s ease-out .2s,
- margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s,
- opacity .2s ease-in-out, background-color .2s ease-in-out; }
+  -webkit-transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
+  -moz-transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
+  -o-transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out;
+  transition: width .2s ease-out .2s, height .2s ease-out .2s, margin-left .2s ease-out .2s, margin-right .2s ease-out .2s, margin-top .2s ease-out .2s, margin-bottom .2s ease-out .2s, opacity .2s ease-in-out, background-color .2s ease-in-out; }
 
 /*
 ------------------------------------------------------------------------------------------------------------------------
