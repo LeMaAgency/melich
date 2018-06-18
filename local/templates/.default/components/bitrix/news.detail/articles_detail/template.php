@@ -16,9 +16,10 @@ $this->setFrameMode(true);
     <div class="news__detail__title">
         <h3><?=$arResult["NAME"]?></h3>
     </div>
-    <div class="news__detail__img">
+    <div class="news__detail__date"><span></span></div>
+    <div class="news__detail__text">
         <img
-                class="detail_picture"
+                class="news__detail__img"
                 border="0"
                 src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
                 width="<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>"
@@ -26,10 +27,7 @@ $this->setFrameMode(true);
                 alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
                 title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
         />
-        <img border="0" src="/upload/iblock/a7e/a7e19bd1c0acf03a9e274f90b6f5741f.jpg" width="434" height="322">
-    </div>
-    <div class="news__detail__date"><span></span></div>
-    <div class="news__detail__text">
+        <img class="news__detail__img" border="0" src="/upload/iblock/a7e/a7e19bd1c0acf03a9e274f90b6f5741f.jpg" width="434" height="322">
         <p><?=$arResult["FIELDS"]["PREVIEW_TEXT"];unset($arResult["FIELDS"]["PREVIEW_TEXT"]);?></p>
     </div>
 </div>

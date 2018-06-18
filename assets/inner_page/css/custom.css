@@ -431,6 +431,9 @@
 }
 .news__detail__img {
     margin-bottom: 20px;
+    margin-right: 20px;
+    float: left;
+    height: auto;
 }
 .news__detail__title {
     font-size: 30px;
@@ -439,6 +442,7 @@
     text-transform: uppercase;
     padding-bottom: 37px;
     padding-top: 37px;
+    padding-left: 20px;
     margin-bottom: 0;
 }
 .news__detail__date {
@@ -446,4 +450,12 @@
 }
 .news__detail__text {
 
+}
+@media (max-width: 1000px) {
+    .news__detail__title ,
+    .news__detail__img {
+        float: none;
+        margin-right: 0;
+        padding-left: 0;
+    }
 }
