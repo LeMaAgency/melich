@@ -1881,9 +1881,9 @@ li.fancybox-thumbs-loading {
       width: 100%; }
       .catalog__item {
         width: 33.2%;
-        height: 450px; }
+        height: 625px; }
       .catalog__link img {
-        height: 450px; } }
+        height: 620px; } }
   @media screen and (max-width: 992px) {
     .catalog__item {
       width: 50%;
@@ -1908,6 +1908,10 @@ li.fancybox-thumbs-loading {
       font-size: 16px; }
       .catalog__btn::before, .catalog__btn::after {
         display: none; } }
+  .popular-model .catalog__item {
+    height: 600px; }
+  .popular-model .catalog__link img {
+    height: 800px; }
 
 .catalog-filter {
   flex-shrink: 0;
