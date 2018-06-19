@@ -3538,8 +3538,8 @@ li.fancybox-thumbs-loading {
       padding: 40px 55px 0; } }
   @media screen and (max-width: 768px) {
     .card-description {
-      padding-left: 0px;
-      padding-right: 0px; }
+      padding-left: 10px;
+      padding-right: 10px; }
       .card-description .breadcrumbs__list {
         flex-wrap: wrap; }
       .card-description__article {
