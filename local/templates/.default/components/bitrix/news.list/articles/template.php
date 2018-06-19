@@ -31,7 +31,7 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
         <? foreach ($data->items() as $item): ?>
             <article class="articles-item" <?=$item->editId();?>>
                 <a class="articles-item__link" href="<?= $item->detailUrl(); ?>">
-                    <div class="articles-item__img">
+                    <div class="articles-item__img" >
                         <img src="<?= $item->previewPicture(); ?>"
                              data-object-fit="cover"
                              alt="<?= $item->getName(); ?>">

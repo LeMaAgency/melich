@@ -22,6 +22,7 @@
 
 .articles-item {
   width: 50%;
+  background-color: #333333;
 
   &__link {
     display: flex;
@@ -140,6 +141,8 @@
     color: #cfcfcf;
 
     margin-bottom: 20px;
+    overflow: hidden;
+    height: 233px;
   }
 
   &__icon {
