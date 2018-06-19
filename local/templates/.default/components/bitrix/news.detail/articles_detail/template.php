@@ -29,8 +29,8 @@ $this->setFrameMode(true);
                 alt="<?= $arResult["DETAIL_PICTURE"]["ALT"] ?>"
                 title="<?= $arResult["DETAIL_PICTURE"]["TITLE"] ?>"
         />
-        <img class="news__detail__img" border="0" src="/upload/iblock/a7e/a7e19bd1c0acf03a9e274f90b6f5741f.jpg"
-             width="434" height="322">
+ <!--       <img class="news__detail__img" border="0" src="/upload/iblock/a7e/a7e19bd1c0acf03a9e274f90b6f5741f.jpg"
+             width="434" height="322">-->
 
         <? if ($arResult["FIELDS"]["DETAIL_TEXT"]): ?>
             <p>
