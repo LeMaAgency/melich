@@ -31,12 +31,18 @@ $this->setFrameMode(true);
         />
         <img class="news__detail__img" border="0" src="/upload/iblock/a7e/a7e19bd1c0acf03a9e274f90b6f5741f.jpg"
              width="434" height="322">
-        <p><?= $arResult["FIELDS"]["PREVIEW_TEXT"];
-            unset($arResult["FIELDS"]["PREVIEW_TEXT"]); ?>
-        </p>
-        <p><?= $arResult["FIELDS"]["DETAIL_TEXT"];
-            unset($arResult["FIELDS"]["DETAIL_TEXT"]); ?>
-        </p>
+
+        <? if ($arResult["FIELDS"]["DETAIL_TEXT"]): ?>
+            <p>
+                <?= $arResult["FIELDS"]["DETAIL_TEXT"];
+                unset($arResult["FIELDS"]["DETAIL_TEXT"]); ?>
+            </p>
+        <? else: ?>
+            <p>
+                <?= $arResult["FIELDS"]["PREVIEW_TEXT"];
+                unset($arResult["FIELDS"]["PREVIEW_TEXT"]); ?>
+            </p>
+        <? endif; ?>
     </div>
 </div>
 
