@@ -410,7 +410,8 @@
     position: relative;
 }
 .btn-back-control {
-
+    position: relative;
+    padding-left: 40px;
 }
 
 .btn-back-control:before {
@@ -428,6 +429,7 @@
 @media (max-width: 769px) {
     .btn-back {
         display: block;
+        padding-left: 20px;
     }
 }
 
