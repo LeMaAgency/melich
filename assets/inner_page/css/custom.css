@@ -307,6 +307,12 @@
     z-index: 99995;
     cursor: pointer;
 }
+@media (max-width: 780px) {
+    #next_qick_view,
+    #prev_qick_view {
+        top: 10%;
+    }
+}
 
 #next_qick_view:hover, #prev_qick_view:hover {
     background-color: rgba(123, 123, 123, 0.5);
