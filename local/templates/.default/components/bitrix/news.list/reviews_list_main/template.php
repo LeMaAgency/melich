@@ -80,13 +80,13 @@ $data = new \Lema\Template\TemplateHelper($this);
         <? endforeach; ?>
     </div>
 
-    <div class="page__index__inf__tabs__block__comment__btn">
+    <!--<div class="page__index__inf__tabs__block__comment__btn">
         <a href="/"
-           title="<?= Loc::getMessage("LEMA_REVIEWS_LIST_MAIN_ALL"); ?>"
+           title="<?/*= Loc::getMessage("LEMA_REVIEWS_LIST_MAIN_ALL"); */?>"
            class="page__index__inf__tabs__block__comment__btn__control">
-            <?= Loc::getMessage("LEMA_REVIEWS_LIST_MAIN_ALL"); ?>
+            <?/*= Loc::getMessage("LEMA_REVIEWS_LIST_MAIN_ALL"); */?>
         </a>
-    </div>
+    </div>-->
 <? endif; ?>
 
 <!-- list -->
