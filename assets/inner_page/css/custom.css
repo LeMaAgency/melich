@@ -80,6 +80,8 @@
     margin-top: 20px;
 }
 .find_price{
+    font-family: "Garamond Premiere Pro", sans-serif;
+    font-size: 18px;
     /*text-align: center;*/
     display: inline-block;
 }
@@ -100,7 +102,7 @@
 }
 .find_price__label{
     display: block;
-    font-size: 10px;
+    font-size: 15px;
     text-align: left;
     font-style: italic;
     margin-top: 20px;

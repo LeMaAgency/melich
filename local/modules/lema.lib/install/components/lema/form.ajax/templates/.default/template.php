@@ -11,7 +11,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         </div>
     <?endforeach;?>
     <div class="it-block checkbox" style="border:1px solid transparent">
-        <label style="margin:5px 10px;">
+        <label style="margin:2px 10px;">
             <input type="checkbox" value="1" class="checkbox-152-fz">
             <?=$component->get152FZ();?>
         </label>

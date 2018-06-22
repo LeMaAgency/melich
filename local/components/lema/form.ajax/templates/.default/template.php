@@ -13,7 +13,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         <input type="submit" value="<?=$component->getBtnTitle()?>" class="btn">
     </div>
     <div class="it-block checkbox find_price__label" style="border:1px solid transparent">
-        <label style="margin:5px 10px;">
+        <label style="margin:5px 0px;">
             <input type="checkbox" value="1" class="checkbox-152-fz">
             <?=$component->get152FZ();?>
         </label>
