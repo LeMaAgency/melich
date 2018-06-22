@@ -36,3 +36,14 @@
         height: auto;
     }
 }
+
+
+/*  Новые правки */
+
+.page__index__slider {
+    width: 100%;
+}
+
+.page__index__inf {
+    display: none;
+}
