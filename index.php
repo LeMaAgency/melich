@@ -283,5 +283,33 @@ $APPLICATION->SetTitle("MELIH");
             </div>
         </div>
     </div>
+    <div class="page__index__text">
+        <p>Более <b>30 лет</b> меховая мы чтим традиции качества и стиля, заложенные основателем.<br><br>
+            Приглашаем Вас на нашу фабрику, <br>где расположен, пожалуй, самый крупный шоурум на ЮГЕ России</p>
+        <span>ФАБРИКА МЕХА И КОЖИ</span>
+    </div>
+    <div class="page__index__block">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-24 item">
+                    <div class="item__wrap">
+                        <div class="item__bg" style="background-image: url('/assets/img/new/IMG_9689.jpg')"></div>
+                        <div class="item__title"><span>Мутон</span></div>
+                        <div class="item__btn">
+                            <a href=""><span>Подробнее о коллекции</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-24  item">
+                    <div class="item__wrap">
+                        <div class="item__bg" style="background-image: url('/assets/img/new/IMG_9757.jpg')"></div>
 
+                        <div class="item__btn big">
+                            <a href=""><span>О компании</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

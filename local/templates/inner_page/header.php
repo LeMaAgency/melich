@@ -21,14 +21,17 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
         ->addCssArray(array(
             '/assets/inner_page/css/style.css?v=6',
             '/assets/inner_page/css/custom.css',
+            '/assets/custom_all//style.css',
         ))
         ->addJsArray(array(
             '/assets/inner_page/js/jquery.min.js',
+            '/assets/custom_all//script.js',
             '/assets/inner_page/js/object-fit-polyfill.js',
             '/assets/inner_page/js/jquery.fancybox.min.js',
             '/assets/inner_page/js/slick.min.js',
             '/assets/inner_page/js/jquery.mCustomScrollbar.concat.min.js',
             '/assets/inner_page/js/main.js?v=4',
+
         ));
     ?>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnVwscjfcA78bKndhDTdwKs6c4k9awWXE&amp;callback=initMap" type="text/javascript" async defer></script>
