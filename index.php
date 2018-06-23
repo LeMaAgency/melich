@@ -284,7 +284,7 @@ $APPLICATION->SetTitle("MELIH");
         </div>
     </div>
     <div class="page__index__text">
-        <p>БОЛЕЕ 30 ЛЕТ НАША МЕХОВАЯ ФАБРИКА ЧТИТ ТРАДИЦИИ КАЧЕСТВА И СТИЛЯ, ЗАЛОЖЕННЫЕ ОСНОВАТЕЛЕМ…</p>
+        <p>БОЛЕЕ 30 ЛЕТ НАША МЕХОВАЯ ФАБРИКА ЧТИТ ТРАДИЦИИ КАЧЕСТВА И СТИЛЯ, <br><br>ЗАЛОЖЕННЫЕ ОСНОВАТЕЛЕМ…</p>
         <span>ФАБРИКА МЕХА И КОЖИ</span>
     </div>
     <div class="page__index__block">
@@ -294,7 +294,7 @@ $APPLICATION->SetTitle("MELIH");
                     <div class="item__wrap">
                         <div class="item__bg" style="background-image: url('/assets/img/new/IMG_9689.jpg')"></div>
                         <div class="item__btn">
-                            <a href=""><span>Посмотреть каталог</span></a>
+                            <a href="/catalog/"><span>Посмотреть каталог</span></a>
                         </div>
                     </div>
                 </div>
@@ -303,7 +303,7 @@ $APPLICATION->SetTitle("MELIH");
                         <div class="item__bg" style="background-image: url('/assets/img/new/IMG_9757.jpg')"></div>
 
                         <div class="item__btn big">
-                            <a href=""><span>О компании</span></a>
+                            <a href="/about/"><span>О компании</span></a>
                         </div>
                     </div>
                 </div>
