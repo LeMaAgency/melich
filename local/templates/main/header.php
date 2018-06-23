@@ -84,7 +84,7 @@ Loc::loadMessages(__FILE__);
                 </ul>
                 <div class="mob-menu-footer">
                     <div class="header__main__phone__btn">
-                        <a href="#" title="Заказать звонок" class="header__main__phone__btn__control">Заказать звонок</a>
+                        <a href="tel:89282656333" title="Позвонить" class="header__main__phone__btn__control">Позвонить нам</a>
                     </div>
                 </div>
                 <div class="mob-menu-icon">
