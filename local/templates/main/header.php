@@ -103,7 +103,11 @@ Loc::loadMessages(__FILE__);
             <span></span>
         </div>
         <div class="menu-top">
-            <? $APPLICATION->IncludeComponent('bitrix:menu', 'top_menu', array(
+            <div class="container">
+                <div class="menu-top-logo">
+                <img src="/assets/inner_page/img/header-logo.png" alt="banner">
+            </div>
+                <? $APPLICATION->IncludeComponent('bitrix:menu', 'top_menu', array(
                 'ALLOW_MULTI_SELECT' => 'N',
                 'ROOT_MENU_TYPE' => 'top',
                 'CHILD_MENU_TYPE' => 'left',
@@ -117,6 +121,7 @@ Loc::loadMessages(__FILE__);
                 'USE_EXT' => 'Y',
                 'COMPONENT_TEMPLATE' => 'top_menu'
             )); ?>
+            </div>
         </div>
         <div class="header container-fluid">
             <div class="header__main">

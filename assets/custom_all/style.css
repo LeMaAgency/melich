@@ -210,6 +210,14 @@
 /*-webkit-transform: scaleX(1);*/
 /*transform: scaleX(1);*/
 /*}*/
+.menu-top .content {
+    position: relative;
+}
+.menu-top-logo {
+    position: absolute;
+    left: 0;
+    top: -8px;
+}
 
 .page__index__block {
     clear: both;
