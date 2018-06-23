@@ -29,7 +29,7 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Доставка и оплата", 
+		"Где купить", 
 		"/shipping/", 
 		Array(), 
 		Array(), 

@@ -1,1 +1,1 @@
-<a class="shipping__card-phone" href="tel:84957245437">8 (495) 724-54-37</a>
+<a class="shipping__card-phone" href="tel:89282656333">+79282656333</a>
