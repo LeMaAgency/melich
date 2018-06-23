@@ -172,12 +172,12 @@ $APPLICATION->SetTitle("О компании");
     <!--Start moving-forward-->
     <div class="moving-forward">
         <div class="flex-container flex-direction-tablet">
-            <div class="column-min">
+			<?/* <div class="column-min">
                 <div class="moving-forward__photo">
                     <img src="<?=SITE_DIR."assets/inner_page/img/moving-forward-photo.jpg"?>" data-object-fit="cover" alt="">
                 </div>
-            </div>
-            <div class="column-large">
+			</div>*/?>
+            <div class="column-large width_100">
                 <div class="content-container moving-forward__container">
                     <div class="heading">
                         <h2 class="heading__title"><? $APPLICATION->IncludeFile(SITE_DIR . 'include/about/progress/title.php'); ?></h2>
@@ -191,12 +191,12 @@ $APPLICATION->SetTitle("О компании");
     </div>
     <!--End moving-forward-->
     <!--Start block-photo-->
-    <section class="block-photo">
+    <!--<section class="block-photo">
         <div class="block-photo__img">
-            <img src="<?=SITE_DIR."assets/inner_page/img/block-photo-1.jpg"?>" data-object-fit="cover" alt="">
+			<img src="<?/*=SITE_DIR."assets/inner_page/img/block-photo-1.jpg"*/?>" data-object-fit="cover" alt="">
         </div>
         <div class="block-photo__img">
-            <img src="<?=SITE_DIR."assets/inner_page/img/block-photo-2.jpg"?>" data-object-fit="cover" alt="">
+			<img src="<?/*=SITE_DIR."assets/inner_page/img/block-photo-2.jpg"*/?>" data-object-fit="cover" alt="">
         </div>
-    </section>
+    </section>-->
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
