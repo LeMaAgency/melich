@@ -294,9 +294,8 @@ $APPLICATION->SetTitle("MELIH");
                 <div class="col-12 col-lg-24 item">
                     <div class="item__wrap">
                         <div class="item__bg" style="background-image: url('/assets/img/new/IMG_9689.jpg')"></div>
-                        <div class="item__title"><span>Мутон</span></div>
                         <div class="item__btn">
-                            <a href=""><span>Подробнее о коллекции</span></a>
+                            <a href=""><span>Посмотреть каталог</span></a>
                         </div>
                     </div>
                 </div>

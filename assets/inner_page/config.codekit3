@@ -506,13 +506,13 @@
 		},
 	"\/img\/shipping-photo.jpg": {
 		"ft": 16384,
-		"iS": 43397,
+		"iS": 60485,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/shipping-photo.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/img\/slider-1.jpg": {

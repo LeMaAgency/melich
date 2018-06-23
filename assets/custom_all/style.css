@@ -32,11 +32,15 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #8495a0;
-    transition: color .2s
+    transition: color .2s;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
 .mob-menu-nav li a:hover, .mob-menu-nav li a:focus {
-    color: #fff
+    color: #fff;
+    padding: 15px 40px;
+    font-size: 13px;
 }
 
 .mob-menu-footer {
