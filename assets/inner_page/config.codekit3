@@ -208,6 +208,50 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/img\/cat\/1.jpeg": {
+		"ft": 16384,
+		"iS": 82441,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/cat\/1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/cat\/2.jpeg": {
+		"ft": 16384,
+		"iS": 80271,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/cat\/2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/cat\/3.jpeg": {
+		"ft": 16384,
+		"iS": 49714,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/cat\/3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/img\/cat\/4.jpeg": {
+		"ft": 16384,
+		"iS": 75780,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/img\/cat\/4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/img\/catalog-1.jpg": {
 		"ft": 16384,
 		"iS": 125697,
@@ -243,7 +287,7 @@
 		},
 	"\/img\/catalog-header-bg.jpg": {
 		"ft": 16384,
-		"iS": 244421,
+		"iS": 49714,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/img\/catalog-header-bg.jpg",

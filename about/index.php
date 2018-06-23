@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Для Вас");
+$APPLICATION->SetTitle("О компании");
 ?>
     <section class="about">
         <div class="flex-container flex-reverse-tablet">
@@ -89,7 +89,7 @@ $APPLICATION->SetTitle("Для Вас");
             </div>
             <div class="column-min about-photo">
                 <div class="about-photo__img">
-                    <img src="<?=SITE_DIR."assets/inner_page/img/about-director-photo-2.jpg"?>" data-object-fit="cover" alt="">
+                    <img src="<?=SITE_DIR."assets/inner_page/img/about-director-photo.jpg"?>" data-object-fit="cover" alt="">
                 </div>
             </div>
         </div>
