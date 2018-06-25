@@ -77,7 +77,62 @@ $APPLICATION->SetTitle("Контакты");
             </div>
         </div>
         <div class="col-12">
-            <section class="page__index__feedback">
+			 <section class="page__index__feedback">
+				<!--        <div class="page__index__feedback__title">-->
+				<!--            <span>специальное предложение для вас</span>-->
+				<!--        </div>-->
+				<div class="page__index__feedback__text">
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:main.include",
+						"",
+						Array(
+							"AREA_FILE_SHOW" => "file",
+							"PATH" => "/include/contacts/feedback_form_title.php"
+						)
+					);?>
+
+				</div>
+				<?$APPLICATION->IncludeComponent(
+	"lema:form.ajax", 
+	"contacts", 
+	array(
+		"CACHE_TIME" => "3600",
+		"CACHE_TYPE" => "A",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO",
+		"EVENT_TYPE" => "59",
+		"FORM_152_FZ" => "Я согласен на обработку <a href=\"#popup-personal\" data-fancybox=\"\">персональных данных</a>",
+		"FORM_ACTION" => "",
+		"FORM_BTN_TITLE" => "Связаться с нами",
+		"FORM_CLASS" => "ajax-form page__index__feedback__form form",
+		"FORM_FIELDS" => "[{\"name\":\"name\",\"type\":\"text\",\"title\":\"Имя\",\"placeholder\":\"Ваше имя*\",\"default\":\"\",\"required\":\"Y\"},{\"name\":\"phone\",\"type\":\"tel\",\"title\":\"Телефон\",\"placeholder\":\"Введите Ваш телефон*\",\"default\":\"\",\"required\":\"Y\"}]",
+		"FORM_SUCCESS_FUNCTION" => "\$.fancybox.open(\"Ваше сообщение успешно отправлено\")",
+		"FORM_SUCCESS_FUNCTION_CORRECT_JSON" => "Y",
+		"IBLOCK_ID" => "12",
+		"IBLOCK_TYPE" => "feedback",
+		"NEED_SAVE_TO_IBLOCK" => "Y",
+		"NEED_SEND_EMAIL" => "Y",
+		"COMPONENT_TEMPLATE" => "contacts"
+	),
+	false
+);?>
+<div class="popup popup-new" id="popup-personal">
+			<div class="popup-wrap">
+				<div class="popup-personal">
+					<?$APPLICATION->IncludeComponent(
+						"bitrix:main.include",
+						"",
+						Array(
+							"AREA_FILE_SHOW" => "file",
+							"PATH" => "/include/contacts/feedback_form_treatment.php"
+						)
+					);?>
+				</div>
+			</div>
+		</div>
+
+            </section>
+			<?/*<section class="page__index__feedback">
                 <!--        <div class="page__index__feedback__title">-->
                 <!--            <span>специальное предложение для вас</span>-->
                 <!--        </div>-->
@@ -148,7 +203,7 @@ $APPLICATION->SetTitle("Контакты");
                         <span>Ваше сообщение успешно отправлено</span>
                     </div>
                 </form>
-            </section>
+			</section>*/?>
         </div>
     </div>
 
