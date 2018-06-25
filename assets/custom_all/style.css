@@ -474,7 +474,7 @@ width: 100%;
 }
 
 
-.popup {
+.popup-new {
     display: none;
     max-width: 600px;
 }
@@ -995,4 +995,18 @@ width: 100%;
         padding-top: 0;
         padding-bottom: 0;
     }
+}
+
+.quick_prev_btn {
+    display: block;
+    border: 0;
+    background: transparent!important;
+}
+.quick_prev_btn svg {
+    fill: #ffffff4a;
+    height: 50px;
+}
+
+.quick_prev_btn:hover svg {
+    fill: #fff;
 }

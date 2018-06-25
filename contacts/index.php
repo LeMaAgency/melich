@@ -103,7 +103,7 @@ $APPLICATION->SetTitle("Контакты");
                             </svg>
                             <span class="form-checkbox-text">Я согласен на обработку <a href="#popup-personal" data-fancybox="">персональных данных</a></span>
                         </label>
-                        <div class="popup" id="popup-personal">
+                        <div class="popup popup-new" id="popup-personal">
                             <div class="popup-wrap">
                                 <div class="popup-personal">
                                     <b>1.Сбор информации</b><br><br>
