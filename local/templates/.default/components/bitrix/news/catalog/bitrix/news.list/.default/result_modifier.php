@@ -18,3 +18,5 @@ if(!empty($arResult['ITEMS']))
         $arResult['ITEMS'][$k]['PREVIEW_PICTURE_SRC'] = Helper::getImageWatermarkSrc($arItem['PREVIEW_PICTURE'], $watermarkParams);
     }
 }
+
+
