@@ -11,6 +11,18 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+$arResult["SECTION_ID"] = CIBlockFindTools::GetSectionID(
+    $arResult["VARIABLES"]["SECTION_ID"],
+    $arResult["VARIABLES"]["SECTION_CODE"],
+    array("IBLOCK_ID" => $arParams["IBLOCK_ID"])
+);
+$res = CIBlockSection::GetByID($arResult["SECTION_ID"]);
+if($ar_res = $res->GetNext())
+  $arResult["SECTION_IMAGE"] = CFile::getPath($ar_res['PICTURE']);
+if(!empty($arResult["SECTION_IMAGE"])){
+	$APPLICATION->AddViewContent("banner-image", "style='background-image:url(".$arResult["SECTION_IMAGE"].");'", 100);
+}
 ?>
 
 <?if($arParams["USE_RSS"]=="Y"):?>
