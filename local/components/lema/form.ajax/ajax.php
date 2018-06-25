@@ -29,47 +29,73 @@ foreach($dataFields as $field)
 $form = new \Lema\Forms\AjaxForm();
 
 $form->setRules($rules)->setFields($checkData);
-
-
+if(isset($form->getFields()["contacts-check"])){
+	require_once $_SERVER["DOCUMENT_ROOT"]."/recaptchalib.php";
+	// ваш секретный ключ
+	$secret = "6LeRoGAUAAAAAC_iBQsGhqv_LGsv2LP3fym3DuM2";
+	 
+	// пустой ответ
+	$response = null;
+	 
+	// проверка секретного ключа
+	$reCaptcha = new ReCaptcha($secret);
+}
 if($form->validate())
 {
-    $fields = array();
-    foreach($dataFields as $field)
-        $fields[mb_strtoupper($field['name'], SITE_CHARSET)] = $form->getField($field['name']);
-
     $status = true;
-    //отправка сообщения с событием $arParams['EVENT_TYPE']
-    if(isset($arParams['NEED_SEND_EMAIL'], $arParams['EVENT_TYPE']) && $arParams['NEED_SEND_EMAIL'] === 'Y')
-    {
-        $res = \CEventType::GetList(array('ID' => $arParams['EVENT_TYPE']));
-        if(!($row = $res->Fetch()))
-            $status = false;
-        if($status)
-            $status = $status && $form->sendMessage($row['EVENT_NAME'], $fields);
-    }
-
-    //добавление записи в инфоблок с ID = $arParams['IBLOCK_ID']
-    if(isset($arParams['NEED_SAVE_TO_IBLOCK'], $arParams['IBLOCK_ID']) && $arParams['NEED_SAVE_TO_IBLOCK'] === 'Y')
-    {
-        $previewText = null;
-        foreach($form->getFields() as $field => $value)
-            $previewText .= htmlspecialcharsbx((isset($orderedDataFields[$field]['title']) ? $orderedDataFields[$field]['title'] : $field) . ': ' . $value) . PHP_EOL;
-        $status = $status && $form->addRecord($arParams['IBLOCK_ID'], array(
-            'NAME' => $form->getField('name'),
-            'PREVIEW_TEXT' => $previewText,
-            'ACTIVE' => 'N',
-            'PROPERTY_VALUES' => $fields,
-        ));
-    }
+	if(isset($form->getFields()["contacts-check"])){
+		if ($_POST["g-recaptcha-response"]) {
+			$response = $reCaptcha->verifyResponse(
+			   $_SERVER["REMOTE_ADDR"],
+			   $_POST["g-recaptcha-response"]
+			);
+		}
+	   if ($response !== null && $response->success) {
+		   $status = true;
+	   }else{
+		   $errors['recaptcha'] = 'Проверка с помощью ReCaptcha не была пройдена!';
+		   $status = false;
+	   }
+	}
+	if($status){
+		$fields = array();
+		foreach($dataFields as $field)
+			$fields[mb_strtoupper($field['name'], SITE_CHARSET)] = $form->getField($field['name']);
+	
+		$status = true;
+		//отправка сообщения с событием $arParams['EVENT_TYPE']
+		if(isset($arParams['NEED_SEND_EMAIL'], $arParams['EVENT_TYPE']) && $arParams['NEED_SEND_EMAIL'] === 'Y')
+		{
+			$res = \CEventType::GetList(array('ID' => $arParams['EVENT_TYPE']));
+			if(!($row = $res->Fetch()))
+				$status = false;
+			if($status)
+				$status = $status && $form->sendMessage($row['EVENT_NAME'], $fields);
+		}
+	
+		//добавление записи в инфоблок с ID = $arParams['IBLOCK_ID']
+		if(isset($arParams['NEED_SAVE_TO_IBLOCK'], $arParams['IBLOCK_ID']) && $arParams['NEED_SAVE_TO_IBLOCK'] === 'Y')
+		{
+			$previewText = null;
+			foreach($form->getFields() as $field => $value)
+				$previewText .= htmlspecialcharsbx((isset($orderedDataFields[$field]['title']) ? $orderedDataFields[$field]['title'] : $field) . ': ' . $value) . PHP_EOL;
+			$status = $status && $form->addRecord($arParams['IBLOCK_ID'], array(
+				'NAME' => $form->getField('name'),
+				'PREVIEW_TEXT' => $previewText,
+				'ACTIVE' => 'N',
+				'PROPERTY_VALUES' => $fields,
+			));
+		}
+	}
 
     if($status)
     {
         echo json_encode(array('status' => true));
     }
     else
-    {
-        echo json_encode(array('errors' => $form->getErrors()));
+    {  
+		 echo json_encode( array('errors' =>array_merge($errors,  $form->getErrors())));
     }
 }
-else
-    echo json_encode(array('errors' => $form->getErrors()));
+else  
+	echo json_encode( array('errors' =>array_merge($errors,  $form->getErrors())));

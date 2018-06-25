@@ -31,6 +31,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
             '/assets/inner_page/js/slick.min.js',
             '/assets/inner_page/js/jquery.mCustomScrollbar.concat.min.js',
             '/assets/inner_page/js/main.js?v=4',
+            '//www.google.com/recaptcha/api.js?hl=ru',
 
         ));
     ?>

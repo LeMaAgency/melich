@@ -24,7 +24,13 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</span>
 			</label>
 		</div>
-		
+
+		<div class="it-block">
+			<div class="g-recaptcha" data-sitekey="6LeRoGAUAAAAAP4PIwF6FJrkanI60k43qhetOsDH"></div>
+				<input type="hidden" id="form_field_recaptcha" name="recaptcha">
+			<div class="it-error"></div>
+		</div>
+
 		<div class="it-block ">
 			<input type="submit" value="<?=$component->getBtnTitle()?>" class="btn btn-control">
 		</div>
