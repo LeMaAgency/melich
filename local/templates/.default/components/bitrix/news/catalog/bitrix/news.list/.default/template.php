@@ -18,6 +18,7 @@ use Bitrix\Main\Localization\Loc;
 Loc::loadMessages(__FILE__);
 
 $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__name, $component->randString());
+
 ?>
 
 <? if ($_REQUEST['showMore'] == '1')

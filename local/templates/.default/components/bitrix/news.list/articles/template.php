@@ -41,6 +41,7 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
                             <time>
                                 <?= $item->get("ACTIVE_FROM"); ?>
                             </time>
+							<?=$item->getName();?>
                         </div>
                         <div class="articles-item__text">
                             <p>
