@@ -343,9 +343,10 @@ header {position: relative}
     font-size: 25px;
     color: #000;
     letter-spacing: 3px;
+    text-transform: none;
 }
 .page__index__text p {
-    line-height: 33px;
+    line-height: 20px;
 }
 .page__index__text b {
     font-style: italic;
