@@ -13,6 +13,7 @@ if(!empty($arResult['ITEMS']))
 
     foreach($arResult['ITEMS'] as $k => $arItem)
     {
-        $arResult['ITEMS'][$k]['PREVIEW_PICTURE_SRC'] = Helper::getImageWatermarkSrc($arItem['PREVIEW_PICTURE'], $watermarkParams);
+        //$arResult['ITEMS'][$k]['PREVIEW_PICTURE_SRC'] = Helper::getImageWatermarkSrc($arItem['PREVIEW_PICTURE'], $watermarkParams);
+        $arResult['ITEMS'][$k]['PREVIEW_PICTURE_SRC'] = $arItem['PREVIEW_PICTURE']['SRC'];
     }
 }
