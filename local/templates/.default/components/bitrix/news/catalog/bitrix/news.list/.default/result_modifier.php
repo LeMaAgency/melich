@@ -15,7 +15,8 @@ if(!empty($arResult['ITEMS']))
     {
         if(empty($arItem['PREVIEW_PICTURE']) || $arItem['PREVIEW_PICTURE'] == null)
                 continue;
-        $arResult['ITEMS'][$k]['PREVIEW_PICTURE_SRC'] = Helper::getImageWatermarkSrc($arItem['PREVIEW_PICTURE'], $watermarkParams);
+        //$arResult['ITEMS'][$k]['PREVIEW_PICTURE_SRC'] = Helper::getImageWatermarkSrc($arItem['PREVIEW_PICTURE'], $watermarkParams);
+        $arResult['ITEMS'][$k]['PREVIEW_PICTURE_SRC'] = $arItem['PREVIEW_PICTURE']['SRC'];
     }
 }
 
