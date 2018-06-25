@@ -1010,3 +1010,7 @@ width: 100%;
 .quick_prev_btn:hover svg {
     fill: #fff;
 }
+
+.quick_prev_btn::before {
+    display: none;
+}
