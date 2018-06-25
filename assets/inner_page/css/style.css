@@ -1844,9 +1844,9 @@ li.fancybox-thumbs-loading {
       right: 0; }
   @media screen and (max-width: 1600px) {
     .catalog__item {
-      height: 550px; }
+      height: 720px; }
     .catalog__link img {
-      height: 550px; }
+      height: 720px; }
     .catalog__btn {
       max-width: 600px; } }
   @media screen and (max-width: 1366px) {
