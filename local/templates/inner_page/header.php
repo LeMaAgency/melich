@@ -41,6 +41,23 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
 <body>
 
 <? $APPLICATION->ShowPanel(); ?>
+<div class="icon-data-include">
+    <svg viewBox="0 0 0 0" style="position: absolute; z-index: -1; opacity: 0;">
+        <defs>
+            <linearGradient id="svg-boxGradient" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="25" y2="25">
+                <stop offset="0%" stop-color="#DBA742"></stop>
+                <stop offset="100%" stop-color="#DBA742"></stop>
+            </linearGradient>
+            <linearGradient id="svg-lineGradient">
+                <stop offset="0%" stop-color="#DBA742"></stop>
+                <stop offset="100%" stop-color="#DBA742"></stop>
+            </linearGradient>
+            <path id="form-checkbox-svg-box" d="M21 12.7v5c0 1.3-1 2.3-2.3 2.3H8.3C7 20 6 19 6 17.7V7.3C6 6 7 5 8.3 5h10.4C20 5 21 6 21 7.3v5.4"></path>
+            <path id="form-checkbox-svg-check" stroke="url(#svg-boxGradient)" d="M10 13l2 2 5-5"></path>
+            <circle id="form-checkbox-svg-circle" cx="13.5" cy="12.5" r="10"></circle>
+        </defs>
+    </svg>
+</div>
 <div class="flex-container">
     <aside class="nav-bar">
         <div class="nav-bar__logo logo">

@@ -311,8 +311,11 @@
     background: rgba(0, 0, 0, 0.61);
 }
 
-    /* -- Комп */
+/* -- Комп */
 header {position: relative}
+
+.flex-full {flex-direction: column;}
+.flex-full .contacts-content {max-width: none}
 
 .page__index__slider__list__item__content {
     height: 78.5%;
@@ -467,4 +470,528 @@ header {position: relative}
 }
 .width_100{
 width: 100%;
+}
+
+
+.popup {
+    display: none;
+    max-width: 600px;
+}
+
+/* --------------------------  */
+
+
+.btn {
+    outline: none;
+    border: 0;
+    overflow: 0;
+    font-family: "Comfortaa", cursive;
+    letter-spacing: 3px;
+    position: relative;
+    display: inline-block;
+    padding: 4px 10px 2px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 200px;
+    -webkit-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    transform: perspective(1px) translateZ(0);
+    background: #DBA742;
+    box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.2)
+}
+
+.btn:active, .btn:focus {
+    outline: none
+}
+
+.btn::-moz-focus-inner {
+    border: 0
+}
+
+.btn-big {
+    font-weight: normal
+}
+
+.btn-big .btn-control {
+    padding: 12px 15px
+}
+
+.btn-white, .page__index__map .menu li a.active {
+    background: #fff
+}
+
+.btn-white .btn-control, .page__index__map .menu li a.active .btn-control {
+    color: #4b6868
+}
+
+.btn-control {
+    display: block;
+    border-radius: 100px;
+    padding: 4px 5px;
+    color: #fff
+}
+
+.btn .core__icon {
+    position: relative;
+    top: -2px;
+    margin: 5px
+}
+
+.btn:hover, .btn:focus {
+    transform: scale(1.1)
+}
+
+.btn-border {
+    background: transparent;
+    color: #FFF;
+    border: 2px solid #4b6868
+}
+
+.form.success .form-wrap {
+    display: none
+}
+
+.form.success .form-success {
+    display: block
+}
+
+.form-wrap {
+    display: block
+}
+
+.form-success {
+    display: none;
+    background: #ddd;
+    border-radius: 50px;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px
+}
+
+.form-input {
+    position: relative;
+    margin-bottom: 10px
+}
+
+.form-input-control {
+    display: block;
+    font-size: 11px;
+    padding: 16px 15px 15px;
+    width: 100%;
+    background-color: #f9f9f9;
+    background-clip: padding-box;
+    border: solid 1px #cccccc;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.form-input-control:focus {
+    color: #495057;
+    border-color: #DBA742;
+    outline: 0
+}
+
+.form-input-control::-ms-expand {
+    background-color: transparent;
+    border: 0
+}
+
+.form-input-control::-webkit-input-placeholder, .form-input-control:-ms-input-placeholder, .form-input-control::placeholder {
+    color: #868e96;
+    opacity: 1
+}
+
+.form-input-error {
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    font-size: 12px;
+    padding-top: 2px;
+    color: red
+}
+
+.form-input.error .form-input-control {
+    border-color: red
+}
+
+.form-checkbox {
+    display: block;
+    position: relative;
+    padding: 1em 1em 1em 16%;
+    margin: 0 auto;
+    cursor: pointer
+}
+
+.form-checkbox-control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0
+}
+
+.form-checkbox-control:checked ~ .form-checkbox-text {
+    transition-delay: 0s;
+    opacity: 0.3
+}
+
+.form-checkbox-control:checked ~ .form-checkbox-text a {
+    z-index: auto
+}
+
+.form-checkbox-control:checked ~ .form-checkbox-svg .form-checkbox-svg-box {
+    stroke-dashoffset: 56.1053;
+    transition-delay: 0s
+}
+
+.form-checkbox-control:checked ~ .form-checkbox-svg .form-checkbox-svg-line {
+    stroke-dashoffset: -8
+}
+
+.form-checkbox-control:checked ~ .form-checkbox-svg .form-checkbox-svg-check {
+    stroke-dashoffset: 0;
+    transition-delay: .48s
+}
+
+.form-checkbox-control:checked ~ .form-checkbox-svg .form-checkbox-svg-circle {
+    animation-name: explode
+}
+
+.form-checkbox-svg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    fill: none;
+    stroke: #DBA742;
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round
+}
+
+.form-checkbox-svg use {
+    transition: stroke-dashoffset .8s cubic-bezier(0.9, 0, 0.5, 1)
+}
+
+.form-checkbox-svg-circle {
+    stroke: #DBA742;
+    stroke-dasharray: 1 6;
+    stroke-width: 0;
+    transform-origin: 13.5px 12.5px;
+    transform: scale(0.4) rotate(0deg);
+    animation: none .8s linear
+}
+
+@keyframes explode {
+    30% {
+        stroke-width: 3;
+        stroke-opacity: 1;
+        transform: scale(0.8) rotate(40deg)
+    }
+    100% {
+        stroke-width: 0;
+        stroke-opacity: 0;
+        transform: scale(1.1) rotate(60deg)
+    }
+}
+
+.form-checkbox-svg-box {
+    stroke-dasharray: 56.1053, 56.1053;
+    stroke-dashoffset: 0;
+    transition-delay: .16s
+}
+
+.form-checkbox-svg-check {
+    stroke: red;
+    stroke-dasharray: 9.8995, 9.8995;
+    stroke-dashoffset: 9.8995;
+    transition-duration: .32s
+}
+
+.form-checkbox-text {
+    font-size: 14px;
+    color: #1B4A4E;
+    transition: all .4s linear .4s
+}
+
+.form-checkbox-text a {
+    position: relative;
+    text-decoration: underline;
+    z-index: 2;
+    color: #9f8234;
+}
+
+.form-checkbox-text a:hover {
+    color: #DBA742
+}
+
+.form-checkbox.error .form-checkbox-svg-box {
+    border-color: red;
+    stroke: red
+}
+
+.form-text-mini {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 4px
+}
+.page__index__feedback {
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .page__index__feedback {
+        padding: 50px 0
+    }
+}
+
+.page__index__feedback__title {
+    margin: auto;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 4px
+}
+
+.page__index__feedback__text {
+    margin: auto;
+    max-width: 400px;
+    padding: 20px 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 4px;
+    line-height: 24px;
+}
+
+.page__index__feedback__form {
+    max-width: 300px;
+    margin: auto
+}
+
+.page__index__feedback__form .btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px
+}
+
+.page__index__feedback__form .btn-control {
+    display: block;
+    padding: 15px
+}
+
+.page__index__feedback__form__btn-top {
+    padding-top: 30px
+}
+
+.page__index__feedback__form__btn-top svg {
+    width: 30px;
+    height: 40px;
+    overflow: unset;
+    -webkit-animation: angle_down 1.7s ease-in-out infinite;
+    -moz-animation: angle_down 1.7s ease-in-out infinite;
+    animation: angle_down 1.7s ease-in-out infinite
+}
+
+.page__index__feedback__form__btn-top span {
+    display: block;
+    font-weight: bold;
+    font-size: 19px
+}
+
+@-webkit-keyframes angle_down {
+    0% {
+        opacity: 0.8;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+}
+
+@-moz-keyframes angle_down {
+    0% {
+        opacity: 0.8;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+}
+
+@keyframes angle_down {
+    0% {
+        opacity: 0.8;
+        -webkit-transform: translateY(0px);
+        transform: translateY(0px)
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+}
+
+.page__index__map {
+    margin-bottom: 20px
+}
+
+@media only screen and (max-width: 768px) {
+    .page__index__map__iframe iframe {
+        height: 300px
+    }
+}
+
+.page__index__map__btn {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 30px
+}
+
+@media only screen and (max-width: 768px) {
+    .page__index__map__btn {
+        position: relative
+    }
+}
+
+.page__index__map__btn .btn.active {
+    display: none
+}
+
+.page__index__map__text {
+    display: none;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    padding: 30px
+}
+
+@media only screen and (max-width: 768px) {
+    .page__index__map__text {
+        position: relative
+    }
+}
+
+.page__index__map__text:active, .page__index__map__text.active, .page__index__map__text:active:focus, .page__index__map__text:active:hover, .page__index__map__text.active:focus, .page__index__map__text.active:hover {
+    display: block
+}
+
+.page__index__map .menu {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding: 30px
+}
+
+@media only screen and (max-width: 768px) {
+    .page__index__map .menu {
+        position: relative
+    }
+}
+
+.page__index__map .menu li {
+    display: inline-block
+}
+
+.page__index__map .menu li a {
+    margin: 0 10px 10px
+}
+
+.page__index__map .list .item {
+    display: none;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    padding: 30px 30px 100px
+}
+
+@media only screen and (max-width: 768px) {
+    .page__index__map .list .item {
+        position: relative
+    }
+}
+
+.page__index__map .list .item:active, .page__index__map .list .item.active, .page__index__map .list .item:active:focus, .page__index__map .list .item:active:hover, .page__index__map .list .item.active:focus, .page__index__map .list .item.active:hover {
+    display: block
+}
+
+.page__index__map .list .item .app-js-close {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    color: #555;
+    cursor: pointer;
+    height: 44px;
+    margin: 0;
+    padding: 6px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 44px;
+    z-index: 10
+}
+
+.page__index__map .list .item .app-js-close svg {
+    fill: transparent;
+    opacity: .8;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    transition: stroke .1s
+}
+
+
+.row-table {width: 100%; display: table;}
+.row-table .col-12 {
+    width: 50%;
+    display: table-cell;
+    padding: 20px 30px;
+
+    background-color: #ebebea;
+}
+@media (max-width: 1000px) {
+    .row-table {
+        display: block;
+    }
+    .row-table .col-12 {
+        width: 100%;
+        display: block;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
