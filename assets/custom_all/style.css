@@ -1023,6 +1023,23 @@ width: 100%;
 .mob-logo{
     display: none;
 }
+@media screen and (max-width: 768px) {
+    .hamburger-btn {
+        right: 30px;
+        left: auto;
+    }
+    .nav-bar{
+        right: -100%;
+        left: auto;
+    }
+    .nav-bar--active{
+        right: 0;
+        left: auto;
+    }
+    .main-nav__item::before{
+        background-color: unset;
+    }
+}
 @media (max-width: 480px) {
     .slick-arrow{
         display: none !important;
