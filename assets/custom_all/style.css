@@ -1057,3 +1057,12 @@ width: 100%;
         top:10px;
     }
 }
+
+.loupe{
+    background-image: url(/assets/img/loupe.png);
+    background-size: 70px;
+    background-repeat: no-repeat;
+    min-width: 70px;
+    min-height: 70px;
+    background-position: center;
+}

@@ -37,7 +37,8 @@ $bxAjaxId = CAjax::GetComponentID($component->__name, $component->__template->__
                     </p>
                 </div>
                 <div class="quick_prev_btn" data-id="<?= $item->getId(); ?>" onclick="event.preventDefault()">
-                    Быстрый просмотр
+                    <div class="loupe"></div>
+					<!--Быстрый просмотр-->
                 </div>
             </a>
 
