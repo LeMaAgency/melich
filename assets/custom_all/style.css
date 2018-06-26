@@ -1015,3 +1015,12 @@ width: 100%;
 .quick_prev_btn::before {
     display: none;
 }
+@media (max-width: 480px) {
+    .slick-arrow{
+        display: none !important;
+    }
+}
+.mob-btn{
+    right:15px;
+    left: auto;
+}
