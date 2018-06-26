@@ -1039,8 +1039,9 @@ width: 100%;
     .main-nav__item::before{
         background-color: unset;
     }
-}
-@media (max-width: 480px) {
+    .page-header__logo{
+        visibility: hidden;
+    }
     .slick-arrow{
         display: none !important;
     }
@@ -1051,5 +1052,8 @@ width: 100%;
         left:15px;
         z-index: 40;
         min-width:100px;
+    }
+    .mob-logo.inner{
+        top:10px;
     }
 }

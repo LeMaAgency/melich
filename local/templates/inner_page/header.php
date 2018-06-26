@@ -121,6 +121,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
     <main class="main-content">
         <? if (!preg_match('~^/(?:contacts|catalog/([A-Za-z0-9-]+)/[^/]+)/$~iu', $APPLICATION->GetCurDir())): ?>
             <header class="page-header" <?=$APPLICATION->ShowViewContent('banner-image');?>>
+                <div class="mob-logo inner">
+                    <img src="/assets/inner_page/img/header-logo.png" alt="banner">
+                </div>
                 <div class="hamburger-btn">
                     <button class="hamburger hamburger--collapse" type="button">
                         <span class="hamburger-box">
