@@ -1030,7 +1030,7 @@ width: 100%;
     .mob-logo{
         display: block;
         position: absolute;
-        top:15px;
+        top:30px;
         left:15px;
         z-index: 40;
         min-width:100px;
