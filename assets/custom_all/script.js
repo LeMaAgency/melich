@@ -30,3 +30,9 @@ var jsMobMenu = {
 $(function () {
     jsMobMenu.init();
 });
+
+jQuery(function(){
+    $(".js-detail-loupe").imagezoomsl({
+        zoomrange: [3,5]
+    });
+});

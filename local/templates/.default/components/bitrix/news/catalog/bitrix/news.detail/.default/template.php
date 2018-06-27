@@ -33,10 +33,15 @@ $item = $data->item();
 
             <? if ($item->get("ARRAY_CHECK")): ?>
                 <div class="card-slider__for slider-for">
-                    <? foreach ($item->get("MORE_IMAGE") as $srcImage): ?>
+                    <? foreach ($item->get("MORE_IMAGE") as $key => $srcImage): ?>
 
                         <div class="card-slider__for-item">
-                            <img src="<?= $srcImage; ?>" alt="<?= $item->getName(); ?>">
+                            <img src="<?= $srcImage; ?>"
+                                 class="js-detail-loupe"
+                                 alt="<?= $item->getName(); ?>"
+                                 data-large="<?= $srcImage; ?>"
+                                 data-title="<?= $item->getName(); ?>"
+                                 data-help="Используйте колесико мыши для изменения кратности увеличения +/-">
                         </div>
                     <? endforeach; ?>
                 </div>

@@ -21,11 +21,12 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true)
         ->addCssArray(array(
             '/assets/inner_page/css/style.css?v=6',
             '/assets/inner_page/css/custom.css',
-            '/assets/custom_all//style.css',
+            '/assets/custom_all/style.css',
         ))
         ->addJsArray(array(
             '/assets/inner_page/js/jquery.min.js',
-            '/assets/custom_all//script.js',
+            '/assets/inner_page/js/zoomsl-3.0.min.js',
+            '/assets/custom_all/script.js',
             '/assets/inner_page/js/object-fit-polyfill.js',
             '/assets/inner_page/js/jquery.fancybox.min.js',
             '/assets/inner_page/js/slick.min.js',

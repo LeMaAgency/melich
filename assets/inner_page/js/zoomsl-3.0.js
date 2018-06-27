@@ -1,4 +1,3 @@
-/*http://zoomsl.sergeland.ru Sergey Zaragulov skype: deeserge icq: 287295769 sergeland@mail.ru*/
 (function($, global){
 "use strict";
 
@@ -17,7 +16,7 @@
 			if (!$(this).is("img")) return true;			
 			var that = this;			
             setTimeout(function () {
-				$(new Image()).load(function(){				
+				$(new Image()).on('load',function(){				
 					sergelandimagezoomer.init($(that), options);					
 				}).attr('src', $(that).attr('src'));				
             }, 30);
@@ -30,28 +29,28 @@
 
 		dsetting: { //default settings
 		
-				// загрузка big картинки
-				loadinggif: '',      				  // картинка показываемая при загрузке big изображения
-				loadopacity: 0.1,					  // прозрачность фона перекрытия tmb картинки при загрузке	big изображения
-				loadbackground: '#878787',			  // цвет фона перекрытия tmb картинки при загрузке	 big изображения
+				// Р·Р°РіСЂСѓР·РєР° big РєР°СЂС‚РёРЅРєРё
+				loadinggif: '',      				  // РєР°СЂС‚РёРЅРєР° РїРѕРєР°Р·С‹РІР°РµРјР°СЏ РїСЂРё Р·Р°РіСЂСѓР·РєРµ big РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
+				loadopacity: 0.1,					  // РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ С„РѕРЅР° РїРµСЂРµРєСЂС‹С‚РёСЏ tmb РєР°СЂС‚РёРЅРєРё РїСЂРё Р·Р°РіСЂСѓР·РєРµ	big РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
+				loadbackground: '#878787',			  // С†РІРµС‚ С„РѕРЅР° РїРµСЂРµРєСЂС‹С‚РёСЏ tmb РєР°СЂС‚РёРЅРєРё РїСЂРё Р·Р°РіСЂСѓР·РєРµ	 big РёР·РѕР±СЂР°Р¶РµРЅРёСЏ
 
 				
-				// лупа (cursorshade)
-				cursorshade: true,						// показать контейнер лупы
-				magnifycursor: 'crosshair',				// вид курсора мыши над tmb в формате CSS
-				cursorshadecolor: '#fff',				// цвет контейнера лупы в формате CSS
-				cursorshadeopacity: 0.3,				// прозрачность контейнера лупы
-				cursorshadeborder: '1px solid black', 	// внешний бордюра контейнера лупы в формате CSS
-				zindex: '', 							// z-index контейнера лупы 
-				stepzoom: 0.5,							// шаг зуммирования при прокрутке колеса мыши					
-				zoomrange: [2, 2], 						// диапазон зуммирования
-				zoomstart: 2,							// стартовая установка зуммирования
-				disablewheel: true,					    // отключить прокрутку документа колесом мыши когда курсор над картинкой tmb в случае если не задан диапазон зуммирования
+				// Р»СѓРїР° (cursorshade)
+				cursorshade: true,						// РїРѕРєР°Р·Р°С‚СЊ РєРѕРЅС‚РµР№РЅРµСЂ Р»СѓРїС‹
+				magnifycursor: 'crosshair',				// РІРёРґ РєСѓСЂСЃРѕСЂР° РјС‹С€Рё РЅР°Рґ tmb РІ С„РѕСЂРјР°С‚Рµ CSS
+				cursorshadecolor: '#fff',				// С†РІРµС‚ РєРѕРЅС‚РµР№РЅРµСЂР° Р»СѓРїС‹ РІ С„РѕСЂРјР°С‚Рµ CSS
+				cursorshadeopacity: 0.3,				// РїСЂРѕР·СЂР°С‡РЅРѕСЃС‚СЊ РєРѕРЅС‚РµР№РЅРµСЂР° Р»СѓРїС‹
+				cursorshadeborder: '1px solid black', 	// РІРЅРµС€РЅРёР№ Р±РѕСЂРґСЋСЂР° РєРѕРЅС‚РµР№РЅРµСЂР° Р»СѓРїС‹ РІ С„РѕСЂРјР°С‚Рµ CSS
+				zindex: '', 							// z-index РєРѕРЅС‚РµР№РЅРµСЂР° Р»СѓРїС‹ 
+				stepzoom: 0.5,							// С€Р°Рі Р·СѓРјРјРёСЂРѕРІР°РЅРёСЏ РїСЂРё РїСЂРѕРєСЂСѓС‚РєРµ РєРѕР»РµСЃР° РјС‹С€Рё					
+				zoomrange: [2, 2], 						// РґРёР°РїР°Р·РѕРЅ Р·СѓРјРјРёСЂРѕРІР°РЅРёСЏ
+				zoomstart: 2,							// СЃС‚Р°СЂС‚РѕРІР°СЏ СѓСЃС‚Р°РЅРѕРІРєР° Р·СѓРјРјРёСЂРѕРІР°РЅРёСЏ
+				disablewheel: true,					    // РѕС‚РєР»СЋС‡РёС‚СЊ РїСЂРѕРєСЂСѓС‚РєСѓ РґРѕРєСѓРјРµРЅС‚Р° РєРѕР»РµСЃРѕРј РјС‹С€Рё РєРѕРіРґР° РєСѓСЂСЃРѕСЂ РЅР°Рґ РєР°СЂС‚РёРЅРєРѕР№ tmb РІ СЃР»СѓС‡Р°Рµ РµСЃР»Рё РЅРµ Р·Р°РґР°РЅ РґРёР°РїР°Р·РѕРЅ Р·СѓРјРјРёСЂРѕРІР°РЅРёСЏ
 
 				
-				// подсказка (statusdiv)
-				showstatus: true, 						// показывать при наведении на tmb help контейнер
-				showstatustime: 2000,                   // время показа help контейнера
+				// РїРѕРґСЃРєР°Р·РєР° (statusdiv)
+				showstatus: true, 						// РїРѕРєР°Р·С‹РІР°С‚СЊ РїСЂРё РЅР°РІРµРґРµРЅРёРё РЅР° tmb help РєРѕРЅС‚РµР№РЅРµСЂ
+				showstatustime: 2000,                   // РІСЂРµРјСЏ РїРѕРєР°Р·Р° help РєРѕРЅС‚РµР№РЅРµСЂР°
 				statusdivborder: '1px solid black', 
 				statusdivbackground: '#C0C0C0', 
 				statusdivpadding: '4px', 
@@ -59,33 +58,33 @@
 				statusdivopacity: 0.8,
 
 				
-				// контейнер big картинки (magnifier)
-				magnifierpos: 'right',    				// сторона отображения контейнера left/right
-				magnifiersize: [0, 0], 					// размер контейнера  
-				magnifiereffectanimate: 'showIn',       // эффект появления/скрытия fadeIn/showIn/slideIn
-				innerzoom: false,						// показать контейнер внутри tmb
-				innerzoommagnifier: false,				// показать контейнер как лупу
-				descarea: false,						// показать контейнер в произвольной области, область descarea должна иметь width и height				
-				leftoffset:  15, 						// отступ слева от tmb картинки
-				rightoffset: 15, 						// отступ справа от tmb картинки
-				switchsides: true,						// учитывать край экрана
-                magnifierborder: '1px solid black',     // внешний бордюр
+				// РєРѕРЅС‚РµР№РЅРµСЂ big РєР°СЂС‚РёРЅРєРё (magnifier)
+				magnifierpos: 'right',    				// СЃС‚РѕСЂРѕРЅР° РѕС‚РѕР±СЂР°Р¶РµРЅРёСЏ РєРѕРЅС‚РµР№РЅРµСЂР° left/right
+				magnifiersize: [0, 0], 					// СЂР°Р·РјРµСЂ РєРѕРЅС‚РµР№РЅРµСЂР°  
+				magnifiereffectanimate: 'showIn',       // СЌС„С„РµРєС‚ РїРѕСЏРІР»РµРЅРёСЏ/СЃРєСЂС‹С‚РёСЏ fadeIn/showIn/slideIn
+				innerzoom: false,						// РїРѕРєР°Р·Р°С‚СЊ РєРѕРЅС‚РµР№РЅРµСЂ РІРЅСѓС‚СЂРё tmb
+				innerzoommagnifier: false,				// РїРѕРєР°Р·Р°С‚СЊ РєРѕРЅС‚РµР№РЅРµСЂ РєР°Рє Р»СѓРїСѓ
+				descarea: false,						// РїРѕРєР°Р·Р°С‚СЊ РєРѕРЅС‚РµР№РЅРµСЂ РІ РїСЂРѕРёР·РІРѕР»СЊРЅРѕР№ РѕР±Р»Р°СЃС‚Рё, РѕР±Р»Р°СЃС‚СЊ descarea РґРѕР»Р¶РЅР° РёРјРµС‚СЊ width Рё height				
+				leftoffset:  15, 						// РѕС‚СЃС‚СѓРї СЃР»РµРІР° РѕС‚ tmb РєР°СЂС‚РёРЅРєРё
+				rightoffset: 15, 						// РѕС‚СЃС‚СѓРї СЃРїСЂР°РІР° РѕС‚ tmb РєР°СЂС‚РёРЅРєРё
+				switchsides: true,						// СѓС‡РёС‚С‹РІР°С‚СЊ РєСЂР°Р№ СЌРєСЂР°РЅР°
+                magnifierborder: '1px solid black',     // РІРЅРµС€РЅРёР№ Р±РѕСЂРґСЋСЂ
 
 				
-				// контейнер текста снизу к картинке
+				// РєРѕРЅС‚РµР№РЅРµСЂ С‚РµРєСЃС‚Р° СЃРЅРёР·Сѓ Рє РєР°СЂС‚РёРЅРєРµ
 				textdnbackground: '#fff',               
 				textdnpadding: '10px',
 				textdnfont: '13px/20px cursive',
 
 				
-                // коэффициенты скорости анимации
-				scrollspeedanimate: 5 /*4*/,		    // прокрутки big картинки
-				zoomspeedanimate: 7, 			        // зуммирования (плавность)
-				loopspeedanimate: 2.5 /*2.45342*/ ,		// перемещения области лупы и big контейнера в режиме лупы				
-				magnifierspeedanimate: 350, 		    // показа big контейнера
+                // РєРѕСЌС„С„РёС†РёРµРЅС‚С‹ СЃРєРѕСЂРѕСЃС‚Рё Р°РЅРёРјР°С†РёРё
+				scrollspeedanimate: 5 /*4*/,		    // РїСЂРѕРєСЂСѓС‚РєРё big РєР°СЂС‚РёРЅРєРё
+				zoomspeedanimate: 7, 			        // Р·СѓРјРјРёСЂРѕРІР°РЅРёСЏ (РїР»Р°РІРЅРѕСЃС‚СЊ)
+				loopspeedanimate: 2.5 /*2.45342*/ ,		// РїРµСЂРµРјРµС‰РµРЅРёСЏ РѕР±Р»Р°СЃС‚Рё Р»СѓРїС‹ Рё big РєРѕРЅС‚РµР№РЅРµСЂР° РІ СЂРµР¶РёРјРµ Р»СѓРїС‹				
+				magnifierspeedanimate: 350, 		    // РїРѕРєР°Р·Р° big РєРѕРЅС‚РµР№РЅРµСЂР°
 
 				
-				// внешний вид
+				// РІРЅРµС€РЅРёР№ РІРёРґ
 				classmagnifier:   "magnifier",
 				classcursorshade: "cursorshade",
 				classstatusdiv:   "statusdiv",
@@ -342,7 +341,7 @@
 				   $textdn;				   
 
 			if(img.h === 0 || img.w === 0){			
-				$(new Image()).load(function(){				
+				$(new Image()).on('load',function(){				
 					self.init($img, options);					
 				}).attr("src", $img.attr("src"));				
 				return;
@@ -688,7 +687,7 @@
 
 				if(setting.largeimage !== $tracker.data('largeimage')){	
 				
-					$(new Image()).load(function(){						
+					$(new Image()).on('load',function(){						
 					}).attr("src", setting.largeimage);	
 			
 					$($tracker).unbind();
@@ -712,7 +711,7 @@
 				setting.largeimage = $img.attr("data-large") || $img.attr("src");
 				if(setting.largeimage !== $tracker.data("largeimage")){	
 				
-					$(new Image()).load(function(){						
+					$(new Image()).on('load',function(){						
 					}).attr("src", setting.largeimage);	
 			
 					$($tracker).unbind();
