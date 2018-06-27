@@ -11,6 +11,8 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+use Bitrix\Main\Localization\Loc;
+Loc::loadMessages(__FILE__);
 $data = new \Lema\Template\TemplateHelper($this);
 $item = $data->item();
 ?>
@@ -138,7 +140,8 @@ $item = $data->item();
                     <div class="find_price">
 
                         <div class="find_price_right">
-                            Чтобы узнать цену позвоните по тел +79282656333 или оставьте свои данные для связи<br>
+                            <?=Loc::getMessage("LEMA_NEWS_DETAIL_FEEDBACK_TITLE");?>
+                            <br>
                             <? $APPLICATION->IncludeComponent(
                                 "lema:form.ajax",
                                 "",
