@@ -576,6 +576,26 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"\/js\/jquery.magnify-mobile.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/jquery.magnify-mobile-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/jquery.magnify.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/jquery.magnify-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
 	"\/js\/jquery.mCustomScrollbar.concat.min.js": {
 		"ft": 64,
 		"ma": 0,
@@ -860,6 +880,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/js\/slick.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/zoomsl-3.0.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/zoomsl-3.0-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
@@ -1428,26 +1458,6 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/scss\/style-min.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/scss\/style-min-min.css",
-		"oF": 0,
-		"oS": 3
-		},
-	"\/scss\/style.css": {
-		"aP": 1,
-		"bl": 0,
-		"ft": 16,
-		"ma": 0,
-		"oA": 0,
-		"oAP": "\/scss\/style-min.css",
-		"oF": 0,
-		"oS": 3
 		},
 	"\/scss\/style.scss": {
 		"aP": 0,

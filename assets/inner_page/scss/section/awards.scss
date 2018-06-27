@@ -84,10 +84,12 @@
 
       .awards__item-visible {
         transform: rotateY(-180deg) translateY(-50%);
+        opacity: 0;
       }
 
       .awards__item-hidden {
         transform: rotateY(0deg) translateY(-50%);
+        opacity: 1;
       }
 
       &::before {
@@ -142,6 +144,7 @@
     transform: rotateY(0) translateY(-50%);
     backface-visibility: hidden;
     transition: all 0.4s ease-in-out;
+    opacity: 1;
   }
 
   &__item-hidden {
@@ -158,6 +161,7 @@
     transform: rotateY(180deg) translateY(-50%);
     backface-visibility: hidden;
     transition: all 0.4s ease-in-out;
+    opacity: 0;
   }
 
   @media screen and (max-width: 1440px) {
