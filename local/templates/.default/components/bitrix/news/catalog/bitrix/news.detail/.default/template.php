@@ -60,7 +60,37 @@ $item = $data->item();
         </div>
 
         <div class="card-description">
-            <? $APPLICATION->IncludeComponent(
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link" href="/">
+                            Главная
+                        </a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link"
+                           href="<?=$item->listUrl();?>"
+                           title="<?=$arResult["IBLOCK"]["NAME"];?>"
+                           itemprop="url">
+                            <?=$arResult["IBLOCK"]["NAME"];?>
+                        </a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link"
+                           href="<?=$arResult["SECTION"]["PATH"][0]["SECTION_PAGE_URL"];?>"
+                           title="<?=$arResult["SECTION"]["PATH"][0]["NAME"];?>"
+                           itemprop="url">
+                            <?=$arResult["SECTION"]["PATH"][0]["NAME"];?>
+                        </a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link">
+                            <?=$item->getName();?>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <?/* $APPLICATION->IncludeComponent(
                 "bitrix:breadcrumb",
                 "breadcrumb_inner",
                 Array(
@@ -69,7 +99,7 @@ $item = $data->item();
                     "START_FROM" => "0",
                 ),
                 false
-            ); ?>
+            ); */?>
             <div class="heading">
                 <h2 class="heading__title">
                     <?= $item->getName(); ?>
